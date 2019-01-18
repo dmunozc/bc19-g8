@@ -1,0 +1,66 @@
+max 1000 rounds
+between 32x32 and 64x64 square maps
+top left is 0,0
+start with 1 to 3 castles, 100 karb and 500 fuel
+resource tiles can be either karb or fuel
+each round we receive 25 fuel
+robots have full map knowledge, including resources, can only see robots withing their vision radius
+each unit has its own process, 100mssec clock, with 20ms additional computation for each round. capped at 200 msec
+if health drops to 0, unit is destroyed
+units need to deposit mined stuff into castles or churches
+
+castles:
+health = 200
+radius = 100
+castles is a superset of churches
+cannot be built
+can attack, but consumes fuel
+can trade with enemies, but only if accepted by enemy
+can communicate with all units, one way (castle to units)
+if all castles are destroyed, its game over
+Units also have a direct channel to communicate an 8 bit value to all their team’s Castles for free from any distance. This can also be combined with any other action, including general radio communications.
+
+friendly fire is active for AOE
+
+churches:
+produce robots for resources, at an adjacent point at end of turn
+robots deposit resources when they are adjacent
+cost 50 karb and 200 fuel to build
+health = 100
+radius = 100
+
+pilgrims:
+scouting, mining, building
+cost: 10 karb, 50 fuel
+most vision
+non combatant
+only miners of resources
+each turn receives 2 karb or 10 fuel units mined
+only unit that can construct buildings
+
+
+crusader:
+cost: 15 karb, 50 fuel
+fastest
+
+prophet:
+cost: 25 karb, 50 fuel
+most attack range
+most attack cost
+cannot attack close
+
+preacher:
+cost: 30 karb, 50 fuel
+most expensive movement
+most health
+most attack + radius
+
+each unit can only perform 1 action per turn
+
+units that destroy other units receive half of resources require to build it + carrying resources
+ all divided by the r^2 between the attacker and the target. So, if a Pilgrim were destroyed by a Crusader with dx,dy=(1,1) and was carrying 10 Fuel and 3 Karbonite, the attacker would now have an additional 5 Fuel and 4 Karbonite.
+ 
+Radio is the primary method of communication usable by unit. In any given turn, a unit can broadcast a 16 bit message to all units within squared radius X^2, consuming X Fuel. For example, a unit with id 1984 that wanted to broadcast a message with a squared radius of 10 squares would need to expend Math.ceil(Math.sqrt(10)) = 4 Fuel. On the next round, all units within that radius will see that the a unit with ID 1984 broadcasted the given message (from its new position, if the unit moved). Units can radio broadcast simultaneously with all other actions. Note that robots can see the unit ID and x,y location that produced a broadcast, but not which team the unit belongs to.
+
+
+ 
