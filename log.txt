@@ -1,0 +1,2378 @@
+[31m[Robot 1759 Log][0m "on fun"
+[31m[Robot 1759 Log][0m true
+[31m[Robot 1759 Log][0m "on fun"
+[31m[Robot 1759 Log][0m true
+[31m[Robot 1759 Log][0m "13,23"
+[31m[Robot 1759 Log][0m [[13,27],[37,23]]
+[31m[Robot 1759 Log][0m "closest castle is: 13,27"
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[31m[Robot 915 Log][0m "on fun"
+[31m[Robot 915 Log][0m false
+[31m[Robot 915 Log][0m "on fun"
+[31m[Robot 915 Log][0m true
+[31m[Robot 915 Log][0m "15,49"
+[31m[Robot 915 Log][0m [[15,1],[35,49]]
+[31m[Robot 915 Log][0m "closest castle is: 35,49"
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 3123 Log][0m "its the castle blue"
+[34m[Robot 3123 Log][0m "23  37"
+[34m[Robot 2402 Log][0m "its the castle blue"
+[34m[Robot 2402 Log][0m "49  35"
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot build on occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot build on occupied tile.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot build on occupied tile.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2611 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot build on occupied tile.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 1147 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot build on occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[34m[Robot 117 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot build on occupied tile.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot build on occupied tile.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot build on occupied tile.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto occupied tile.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2611 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot build on occupied tile.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Can't move off of map.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2234 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto occupied tile.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Can't move off of map.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Can't move off of map.
+[31m[Robot 2611 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2234 Error][0m Cannot move onto occupied tile.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 117 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto occupied tile.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2611 Error][0m Can't move off of map.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1147 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[31m[Robot 2872 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1588 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto occupied tile.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2748 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 1759 Log][0m "Building a crusader at 24, 14"
+[31m[Robot 1759 Error][0m Cannot afford to build specified unit.
+[34m[Robot 3123 Log][0m "Building a crusader at 24, 38"
+[34m[Robot 3123 Error][0m Cannot afford to build specified unit.
+[31m[Robot 915 Log][0m "Building a crusader at 50, 16"
+[31m[Robot 915 Error][0m Cannot afford to build specified unit.
+[34m[Robot 2402 Log][0m "Building a crusader at 50, 36"
+[34m[Robot 2402 Error][0m Cannot afford to build specified unit.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 15 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2234 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2872 Error][0m Can't move off of map.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 2611 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 2873 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 3693 Error][0m Cannot move onto impassable terrain.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+[34m[Robot 1066 Error][0m Can't move off of map.
+[31m[Robot 3405 Error][0m Cannot move onto impassable terrain.
+Game over, red won by random draw.

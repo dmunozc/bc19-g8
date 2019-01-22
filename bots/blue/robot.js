@@ -14,6 +14,10 @@ class MyRobot extends BCAbstractRobot {
         }
 
         else if (this.me.unit === SPECS.CASTLE) {
+          if(step === 1){
+            this.log("its the castle blue")
+             this.log(this.me.x + "  " + this.me.y)
+          }
             if (step % 10 === 0) {
                 this.log("Building a crusader at " + (this.me.x+1) + ", " + (this.me.y+1));
                 return this.buildUnit(SPECS.CRUSADER, 1, 1);
