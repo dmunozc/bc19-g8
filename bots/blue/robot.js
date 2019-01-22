@@ -1,5 +1,6 @@
 import {BCAbstractRobot, SPECS} from 'battlecode';
 import * as resource from './resource.js';
+import * as combat from './combat.js';
 import pilgrim from './pilgrim.js';
 
 var step = -1;
@@ -14,6 +15,7 @@ class MyRobot extends BCAbstractRobot {
         this.game_map = [];
         this.karb_locations = [];
         this.fuel_locations = [];
+        this.enemies = [];
 
     
     }
@@ -36,21 +38,26 @@ class MyRobot extends BCAbstractRobot {
 
             // Creating a pilgrim cap
             this.pilgrim_cap = 10;
-    
-
-            // if (this.me.unit === SPECS.CASTLE){
-            //     var curr_loc = {'x': this.me.x, 'y':this.me.y};
-            //     // this.castle_locations.push(curr_loc);
-            //     this.log("I am updating map. Curr_loc: " + curr_loc.x + ", " + curr_loc.y);
-            //     this.game_map = resource.update_map(curr_loc, this.game_map, true);
-            //     // this.log(this.game_map);
-
-            // }
         }
 
 
         if (this.me.unit === SPECS.CRUSADER) {
             // this.log("Crusader health: " + this.me.health);
+            var curr_loc = {'x': this.me.x, 'y':this.me.y};
+            var visible = this.getVisibleRobots();
+
+            // Check for a nearby enemy
+            this.enemies = combat.get_visible_enemies(this.me.team, visible);
+            if (this.enemies.length !== 0){
+                this.log("We see an enemy!");
+                var target = resource.find_nearest_node(curr_loc, this.enemies);
+                //Check if in range
+                var dist = resource.calculate_distance(curr_loc, target);
+                if (dist <= 4){
+                    this.log("Attacking enemy!");
+                    var attack = combat.get_relative_position(curr_loc, target);
+                    return this.attack(attack.x, attack.y);                }
+            }
             const choices = [[0,-1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
             const choice = choices[Math.floor(Math.random()*choices.length)]
             return this.move(...choice);
@@ -64,8 +71,7 @@ class MyRobot extends BCAbstractRobot {
             var nearest_karb = resource.find_nearest_node(curr_loc, this.karb_locations);
             // Find nearest fuel
             var nearest_fuel = resource.find_nearest_node(curr_loc, this.fuel_locations);
-            // this.log ("Fuel: " + this.me.fuel + ". Cap: " + this.fuel_cap);
-            // this.log ("Karb: " + this.me.karbonite + ". Cap: " + this.karb_cap);
+
             if (this.me.fuel !== this.fuel_cap && this.me.karbonite !== this.karb_cap){
                 if (curr_loc.x === nearest_fuel.x && curr_loc.y === nearest_fuel.y || curr_loc.x === 
                     nearest_karb.x && curr_loc.y === nearest_karb.y) {
@@ -76,9 +82,6 @@ class MyRobot extends BCAbstractRobot {
 
                 // Moves randomly
                 if (nearest_karb && this.me.fuel === 0 || this.me.karbonite === 0) {
-                    // var move_orders = resource.calculate_move(curr_loc, nearest_fuel);
-                    // // this.log("Move orders: " + move_orders.x + ", " + move_orders.y);
-                    // return this.move(move_orders.x, move_orders.y);
                     const choices = [[0,-1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
                     const choice = choices[Math.floor(Math.random()*choices.length)]
                     return this.move(...choice);
@@ -104,11 +107,10 @@ class MyRobot extends BCAbstractRobot {
         }
 
         else if (this.me.unit === SPECS.CASTLE) {
-            // if (step < 10) {
-            //     this.log("Building a pilgrim at " + (this.me.x+1) + ", " + (this.me.y+1));
-            //     return this.buildUnit(pilgrim)
-            // }
-
+            if (step % 12) {
+                this.log("Building a crusader at " + (this.me.x+1) + ", " + (this.me.y+1));
+                return this.buildUnit(SPECS.CRUSADER, 1, 1);
+            }
             if (step % 10 && this.num_pilgrims < this.pilgrim_cap) {
                 this.log("Building a pilgrim at " + (this.me.x+1) + ", " + (this.me.y+1));
                 this.num_pilgrims++;
