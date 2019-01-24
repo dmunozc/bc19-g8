@@ -21,7 +21,7 @@ class MyRobot extends BCAbstractRobot {
     }
     turn() {
         step++;
-
+        return;
         // This is to initialize our class variables on the first turn
         if (step === 0) {
 

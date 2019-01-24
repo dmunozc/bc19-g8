@@ -1,70 +1,59 @@
-import {BCAbstractRobot, SPECS} from 'battlecode';
 
 
+var relativeCoors = [[[-1,-1],[0,-1],[1,-1]],[[-1,0],[0,0],[1,0]],[[-1,1],[0,1],[1,1]]];
 
 
-function findClosestCastle(myLocationX,mylocationY, possibleCastleLocations,map,rob){
-  var i = 0;
-  var minLength = 4096 ;
-  var length = 0;
-  var closestIndex = -1;
-  for (i = 0; i < possibleCastleLocations.length; i++) {
-    length = 0;
-    rob.log("on fun")
-    rob.log(map[possibleCastleLocations[i][0]][possibleCastleLocations[i][1]]);
-    if(map[possibleCastleLocations[i][0]][possibleCastleLocations[i][1]] == true){
-      length = Math.abs(mylocationY - possibleCastleLocations[i][0]) + Math.abs(myLocationX - possibleCastleLocations[i][0]);
-      if(length < minLength){
-        minLength = length;
-        closestIndex = i;
-      }
+export function check_if_coor_in_path(coor,paths){
+  var i;
+  for(i = 0; i < paths.length;i++){
+    if(coor[0] == paths[i][0] && coor[1] == paths[i][1]){
+      return true;
     }
-    
   }
-  return closestIndex;
+  return false;
 }
 
-function getRandomPath(direction,openPaths){
-  openPaths[direction[1]+1][direction[0]+1] = 0;
-  openPaths[1][direction[0]+1] = 0;
-  openPaths[direction[1]+1][1] = 0;
-  var path = [];
+export function get_random_path(direction,openPaths){
+  openPaths[direction[1]+1][direction[0]+1] = 0; //making impassable what was tried before
+  openPaths[1][direction[0]+1] = 0;  //making impassable what was tried before
+  openPaths[direction[1]+1][1] = 0;  //making impassable what was tried before
+  //this will break if everything in openPaths is impassable
+  var  i = 0;
+  var  j = 0;
   var found = false;
-  var i;
-  var j;
-  for(i = 0;i < 3;i++){
-    for(j = 0;j < 3;j++){
-      if(openPaths[i][j] == 1){
-        path[0] = i;
-        path[1] = j;
-        found = true;
-        break;
-      }
-    }
-    if(found == true){
-      break;
+  while(!found){
+    i = Math.floor(Math.random() * (3) );
+    j = Math.floor(Math.random() * (3) );
+    if(openPaths[i][j] == 1){
+      found = true;
     }
   }
+  return relativeCoors[i][j];
 }
 //have to decide y and x locations
 //should try for alwayx x,y
-function getPossibleSteps(coor,map){
+export function get_possible_steps(coor,map){
   var result = [[],[],[]];//[y][x]
   var i;
   var j;
   for(i = 0;i < 3;i++){
     for(j = 0;j < 3;j++){
+      //console.log(result.toString());
       if(i == 1 && j == 1){
         result[i][j] = 0;
       }else{
-        result[i][j] = map[coor[1]+i-1][coor[0]+j-1] == true ? 1 : 0;
+        if(coor[1]+i-1 < 0 || coor[1]+i-1 >= map.length || coor[0]+j-1 < 0 || coor[0]+j-1 >= map.length){
+          result[i][j] = 0;
+        }else{
+          result[i][j] = map[coor[1]+i-1][coor[0]+j-1] == true ? 1 : 0;
+        }
       }
     }
   }
   return result;
 }
 //direction of coor2 in relation of coor1
-function getDirection(coor1,coor2){
+export function get_direction(coor1,coor2){
   var result = [0,0];//e-w,n-s,
   result[1] = (coor2[1] > coor1[1]) ? 1 : (coor2[1] < coor1[1]) ? -1 : 0
   result[0] = (coor2[0] > coor1[0]) ? 1 : (coor2[0] < coor1[0]) ? -1 : 0
@@ -72,49 +61,49 @@ function getDirection(coor1,coor2){
 }
 //this function gets the next step to take (will have to take into account different units in future
 //only single step
-function getNextStep(currentLocation,destination,map){
-  var direction = getDirection(currentLocation,destination);
-  var openPaths = getPossibleSteps(currentLocation,map);
+export function get_next_step(currentLocation,destination,map,currentPath){
+  var direction = get_direction(currentLocation,destination);
+  var openPaths = get_possible_steps(currentLocation,map);
   var newLocation = [currentLocation[0],currentLocation[1]];
   
   var moveAvailable = false;
-  if(map[currentLocation[1]][currentLocation[0] + direction[0]] == true){
-    newLocation[0] = currentLocation[0] + direction[0];
+  if(newLocation[0] + direction[0] != newLocation[0]  && map[newLocation[1]][newLocation[0] + direction[0]] == true){
+    newLocation[0] = newLocation[0] + direction[0];
     moveAvailable = true;
   }
-  if(map[currentLocation[1] + direction[1]][currentLocation[0]] == true){
-    newLocation[1] = currentLocation[1] + direction[1];
+  if(newLocation[1] + direction[1] != newLocation[1] && map[newLocation[1] + direction[1]][newLocation[0]] == true){
+    newLocation[1] = newLocation[1] + direction[1];
     moveAvailable = true;
   }
   if(moveAvailable == true){
-    return newLocation;
+    if(!check_if_coor_in_path(newLocation,currentPath)){//this option does not allow backtracking
+      return newLocation;
+    }
+    newLocation = [currentLocation[0],currentLocation[1]];
   }
   //else if could not move, need to figure out where to move to continue.
   //this could break if enter into tunnel
+  //return random open path
+  var newPath = get_random_path(direction,openPaths);
+  //console.log(check_if_coor_in_path(newPath,currentPath));
+  //console.log([newLocation[0] + newPath[0],newLocation[1] + newPath[1]]);
+  //console.log(check_if_coor_in_path([newLocation[0] + newPath[0],newLocation[1] + newPath[1]],currentPath));
+  while(check_if_coor_in_path([newLocation[0] + newPath[0],newLocation[1] + newPath[1]],currentPath)){ //this option does not allow backtracking
+    newPath = get_random_path(direction,openPaths);
+  }
   
-  
-  return newLocation;
+  return [newLocation[0] + newPath[0],newLocation[1] + newPath[1]];
 }
 
-
-/*function findPathToCoordinateDFS(origin,destination,map){
-  var S = [];
-  S.push(origin);
-  var found = false;
-  var current;
-  while(S.length > 0 || found == false){
-    current = S.pop();
-    
-  }
-}*/
 //this function find the whole path to take from origin to destination
-function findPathToCoordinate(origin,destination,map){
+export function find_path_to_coordinate(origin,destination,map,r){
   var path = [];
-  var nextStep = getNextStep(origin,destination,map);
+  var nextStep = get_next_step(origin,destination,map,path);
   var i = 1;
   path[0] = [nextStep[0],nextStep[1]];
   while(nextStep[0] != destination[0] || nextStep[1] != destination[1]){
-    nextStep = getNextStep(nextStep,destination,map);
+    //r.log(i);
+    nextStep = get_next_step(nextStep,destination,map,path);
     path[i] = [nextStep[0],nextStep[1]];
     i++;
   }
