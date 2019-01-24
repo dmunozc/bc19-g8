@@ -1,6 +1,6 @@
 import {BCAbstractRobot, SPECS} from 'battlecode';
 import * as resource from './resource.js';
-//import * as combat from './combat.js';
+import * as combat from './combat.js';
 //import pilgrim from './pilgrim.js';
 import * as movement from './movement.js';
 
@@ -21,7 +21,7 @@ class MyRobot extends BCAbstractRobot {
             //this.log([this.me.x,this.me.y]);
             this.log(castlePaths);
            
-            path = movement.find_path_to_coordinate([this.me.x,this.me.y],castlePaths[1],this.map,this);
+            path = movement.find_path_to_coordinate([this.me.x,this.me.y],castlePaths[0],this.map,this);
             this.log(path);
             stepCounter = 0;
             //this.log(path);
@@ -29,6 +29,20 @@ class MyRobot extends BCAbstractRobot {
             // this.log("Crusader health: " + this.me.health);
             //const choices = [[0,-1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
             //const choice = choices[Math.floor(Math.random()*choices.length)]
+            var visible = this.getVisibleRobots();
+            var enemies = combat.get_visible_enemies(this.me.team, visible);
+            var curr_loc = {'x': this.me.x, 'y':this.me.y};
+            if (enemies.length !== 0){
+              this.log("We see an enemy!");
+                var target = resource.find_nearest_node(curr_loc, enemies);
+                //Check if in range
+                var dist = resource.calculate_distance(curr_loc, target);
+                if (dist <= 4){
+                    this.log("Attacking enemy!");
+                    var attack = combat.get_relative_position(curr_loc, target);
+                    return this.attack(attack.x, attack.y);      
+                }                    
+            }
             if(stepCounter < path.length){
               var movex = path[stepCounter][0] - this.me.x;
               var movey =  path[stepCounter][1] - this.me.y;
@@ -41,6 +55,7 @@ class MyRobot extends BCAbstractRobot {
             }else{
               return
             }
+            return;
             //return this.move(path[stepCounter][1],);
         }
 
