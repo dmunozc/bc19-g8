@@ -105,3 +105,26 @@ export function calculate_move(curr, dest) {
     }
     return res;
 }
+
+
+export function find_possible_castle_locations(origin,map,r){
+  var result = [];
+  var i = 0;
+  var count = 0;
+  var temp;
+  for(i = 0; i < 2; i++){
+    if(i == 0){
+      temp = [(map.length - 1 - origin[0]),origin[1]];
+    }else if (i == 1){
+      temp = [origin[0],(map.length - 1 - origin[1])];
+    }
+    //r.log(temp);
+    //r.log(i);
+    if(map[temp[1]][temp[0]] == true){
+      result[count] = [temp[0],temp[1]];
+      count++;
+    }
+  }
+  //r.log(result);
+  return result;
+}

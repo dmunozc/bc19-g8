@@ -20,3 +20,4 @@ First install the bc19
 - Battlecode docs: https://battlecode.org/dash/docs
 - Example bot logic: https://github.com/npfoss/examplefuncsplayer
 - Battlecode source: https://github.com/battlecode/battlecode19
+- Auto-Accepting Teams: https://docs.google.com/document/d/15qKikSS8LpQFxq259ukxvD7ho6vCsw8jifdKRjO7MHU/edit

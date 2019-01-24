@@ -18,10 +18,11 @@ class MyRobot extends BCAbstractRobot {
           if(step === 0){
             //i know on creation I will be x+1,y+1 away from castle as per code below
             var castlePaths =  resource.find_possible_castle_locations([this.me.x-1,this.me.y-1],this.map,this);
-            //this.log([this.me.x,this.me.y]);
-            this.log(castlePaths);
-           
+            this.log(["me at: " + this.me.x,this.me.y]);
+            this.log("castle paths: ");
+           this.log(castlePaths);
             path = movement.find_path_to_coordinate([this.me.x,this.me.y],castlePaths[0],this.map,this);
+            this.log("chosen path: " );
             this.log(path);
             stepCounter = 0;
             //this.log(path);
@@ -60,7 +61,7 @@ class MyRobot extends BCAbstractRobot {
         }
 
         else if (this.me.unit === SPECS.CASTLE) {
-          if(step % 20 == 0){
+          if(step== 0){
            // find_possible_castle_locations([this.me.x,this.me.y],this.map);
              //this.log(this.map);
           }
