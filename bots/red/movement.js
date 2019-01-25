@@ -1,5 +1,3 @@
-
-
 var relativeCoors = [[[-1,-1],[0,-1],[1,-1]],[[-1,0],[0,0],[1,0]],[[-1,1],[0,1],[1,1]]];
 
 
@@ -110,4 +108,3 @@ export function find_path_to_coordinate(origin,destination,map,r){
   return path;
   
 }
-
