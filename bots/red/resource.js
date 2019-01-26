@@ -126,7 +126,7 @@ export function get_axis_of_symmetry(resourceMap){
         break;
       }
     }
-    if(resourceMap[j][i] == true){
+    if(j < resourceMap.length && i < resourceMap.length && resourceMap[j][i] == true){
       break;
     }
   }
@@ -135,7 +135,7 @@ export function get_axis_of_symmetry(resourceMap){
   if(resourceMap[resourceYSymm[1]][resourceYSymm[0]] == true){
     return 1;
   }
-  if{resourceMap[resourceXSymm[1]][resourceXSymm[0]] == true}{
+  if(resourceMap[resourceXSymm[1]][resourceXSymm[0]] == true){
     return 0;
   }
   return -1;

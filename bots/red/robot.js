@@ -17,11 +17,13 @@ class MyRobot extends BCAbstractRobot {
         if (this.me.unit === SPECS.CRUSADER) {
           if(step === 0){
             //i know on creation I will be x+1,y+1 away from castle as per code below
+            //this.log(this.fuel_map);
             var castlePaths =  resource.find_possible_castle_locations([this.me.x-1,this.me.y-1],this.map,this.fuel_map);
             this.log(["me at: " + this.me.x,this.me.y]);
             this.log("castle paths: ");
            this.log(castlePaths);
-            path = movement.find_path_to_coordinate([this.me.x,this.me.y],castlePaths,this.map,this.me);
+           //this.log(this.map);
+            path = movement.find_path_to_coordinate([this.me.x-1,this.me.y-1],castlePaths,this.map,this.me);
             this.log("chosen path: " );
             this.log(path);
             stepCounter = 0;
@@ -65,7 +67,7 @@ class MyRobot extends BCAbstractRobot {
            // find_possible_castle_locations([this.me.x,this.me.y],this.map);
              //this.log(this.map);
           }
-            if (step %20 === 0) {
+            if (step %3  === 0) {
                 this.log("Building a crusader at " + (this.me.x+1) + ", " + (this.me.y+1));
                 return this.buildUnit(SPECS.CRUSADER, 1, 1);
             } else {

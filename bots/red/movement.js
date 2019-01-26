@@ -102,7 +102,7 @@ export function get_max_movement(direction,radius,map,currentLocation){
       }
       result[1] = direction[1] * dy;
     }
-    if(direction[1] == 0){
+    else if(direction[1] == 0){
       //
       dx = radius;
       while((currentLocation[0] + (direction[0] * dx)) >= map.length){
@@ -126,7 +126,7 @@ export function get_max_movement(direction,radius,map,currentLocation){
 }
 
 export function get_distance(coor1,coor2){
-  return Math.sqrt(Math.pow(coor1[0] + coor2[0],2) + Math.pow(coor1[1] + coor2[1],2));
+  return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
 }
 //this function gets the next step to take (will have to take into account different units in future
 //only single step
@@ -156,7 +156,7 @@ export function get_next_step(currentLocation,destination,map,currentPath,radius
     }
   }
   for(i = maxMovement[1];i > 0 &&  !moveAvailable; i--){
-    if( map[newLocation[1] + 1][newLocation[0]] == true){
+    if( map[newLocation[1] + i][newLocation[0]] == true){
       newLocation[1] = newLocation[1] + i;
       break;
     }

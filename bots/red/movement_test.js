@@ -134,20 +134,25 @@ exports.get_max_movement = function(direction,radius,map,currentLocation){
 
 exports.get_distance = function(coor1,coor2){
 
-  return Math.sqrt(Math.pow(coor1[0] + coor2[0],2) + Math.pow(coor1[1] + coor2[1],2));
+  return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
 }
 //this function gets the next step to take (will have to take into account different units in future
 //only single step
 exports.get_next_step = function(currentLocation,destination,map,currentPath,radius){
 
-  
+  /*console.log("cL " + currentLocation);
+  console.log("dest " + destination);
+  console.log("dist " + this.get_distance(currentLocation,destination));*/
+  console.log("==================");
   if(this.get_distance(currentLocation,destination) < radius){
     return destination;
   }
   
   var direction = this.get_direction(currentLocation,destination);
   var maxMovement = this.get_max_movement(direction,radius,map,currentLocation);
-  
+  console.log("dir " + direction);
+   console.log("mM " + maxMovement);
+   console.log("cL " + currentLocation);
   var openPaths;// = get_possible_steps(currentLocation,map);
   var newLocation = [currentLocation[0],currentLocation[1]];
   
@@ -165,7 +170,7 @@ exports.get_next_step = function(currentLocation,destination,map,currentPath,rad
     }
   }
   for(i = maxMovement[1];i > 0 &&  !moveAvailable; i--){
-    if( map[newLocation[1] + 1][newLocation[0]] == true){
+    if( map[newLocation[1] + i][newLocation[0]] == true){
       newLocation[1] = newLocation[1] + i;
       break;
     }
