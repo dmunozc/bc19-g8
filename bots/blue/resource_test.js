@@ -1,8 +1,9 @@
-import {BCAbstractRobot, SPECS} from 'battlecode';
+// import {BCAbstractRobot, SPECS} from 'battlecode';
 
 // Reads a 2D grid map and returns a list of x, y coordinates for any
 // place on the map that outputs "true"
-export function get_resource_nodes(map){
+exports.get_resource_nodes = function(map){
+
     var list = []
     for (var i = 0; i < map.length; i++){
         for (var j = 0; j < map[0].length; j++){
@@ -16,7 +17,8 @@ export function get_resource_nodes(map){
 
 // Returns the item on the list that is closest to the provided
 // location. 
-export function find_nearest_node(loc,list){
+exports.find_nearest_node = function(loc,list){
+
     var min_dist = 10000000;
     var index;
     for (var i = 0; i < list.length; i++) {
@@ -31,7 +33,8 @@ export function find_nearest_node(loc,list){
 }
 
 // Calculates the distance between two locations
-export function calculate_distance(curr,dest){
+exports.calculate_distance = function(curr,dest){
+
     var dx = Math.abs(dest.x - curr.x);
     var dy = Math.abs(dest.y - curr.y);
     var dist = dx + dy;
@@ -42,7 +45,8 @@ export function calculate_distance(curr,dest){
 }
 
 // Finds the nearest unit of specified type
-export function find_nearest_unit(loc,list,type){
+exports.find_nearest_unit = function(loc,list,type){
+
     var min_dist = 100000000;
     var res = {'x':0, 'y':0};
     var index;
@@ -61,7 +65,8 @@ export function find_nearest_unit(loc,list,type){
 }
 
 // Returns the dx, dy to from source to a dest coordinate
-export function calculate_move(curr,dest){
+exports.calculate_move = function(curr,dest){
+
     // example
     // source: 35, 35
     // dest: 24, 36
