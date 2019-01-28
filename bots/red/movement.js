@@ -58,6 +58,24 @@ export function get_possible_steps(coor,map){
   return result;
 }
 
+export function get_possible_square_steps_list(coor,map){
+  var i;
+  var j;
+  var k = 0;
+  var result = [];
+  for(i = -1; i<=1; i++){
+    for(j = -1; j<=1; j++){
+      if(!(coor[0] + i < 0 || coor[0] + i >= map.length || coor[1] + j < 0 || coor[1] + j >= map.length || (i == 0 && j == 0))){
+        if(map[coor[1] + j][coor[0] + i] == true){
+        result[k] = [i,j];
+        k++;
+        }
+      }
+    }
+  }
+  return result;
+}
+
 export function get_possible_step_list(coor,map,radius){
   var i;
   var j;
