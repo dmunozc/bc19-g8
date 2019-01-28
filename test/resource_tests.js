@@ -26,5 +26,5 @@ test.assert(result2[18].x !== 2);
 
 /**Testing resource.find_nearest_node */
 var curr_loc = {'x': 2, 'y': 3};
-var result3 = resource.find_nearest_node(curr_loc, result2);
+var result3 = resource.find_nearest_node(curr_loc, result2);    
 
