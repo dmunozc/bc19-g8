@@ -1,5 +1,10 @@
 import {BCAbstractRobot, SPECS} from 'battlecode';
 
+
+
+
+
+
 // Reads a 2D grid map and returns a list of x, y coordinates for any
 // place on the map that outputs "true"
 export function get_resource_nodes(map) {
@@ -106,25 +111,43 @@ export function calculate_move(curr, dest) {
     return res;
 }
 
-
-export function find_possible_castle_locations(origin,map,r){
-  var result = [];
-  var i = 0;
-  var count = 0;
-  var temp;
-  for(i = 0; i < 2; i++){
-    if(i == 0){
-      temp = [(map.length - 1 - origin[0]),origin[1]];
-    }else if (i == 1){
-      temp = [origin[0],(map.length - 1 - origin[1])];
+//Checks for maps axis of symmetry
+//return 0 for x axis (up and down symmetry)
+//returns 1 for y axis (left and right symmetry)
+export function get_axis_of_symmetry(resourceMap){
+  var i;
+  var j;
+  var resourceCoordinates = [-1,-1];
+  for(i =0; i < resourceMap.length; i++){
+    for(j =0; j < resourceMap.length; j++){
+      if(resourceMap[j][i] == true){
+        resourceCoordinates[0] = i;
+        resourceCoordinates[1] = j;
+        break;
+      }
     }
-    //r.log(temp);
-    //r.log(i);
-    if(map[temp[1]][temp[0]] == true){
-      result[count] = [temp[0],temp[1]];
-      count++;
+    if(j < resourceMap.length && i < resourceMap.length && resourceMap[j][i] == true){
+      break;
     }
   }
-  //r.log(result);
+  var resourceYSymm =  [(resourceMap.length - 1 - resourceCoordinates[0]),resourceCoordinates[1]];
+  var resourceXSymm = [resourceCoordinates[0],(resourceMap.length - 1 - resourceCoordinates[1])];
+  if(resourceMap[resourceYSymm[1]][resourceYSymm[0]] == true){
+    return 1;
+  }
+  if(resourceMap[resourceXSymm[1]][resourceXSymm[0]] == true){
+    return 0;
+  }
+  return -1;
+}
+
+export function find_possible_castle_locations(origin,map,resourceMap){
+  var result = [];
+  var symm = get_axis_of_symmetry(resourceMap);
+  if(symm == 1){
+    result = [(map.length - 1 - origin[0]),origin[1]];
+  }else if(symm == 0){
+    result = [origin[0],(map.length - 1 - origin[1])];
+  }
   return result;
 }

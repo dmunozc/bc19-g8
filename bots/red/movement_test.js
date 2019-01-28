@@ -46,7 +46,7 @@ exports.get_possible_steps = function(coor,map){
   var j;
   for(i = 0;i < 3;i++){
     for(j = 0;j < 3;j++){
-      //console.log(result.toString());
+      ////console.log(result.toString());
       if(i == 1 && j == 1){
         result[i][j] = 0;
       }else{
@@ -140,19 +140,19 @@ exports.get_distance = function(coor1,coor2){
 //only single step
 exports.get_next_step = function(currentLocation,destination,map,currentPath,radius){
 
-  /*console.log("cL " + currentLocation);
-  console.log("dest " + destination);
-  console.log("dist " + this.get_distance(currentLocation,destination));*/
-  console.log("==================");
+  /*//console.log("cL " + currentLocation);
+  //console.log("dest " + destination);
+  //console.log("dist " + this.get_distance(currentLocation,destination));*/
+  //console.log("==================");
   if(this.get_distance(currentLocation,destination) < radius){
     return destination;
   }
   
   var direction = this.get_direction(currentLocation,destination);
   var maxMovement = this.get_max_movement(direction,radius,map,currentLocation);
-  console.log("dir " + direction);
-   console.log("mM " + maxMovement);
-   console.log("cL " + currentLocation);
+  //console.log("dir " + direction);
+   //console.log("mM " + maxMovement);
+   //console.log("cL " + currentLocation);
   var openPaths;// = get_possible_steps(currentLocation,map);
   var newLocation = [currentLocation[0],currentLocation[1]];
   
@@ -190,9 +190,9 @@ exports.get_next_step = function(currentLocation,destination,map,currentPath,rad
   //this could break if enter into tunnel
   //return random open path
   var newPath = this.get_random_from_list(openPaths);
-  //console.log(check_if_coor_in_path(newPath,currentPath));
-  //console.log([newLocation[0] + newPath[0],newLocation[1] + newPath[1]]);
-  //console.log(check_if_coor_in_path([newLocation[0] + newPath[0],newLocation[1] + newPath[1]],currentPath));
+  ////console.log(check_if_coor_in_path(newPath,currentPath));
+  ////console.log([newLocation[0] + newPath[0],newLocation[1] + newPath[1]]);
+  ////console.log(check_if_coor_in_path([newLocation[0] + newPath[0],newLocation[1] + newPath[1]],currentPath));
   while(this.check_if_coor_in_path([newLocation[0] + newPath[0],newLocation[1] + newPath[1]],currentPath)){ //this option does not allow backtracking
     newPath = this.get_random_from_list(openPaths);
   }

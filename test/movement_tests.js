@@ -66,6 +66,7 @@ radius = 1;
 //in middle of open map
 result3 = movement.get_possible_step_list([3,3],openMap,radius);
 test.assert(result3.length == 4);
+console.log(result3);
 //in corner of open map
 result3 = movement.get_possible_step_list([0,0],openMap,radius);
 test.assert(result3.length == 2);
@@ -191,9 +192,10 @@ temp = result5[0] == 4 && result5[1] == 3;
 test.assert(temp === false);
 /*Test find_path_to_coordinate(origin,destination,map,unit)**/
 var result6;
-result6 = movement.find_path_to_coordinate([0,0],[7,7],openMap,{'unit':2});
+result6 = movement.find_path_to_coordinate([0,0],[7,7],openMap,{'unit':3});
 test.assert(result6[result6.length-1][0] === 7);
 test.assert(result6[result6.length-1][1] === 7);
+//console.log(result6);
 result6 = movement.find_path_to_coordinate([0,0],[0,7],openMap,{'unit':2});
 test.assert(result6[result6.length-1][0] === 0);
 test.assert(result6[result6.length-1][1] === 7);
@@ -231,8 +233,8 @@ test.assert(result6[result6.length-1][0] === 6);
 test.assert(result6[result6.length-1][1] === 2);
 
 //[[13,8],[13,11],[13,14],[13,17],[13,20],[13,23],[13,26],[13,29],[13,32],[13,35],[13,38],[13,41],[13,44],[13,45]]
-console.log("@@@@@@@@@@@@@@@");
+//console.log("@@@@@@@@@@@@@@@");
 result6 = movement.find_path_to_coordinate([13,5],[13,45],mapTest,{'unit':3});
 test.assert(result6[result6.length-1][0] === 13);
 test.assert(result6[result6.length-1][1] === 45);
-console.log(result6);
+//console.log(result6);

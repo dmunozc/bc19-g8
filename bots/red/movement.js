@@ -132,6 +132,8 @@ export function get_distance(coor1,coor2){
 //only single step
 export function get_next_step(currentLocation,destination,map,currentPath,radius){
   
+  //r.log(currentLocation);
+  //r.log(destination);
   if(get_distance(currentLocation,destination) < radius){
     return destination;
   }
@@ -200,4 +202,13 @@ export function find_path_to_coordinate(origin,destination,map,unit){
   }
   return path;
   
+}
+
+
+export function get_visible_robots_list(visible){
+  var res = [];
+  for (var i = 0; i < visible.length; i++){
+    res.push([visible[i].x,visible[i].y]);
+  }
+  return res;
 }
