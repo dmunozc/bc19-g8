@@ -203,8 +203,6 @@ export function find_path_to_coordinate(origin,destination,map,unit){
   return path;
   
 }
-
-
 export function get_visible_robots_list(visible){
   var res = [];
   for (var i = 0; i < visible.length; i++){

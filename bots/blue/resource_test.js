@@ -1,5 +1,5 @@
-// Reads a 2D grid map and returns a list of x, y coordinates for any
-// place on the map that outputs "true"
+/** Reads a 2D grid map and returns a list of x, y coordinates for any
+ *  place on the map that outputs "true" */
 exports.get_resource_nodes = function(map){
 
     var list = []
@@ -14,8 +14,8 @@ exports.get_resource_nodes = function(map){
 }
 
 
-// Returns the item on the list that is closest to the provided
-// location. 
+/** Returns the item on the list that is closest to the provided
+ *  location. */ 
 exports.find_nearest_node = function(loc,list){
 
     var min_dist = 10000000;
@@ -29,8 +29,8 @@ exports.find_nearest_node = function(loc,list){
     }
     return list[index];
 }
-// adds distance to node and checks to see if visible units occupy
-// those nodes
+/** adds distance to node and checks to see if visible units occupy
+ *  those nodes */
 exports.update_nodes = function(loc,list,visible){
 
     for (var i = 0; i < list.length; i++){
@@ -46,7 +46,9 @@ exports.update_nodes = function(loc,list,visible){
 }
 
 
-// Returns the item on list that is not occupied
+/** Returns the item on a sorted list of
+ *  location objects to return closest location object
+ *  that is not occupied */
 exports.find_nearest_unoccupied_node = function(loc,list){
 
     var index = 100000;
@@ -59,11 +61,7 @@ exports.find_nearest_unoccupied_node = function(loc,list){
     return list[index];
 }
 
-exports.get_distance = function(coor1,coor2){
-    return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
-  }
-
-// Finds the nearest unit of specified type
+/** Finds the nearest unit of specified type */
 exports.find_nearest_unit = function(loc,list,type){
 
     var min_dist = 100000000;
@@ -84,38 +82,41 @@ exports.find_nearest_unit = function(loc,list,type){
     }
     return res;
 }
+exports.get_distance = function(coor1,coor2){
+    return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
+  }
 
+/** DEPRECATED 
 // Returns the dx, dy to from source to a dest coordinate
-exports.calculate_move = function(curr,dest){
-
-    // example
-    // source: 35, 35
-    // dest: 24, 36
+// function calculate_move(curr,dest){
+//     // example
+//     // source: 35, 35
+//     // dest: 24, 36
     
-    var dx = dest.x - curr.x;
-    var dy = dest.y - curr.y;
+//     var dx = dest.x - curr.x;
+//     var dy = dest.y - curr.y;
 
-    var res = {'x': 0, 'y': 0};
+//     var res = {'x': 0, 'y': 0};
 
-    // We need to move 2 on the x axis
-    if (Math.abs(dx) > 0 && dy === 0) {
-        res.x = (dx/Math.abs(dx)) * 2;
-    }
-    // We need to move 2 on the y axis
-    if (dx === 0 && Math.abs(dy) > 1) {
-        res.y = (dy/Math.abs(dy)) * 2;
-    }
-    // Else we'll move 1 on x and 1 on y;
-    if (Math.abs(dx) > 1 && Math.abs(dy) > 1) {
-        res.x = (dx/Math.abs(dx));
-        res.y = (dy/Math.abs(dy));
-    }
-    return res;
-}
+//     // We need to move 2 on the x axis
+//     if (Math.abs(dx) > 0 && dy === 0) {
+//         res.x = (dx/Math.abs(dx)) * 2;
+//     }
+//     // We need to move 2 on the y axis
+//     if (dx === 0 && Math.abs(dy) > 1) {
+//         res.y = (dy/Math.abs(dy)) * 2;
+//     }
+//     // Else we'll move 1 on x and 1 on y;
+//     if (Math.abs(dx) > 1 && Math.abs(dy) > 1) {
+//         res.x = (dx/Math.abs(dx));
+//         res.y = (dy/Math.abs(dy));
+//     }
+//     return res;
+// }*/
 
-//Checks for maps axis of symmetry
-//return 0 for x axis (up and down symmetry)
-//returns 1 for y axis (left and right symmetry)
+/** Checks for maps axis of symmetry
+ *  return 0 for x axis (up and down symmetry)
+ *  returns 1 for y axis (left and right symmetry) */
 exports.get_axis_of_symmetry = function(resourceMap){
 
   var i;

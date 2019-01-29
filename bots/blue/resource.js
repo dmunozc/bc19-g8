@@ -79,9 +79,9 @@ export function find_nearest_unit(loc,list,type){
     }
     return res;
 }
-/** DEPRECATED */
+/** DEPRECATED 
 // Returns the dx, dy to from source to a dest coordinate
-// export function calculate_move(curr,dest){
+// function calculate_move(curr,dest){
 //     // example
 //     // source: 35, 35
 //     // dest: 24, 36
@@ -91,22 +91,6 @@ export function find_nearest_unit(loc,list,type){
 
 //     var res = {'x': 0, 'y': 0};
 
-<<<<<<< Updated upstream
-    // We need to move 2 on the x axis
-    if (Math.abs(dx) > 0 && dy === 0) {
-        res.x = (dx/Math.abs(dx)) * 2;
-    }
-    // We need to move 2 on the y axis
-    if (dx === 0 && Math.abs(dy) > 1) {
-        res.y = (dy/Math.abs(dy)) * 2;
-    }
-    // Else we'll move 1 on x and 1 on y;
-    if (Math.abs(dx) > 1 && Math.abs(dy) > 1) {
-        res.x = (dx/Math.abs(dx));
-        res.y = (dy/Math.abs(dy));
-    }
-    return res;
-=======
 //     // We need to move 2 on the x axis
 //     if (Math.abs(dx) > 0 && dy === 0) {
 //         res.x = (dx/Math.abs(dx)) * 2;
@@ -121,7 +105,7 @@ export function find_nearest_unit(loc,list,type){
 //         res.y = (dy/Math.abs(dy));
 //     }
 //     return res;
-// }
+// }*/
 
 /** Checks for maps axis of symmetry
  *  return 0 for x axis (up and down symmetry)
@@ -162,5 +146,4 @@ export function find_possible_castle_locations(origin,map,resourceMap){
     result = [origin[0],(map.length - 1 - origin[1])];
   }
   return result;
->>>>>>> Stashed changes
 }
