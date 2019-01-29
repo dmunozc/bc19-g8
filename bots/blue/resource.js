@@ -107,9 +107,9 @@ export function find_nearest_unit(loc,list,type){
 //     return res;
 // }*/
 
-/** Checks for maps axis of symmetry
- *  return 0 for x axis (up and down symmetry)
- *  returns 1 for y axis (left and right symmetry) */
+//Checks for maps axis of symmetry
+//return 0 for x axis (up and down symmetry)
+//returns 1 for y axis (left and right symmetry)
 export function get_axis_of_symmetry(resourceMap){
   var i;
   var j;
