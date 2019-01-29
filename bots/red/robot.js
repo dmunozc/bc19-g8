@@ -9,7 +9,8 @@ var stepCounter = 0;
 var path;
 var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
-var castlePaths
+var castlePaths;
+var typePil;
 
 class MyRobot extends BCAbstractRobot {
     turn() {
@@ -51,7 +52,7 @@ class MyRobot extends BCAbstractRobot {
             if(step == 100){
               this.log("100");
             }
-            if(step < 5 ||visible.length > 10){
+            if(step < 5 ||visible.length > 8){
               
             
               currentPath[stepCounter] = [this.me.x,this.me.y];
@@ -169,7 +170,7 @@ class MyRobot extends BCAbstractRobot {
           //this.log(possibleSteps);
           var buildPlace = movement.get_random_from_list(possibleSteps);
           var messagingRobots = this.getVisibleRobots().filter(robot => {
-              if (robot.signal == 666){
+              if (robot.signal == 666 || robot.signal == 6969){
                 return robot;
                 
               }
@@ -179,7 +180,7 @@ class MyRobot extends BCAbstractRobot {
           //this.log(messagingRobots);
 
           //this.log(buildPlace);
-          if(step== 0 || step > 2 && messagingRobots.length == 0){
+          if(step== 0 || messagingRobots.length < 2){
            this.log("Building a pilgrim at " + (this.me.x+1) + ", " + (this.me.y+1));
            
                 return this.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
@@ -187,7 +188,7 @@ class MyRobot extends BCAbstractRobot {
           
             if (step%6   === 1) {
                 //this.log("Building a crusader at " + (this.me.x+1) + ", " + (this.me.y+1));
-                return this.buildUnit(4, buildPlace[0], buildPlace[1]);
+                return this.buildUnit(Math.floor(Math.random() * (4 - 4 + 1) ) + 4, buildPlace[0], buildPlace[1]);
             }  else {
                 var visible = this.getVisibleRobots();
                 var enemies = combat.get_visible_enemies(this.me.team, visible);
@@ -207,38 +208,89 @@ class MyRobot extends BCAbstractRobot {
         }else if (this.me.unit === SPECS.PILGRIM) {
           var curr_loc = {'x': this.me.x, 'y':this.me.y};
           var visible = this.getVisibleRobots();
-          var nearest_karb = resource.find_nearest_node(curr_loc, resource.get_resource_nodes(this.getKarboniteMap()));
-          this.signal(666, 6);
-          if (this.me.karbonite !== 20){
-            if (curr_loc.x ===  nearest_karb.x && curr_loc.y === nearest_karb.y) {
-                    console.log("I am mining!");
-                    //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
-                    return this.mine();
+          if(typeof typePil === 'undefined'){
+            this.log("here");
+            if (visible.filter(robot => robot.team === this.me.team && robot.unit === SPECS.PILGRIM).length > 1){
+              typePil = 1;
+            }else{
+              typePil = 0;
             }
-            var nexStep = movement.get_next_step([this.me.x,this.me.y],[nearest_karb.x,nearest_karb.y],this.map,movement.get_visible_robots_list(visible),2);
-            var movex = nexStep[0] - this.me.x;
-            var movey = nexStep[1] - this.me.y;
-            //this.log("location : " + this.me.x + "," +this.me.y);
-            //this.log("movement : " + movex + ";" + movey);
-            return this.move(movex,movey);
-          }else{
-            //this.log("I am full! Looking for nearest castle...");
-            var nearest_castle = resource.find_nearest_unit(curr_loc, visible, 0);
-            //this.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
-            var dist = movement.get_distance([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y]);
-            if(dist <= Math.sqrt(2)){
-              //this.log("I am unloading resources");
-              var dx = nearest_castle.x - curr_loc.x;
-              var dy = nearest_castle.y - curr_loc.y;
-              return this.give(dx, dy, this.me.karbonite, this.me.fuel);
-            }
-            var nexStep = movement.get_next_step([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y],this.map,movement.get_visible_robots_list(visible),2);
-            var movex = nexStep[0] - this.me.x;
-            var movey = nexStep[1] - this.me.y;
-            //this.log("location : " + this.me.x + "," +this.me.y);
-            //this.log("movement : " + movex + ";" + movey);
-            return this.move(movex,movey);
+            this.log(typePil);
+            
           }
+          if(typePil == 1){
+            this.signal(666, 16);
+            var nearest_karb = resource.find_nearest_node(curr_loc, resource.get_resource_nodes(this.getFuelMap()));
+          
+            if (this.me.fuel !== 100){
+              if (curr_loc.x ===  nearest_karb.x && curr_loc.y === nearest_karb.y) {
+                     //this.log("I am mining fuel!");
+                      //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
+                      return this.mine();
+              }
+              var nexStep = movement.get_next_step([this.me.x,this.me.y],[nearest_karb.x,nearest_karb.y],this.map,movement.get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - this.me.x;
+              var movey = nexStep[1] - this.me.y;
+              //this.log("location : " + this.me.x + "," +this.me.y);
+              //this.log("movement : " + movex + ";" + movey);
+              return this.move(movex,movey);
+            }else{
+              //this.log("I am full! Looking for nearest castle...");
+              var nearest_castle = resource.find_nearest_unit(curr_loc, visible, 0);
+              //this.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
+              var dist = movement.get_distance([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y]);
+              if(dist <= Math.sqrt(2)){
+                //this.log("I am unloading resources");
+                var dx = nearest_castle.x - curr_loc.x;
+                var dy = nearest_castle.y - curr_loc.y;
+                return this.give(dx, dy, this.me.karbonite, this.me.fuel);
+              }
+              var nexStep = movement.get_next_step([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y],this.map,movement.get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - this.me.x;
+              var movey = nexStep[1] - this.me.y;
+              //this.log("location : " + this.me.x + "," +this.me.y);
+              //this.log("movement : " + movex + ";" + movey);
+              return this.move(movex,movey);
+            }
+            
+          }else if(typePil == 0){
+            this.signal(6969, 16);
+            var nearest_karb = resource.find_nearest_node(curr_loc, resource.get_resource_nodes(this.getKarboniteMap()));
+          
+            if (this.me.karbonite !== 20){
+              if (curr_loc.x ===  nearest_karb.x && curr_loc.y === nearest_karb.y) {
+                    //  this.log("I am mining karb!");
+                      //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
+                      return this.mine();
+              }
+              var nexStep = movement.get_next_step([this.me.x,this.me.y],[nearest_karb.x,nearest_karb.y],this.map,movement.get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - this.me.x;
+              var movey = nexStep[1] - this.me.y;
+              //this.log("location : " + this.me.x + "," +this.me.y);
+              //this.log("movement : " + movex + ";" + movey);
+              return this.move(movex,movey);
+            }else{
+              //this.log("I am full! Looking for nearest castle...");
+              var nearest_castle = resource.find_nearest_unit(curr_loc, visible, 0);
+              //this.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
+              var dist = movement.get_distance([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y]);
+              if(dist <= Math.sqrt(2)){
+                //this.log("I am unloading resources");
+                var dx = nearest_castle.x - curr_loc.x;
+                var dy = nearest_castle.y - curr_loc.y;
+                return this.give(dx, dy, this.me.karbonite, this.me.fuel);
+              }
+              var nexStep = movement.get_next_step([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y],this.map,movement.get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - this.me.x;
+              var movey = nexStep[1] - this.me.y;
+              //this.log("location : " + this.me.x + "," +this.me.y);
+              //this.log("movement : " + movex + ";" + movey);
+              return this.move(movex,movey);
+            }
+          }
+          
+          
+          
           
         }
 
