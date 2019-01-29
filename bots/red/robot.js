@@ -14,13 +14,6 @@ class MyRobot extends BCAbstractRobot {
         }
 
         else if (this.me.unit === SPECS.CASTLE) {
-<<<<<<< Updated upstream
-            if (step % 10 === 0) {
-                this.log("Building a crusader at " + (this.me.x+1) + ", " + (this.me.y+1));
-                return this.buildUnit(SPECS.CRUSADER, 1, 1);
-            } else {
-                return // this.log("Castle health: " + this.me.health);
-=======
           if(step== 0){
            //this.log("Building a pilgrim at " + (this.me.x+1) + ", " + (this.me.y+1));
                 return this.buildUnit(SPECS.PILGRIM, 1, 1);
@@ -70,7 +63,6 @@ class MyRobot extends BCAbstractRobot {
               var dx = nearest_castle.x - curr_loc.x;
               var dy = nearest_castle.y - curr_loc.y;
               return this.give(dx, dy, this.me.karbonite, this.me.fuel);
->>>>>>> Stashed changes
             }
         }
 

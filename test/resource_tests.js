@@ -29,10 +29,6 @@ test.assert(result2[17].y === 2);
 test.assert(result2[18].x !== 2);
 
 /**Testing resource.find_nearest_node */
-<<<<<<< Updated upstream
-var curr_loc = {'x': 2, 'y': 3};
-var result3 = resource.find_nearest_node(curr_loc, result2);    
-=======
 var nearest_node1 = resource.find_nearest_node({'x': 2, 'y': 3}, result2);
 var nearest_node2 = resource.find_nearest_node({'x': 3, 'y': 2}, result2);
 test.assert(nearest_node1.x === 1);
@@ -59,5 +55,4 @@ test.assert(updated_list[length -1].dist >= updated_list[length-3].dist);
 
 
 /**Testing resource.find_nearest_unoccupied_node */
->>>>>>> Stashed changes
 
