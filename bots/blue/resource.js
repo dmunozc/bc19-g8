@@ -1,12 +1,7 @@
 import * as movement from './movement.js'
 
-<<<<<<< Updated upstream
-// Reads a 2D grid map and returns a list of x, y coordinates for any
-// place on the map that outputs "true"
-=======
 /** Reads a 2D grid map and returns a list of x, y coordinates for any
  *  place on the map that outputs "true" */
->>>>>>> Stashed changes
 export function get_resource_nodes(map){
     var list = []
     for (var i = 0; i < map.length; i++){
