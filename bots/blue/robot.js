@@ -3,13 +3,18 @@ import * as resource from './resource.js';
 import * as combat from './combat.js';
 //import pilgrim from './pilgrim.js';
 import * as movement from './movement.js';
+import * as build from './build.js';
 
 var step = -1;
 var stepCounter = 0;
 var path;
 var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
-var castlePaths
+var castlePaths;
+var numOfPilgrimsBuilt = 0;
+var numOfCrusadersBuilt = 0;
+var numOfProphetsBuilt = 0;
+var numOfPreachersBuilt = 0;
 
 class MyRobot extends BCAbstractRobot {
     turn() {
@@ -88,16 +93,52 @@ class MyRobot extends BCAbstractRobot {
         }
 
         else if (this.me.unit === SPECS.CASTLE) {
-          if(step== 0){
-           //this.log("Building a pilgrim at " + (this.me.x+1) + ", " + (this.me.y+1));
-                return this.buildUnit(SPECS.PILGRIM, 1, 1);
-          }
-            if (step%5   === 1) {
-                //this.log("Building a crusader at " + (this.me.x+1) + ", " + (this.me.y+1));
-                return this.buildUnit(SPECS.CRUSADER, 1, 1);
-            } else {
-                return // //this.log("Castle health: " + this.me.health);
-            }
+			const choices = [[0,-1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
+			const choice = choices[Math.floor(Math.random()*choices.length)]
+			var castleLoc = {'x': this.me.x, 'y':this.me.y};
+			//this.log(this.getVisibleRobots());
+			//Build the units pilgrim, crusaders, prophets, preachers accordingly based on resources available.
+			if(step % 2 === 0 && this.numOfPilgrimsBuilt < 5 && this.karbonite > 100 && this.fuel > 200) {
+				var loc = build.find_location_to_build_unit(castleLoc, this.map, this.getVisibleRobots(),this);
+				this.log("possible relative adjacent location of castle to build pilgrim:" + loc.x  + ", " +  loc.y);
+				this.log("Building a pilgrim at " + (this.me.x + loc.x) + ", " + (this.me.y + loc.y));
+				this.buildUnit(SPECS.PILGRIM, loc.x, loc.y);	
+				this.numOfPilgrimsBuilt++;
+				//return this.move(...choice);
+				if (this.me.unit === SPECS.PILGRIM) {
+					return this.move(...choice);
+				}
+			}
+			if(step % 5 === 0 && this.numOfCrusadersBuilt < 4 && this.karbonite > 100 && this.fuel > 200) {
+				var loc = build.find_location_to_build_unit(castleLoc, this.map, this.getVisibleRobots(),this);
+				this.log("possible relative adjacent location of castle to build crusader:" + loc.x  + ", " +  loc.y);
+				this.log("Building a crusader at " + (this.me.x + loc.x) + ", " + (this.me.y + loc.y));
+				this.buildUnit(SPECS.CRUSADER, loc.x, loc.y);
+				this.numOfCrusadersBuilt++;
+				if (this.me.unit === SPECS.CRUSADER) {
+					return this.move(...choice);
+				}
+			}
+			if(step % 2 === 0 && this.numOfProphetsBuilt < 8 && this.karbonite > 100 && this.fuel > 200) {
+				var loc = build.find_location_to_build_unit(castleLoc, this.map, this.getVisibleRobots(),this);
+				this.log("possible relative adjacent location of castle to build prophet:" + loc.x  + ", " +  loc.y);
+				this.log("Building a prophet at " + (this.me.x + loc.x) + ", " + (this.me.y + loc.y));
+				this.buildUnit(SPECS.PROPHET, loc.x, loc.y);	
+				this.numOfProphetsBuilt++;
+				if (this.me.unit === SPECS.PROPHET) {
+					return this.move(...choice);
+				}
+			}
+			if(step % 10 === 0 && this.numOfPreachersBuilt < 4 && this.karbonite > 100 && this.fuel > 200) {
+				var loc = build.find_location_to_build_unit(castleLoc, this.map, this.getVisibleRobots(),this);
+				this.log("possible relative adjacent location of castle to build preacher:" + loc.x  + ", " +  loc.y);
+				this.log("Building a preacher at " + (this.me.x + loc.x) + ", " + (this.me.y + loc.y));
+				this.buildUnit(SPECS.PREACHER, loc.x, loc.y);
+				this.numOfPreachersBuilt++;
+				if (this.me.unit === SPECS.PREACHER) {
+					return this.move(...choice);
+				}
+			}
         }else if (this.me.unit === SPECS.PILGRIM) {
           var curr_loc = {'x': this.me.x, 'y':this.me.y};
           var visible = this.getVisibleRobots();
