@@ -25,7 +25,7 @@ export function find_nearest_node(loc, list) {
     var min_dist = 10000000;
     var index;
     for (var i = 0; i < list.length; i++) {
-        var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
+        var dist = get_distance([list[i].x, list[i].y],[loc.x, loc.y]);//(Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
         if (dist < min_dist) {
             min_dist = dist;
             index = i;
@@ -34,16 +34,20 @@ export function find_nearest_node(loc, list) {
     }
     return list[index];
 }
-
+export function get_distance(coor1,coor2){
+  return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
+}
 // Calculates the distance between two locations
 export function calculate_distance(curr, dest) {
-    var dx = Math.abs(dest.x - curr.x);
+  
+  return get_distance([curr.x,curr.y],[dest.x,dest.y]);
+  /*  var dx = Math.abs(dest.x - curr.x);
     var dy = Math.abs(dest.y - curr.y);
     var dist = dx + dy;
     if (dx === 1 && dy === 1){
         dist = 1;
     }
-    return dist;
+    return dist;*/
 }
 
 // Finds the nearest unit of specified type
@@ -53,7 +57,7 @@ export function find_nearest_unit(loc, list, type) {
     var index;
     for (var i = 0; i < list.length; i++){
         if (list[i].unit === type) {
-            var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
+            var dist = get_distance([list[i].x, list[i].y],[loc.x, loc.y]);//(Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
             if (dist < min_dist) {
                 min_dist = dist;
                 index = i;
