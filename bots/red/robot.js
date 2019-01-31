@@ -6,13 +6,6 @@ import * as movement from './movement.js';
 import castle from './castle.js';
 import prophet from './prophet.js';
 
-//var step = -1;
-var stepCounter = 0;
-var path;
-var possibleOpponentCastleLocations = [];//y,x locations
-var currentPath = [];
-var castlePaths
-
 class MyRobot extends BCAbstractRobot {
   
   constructor() {

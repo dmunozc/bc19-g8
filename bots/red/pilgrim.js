@@ -27,7 +27,7 @@ pilgrim.takeTurn = (self) => {
             
           }
           if(typePil == 1){
-            self.signal(666, 16);
+            self.signal(666, 25);
             var nearest_karb = resource.find_nearest_node(curr_loc, resource.get_resource_nodes(self.getFuelMap()));
           
             if (self.me.fuel !== 100){
@@ -62,7 +62,7 @@ pilgrim.takeTurn = (self) => {
             }
             
           }else if(typePil == 0){
-            self.signal(6969, 16);
+            self.signal(6969, 25);
             var nearest_karb = resource.find_nearest_node(curr_loc, resource.get_resource_nodes(self.getKarboniteMap()));
           
             if (self.me.karbonite !== 20){

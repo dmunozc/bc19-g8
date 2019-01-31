@@ -273,7 +273,7 @@ function find_nearest_node(loc, list) {
     var min_dist = 10000000;
     var index;
     for (var i = 0; i < list.length; i++) {
-        var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
+        var dist = get_distance([list[i].x, list[i].y],[loc.x, loc.y]);//(Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
         if (dist < min_dist) {
             min_dist = dist;
             index = i;
@@ -282,16 +282,20 @@ function find_nearest_node(loc, list) {
     }
     return list[index];
 }
-
+function get_distance(coor1,coor2){
+  return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
+}
 // Calculates the distance between two locations
 function calculate_distance(curr, dest) {
-    var dx = Math.abs(dest.x - curr.x);
+  
+  return get_distance([curr.x,curr.y],[dest.x,dest.y]);
+  /*  var dx = Math.abs(dest.x - curr.x);
     var dy = Math.abs(dest.y - curr.y);
     var dist = dx + dy;
     if (dx === 1 && dy === 1){
         dist = 1;
     }
-    return dist;
+    return dist;*/
 }
 
 // Finds the nearest unit of specified type
@@ -301,7 +305,7 @@ function find_nearest_unit(loc, list, type) {
     var index;
     for (var i = 0; i < list.length; i++){
         if (list[i].unit === type) {
-            var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
+            var dist = get_distance([list[i].x, list[i].y],[loc.x, loc.y]);//(Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
             if (dist < min_dist) {
                 min_dist = dist;
                 index = i;
@@ -392,7 +396,7 @@ function get_possible_step_list(coor,map,radius){
   var result = [];
   for(i = -radius; i<=radius; i++){
     for(j = -radius; j<=radius; j++){
-      if(get_distance([0,0],[i,j]) <= radius){
+      if(get_distance$1([0,0],[i,j]) <= radius){
         if(!(coor[0] + i < 0 || coor[0] + i >= map.length || coor[1] + j < 0 || coor[1] + j >= map.length || (i == 0 && j == 0))){
           if(map[coor[1] + j][coor[0] + i] == true){
           result[k] = [i,j];
@@ -452,7 +456,7 @@ function get_max_movement(direction,radius,map,currentLocation){
   
 }
 
-function get_distance(coor1,coor2){
+function get_distance$1(coor1,coor2){
   return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
 }
 //this function gets the next step to take (will have to take into account different units in future
@@ -461,7 +465,7 @@ function get_next_step(currentLocation,destination,map,currentPath,radius){
   
   //r.log(currentLocation);
   //r.log(destination);
-  if(get_distance(currentLocation,destination) < radius){
+  if(get_distance$1(currentLocation,destination) < radius){
     return destination;
   }
   
@@ -515,6 +519,24 @@ function get_next_step(currentLocation,destination,map,currentPath,radius){
   return [newLocation[0] + newPath[0],newLocation[1] + newPath[1]];
 }
 
+function get_possible_square_steps_list(coor,map){
+  var i;
+  var j;
+  var k = 0;
+  var result = [];
+  for(i = -1; i<=1; i++){
+    for(j = -1; j<=1; j++){
+      if(!(coor[0] + i < 0 || coor[0] + i >= map.length || coor[1] + j < 0 || coor[1] + j >= map.length || (i == 0 && j == 0))){
+        if(map[coor[1] + j][coor[0] + i] == true){
+        result[k] = [i,j];
+        k++;
+        }
+      }
+    }
+  }
+  return result;
+}
+
 
 function get_visible_robots_list(visible){
   var res = [];
@@ -524,132 +546,237 @@ function get_visible_robots_list(visible){
   return res;
 }
 
-var step = -1;
-var stepCounter = 0;
-var currentPath = [];
-var castlePaths;
+const pilgrim = {};
+var typePil;
 
-class MyRobot extends BCAbstractRobot {
-    turn() {
-        step++;
-        
-       
-        if (this.me.unit === SPECS.CRUSADER) {
-          if(step === 0){
-            //i know on creation I will be x+1,y+1 away from castle as per code below
-            ////this.log(this.fuel_map);
-            castlePaths =  find_possible_castle_locations([this.me.x-1,this.me.y-1],this.map,this.fuel_map);
-            //this.log(["me at: " + this.me.x,this.me.y]);
-            //this.log("castle paths: ");
-           //this.log(castlePaths);
-           ////this.log(this.map);
-            //path = movement.find_path_to_coordinate([this.me.x-1,this.me.y-1],castlePaths,this.map,this.me);
-            ////this.log("chosen path: " );
-            ////this.log(path);
-            stepCounter = 0;
-            ////this.log(path);
+pilgrim.takeTurn = (self) => {
+  
+  var curr_loc = {'x': self.me.x, 'y':self.me.y};
+          var visible = self.getVisibleRobots();
+          if(typeof typePil === 'undefined'){
+            self.log("here");
+            if (visible.filter(robot => robot.team === self.me.team && robot.unit === SPECS.PILGRIM).length > 1){
+              typePil = 1;
+            }else{
+              typePil = 0;
+            }
+            self.log(typePil);
+            
           }
-            // //this.log("Crusader health: " + this.me.health);
+          if(typePil == 1){
+            self.signal(666, 16);
+            var nearest_karb = find_nearest_node(curr_loc, get_resource_nodes(self.getFuelMap()));
+          
+            if (self.me.fuel !== 100){
+              if (curr_loc.x ===  nearest_karb.x && curr_loc.y === nearest_karb.y) {
+                     //self.log("I am mining fuel!");
+                      //self.log("I am carrying " + self.me.fuel + " fuel, and " + self.me.karbonite);
+                      return self.mine();
+              }
+              var nexStep = get_next_step([self.me.x,self.me.y],[nearest_karb.x,nearest_karb.y],self.map,get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - self.me.x;
+              var movey = nexStep[1] - self.me.y;
+              //self.log("location : " + self.me.x + "," +self.me.y);
+              //self.log("movement : " + movex + ";" + movey);
+              return self.move(movex,movey);
+            }else{
+              //self.log("I am full! Looking for nearest castle...");
+              var nearest_castle = find_nearest_unit(curr_loc, visible, 0);
+              //self.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
+              var dist = get_distance$1([self.me.x,self.me.y],[nearest_castle.x,nearest_castle.y]);
+              if(dist <= Math.sqrt(2)){
+                //self.log("I am unloading resources");
+                var dx = nearest_castle.x - curr_loc.x;
+                var dy = nearest_castle.y - curr_loc.y;
+                return self.give(dx, dy, self.me.karbonite, self.me.fuel);
+              }
+              var nexStep = get_next_step([self.me.x,self.me.y],[nearest_castle.x,nearest_castle.y],self.map,get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - self.me.x;
+              var movey = nexStep[1] - self.me.y;
+              //self.log("location : " + self.me.x + "," +self.me.y);
+              //self.log("movement : " + movex + ";" + movey);
+              return self.move(movex,movey);
+            }
+            
+          }else if(typePil == 0){
+            self.signal(6969, 16);
+            var nearest_karb = find_nearest_node(curr_loc, get_resource_nodes(self.getKarboniteMap()));
+          
+            if (self.me.karbonite !== 20){
+              if (curr_loc.x ===  nearest_karb.x && curr_loc.y === nearest_karb.y) {
+                    //  self.log("I am mining karb!");
+                      //self.log("I am carrying " + self.me.fuel + " fuel, and " + self.me.karbonite);
+                      return self.mine();
+              }
+              var nexStep = get_next_step([self.me.x,self.me.y],[nearest_karb.x,nearest_karb.y],self.map,get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - self.me.x;
+              var movey = nexStep[1] - self.me.y;
+              //self.log("location : " + self.me.x + "," +self.me.y);
+              //self.log("movement : " + movex + ";" + movey);
+              return self.move(movex,movey);
+            }else{
+              //self.log("I am full! Looking for nearest castle...");
+              var nearest_castle = find_nearest_unit(curr_loc, visible, 0);
+              //self.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
+              var dist = get_distance$1([self.me.x,self.me.y],[nearest_castle.x,nearest_castle.y]);
+              if(dist <= Math.sqrt(2)){
+                //self.log("I am unloading resources");
+                var dx = nearest_castle.x - curr_loc.x;
+                var dy = nearest_castle.y - curr_loc.y;
+                return self.give(dx, dy, self.me.karbonite, self.me.fuel);
+              }
+              var nexStep = get_next_step([self.me.x,self.me.y],[nearest_castle.x,nearest_castle.y],self.map,get_visible_robots_list(visible),2);
+              var movex = nexStep[0] - self.me.x;
+              var movey = nexStep[1] - self.me.y;
+              //self.log("location : " + self.me.x + "," +self.me.y);
+              //self.log("movement : " + movex + ";" + movey);
+              return self.move(movex,movey);
+            }
+          }
+};
+
+const castle = {};
+castle.takeTurn = (self) => {
+  var possibleSteps = get_possible_square_steps_list([self.me.x, self.me.y],self.map);
+  //self.log("lala");
+  //self.log(possibleSteps);
+  var buildPlace = get_random_from_list(possibleSteps);
+  var messagingRobots = self.getVisibleRobots().filter(robot => {
+      if (robot.signal == 666 || robot.signal == 6969){
+        return robot;
+        
+      }
+      return;
+  });
+  //self.log("msg");
+  //self.log(messagingRobots);
+
+  //self.log(buildPlace);
+  if(self.step== 0 || messagingRobots.length < 2){
+   self.log("Building a pilgrim at " + (self.me.x+1) + ", " + (self.me.y+1));
+   
+        return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
+  }
+  
+    if (self.step%6   === 1) {
+        //self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
+        return self.buildUnit(Math.floor(Math.random() * (4 - 4 + 1) ) + 4, buildPlace[0], buildPlace[1]);
+    }  else {
+        var visible = self.getVisibleRobots();
+        var enemies = get_visible_enemies(self.me.team, visible);
+        var curr_loc = {'x': self.me.x, 'y':self.me.y};
+        if (enemies.length !== 0){
+          //self.log("We see an enemy!");
+            var target = find_nearest_node(curr_loc, enemies);
+            //Check if in range
+            var dist = calculate_distance(curr_loc, target);
+            if (dist <= 8){
+                //self.log("Attacking enemy!");
+                var attack = get_relative_position(curr_loc, target);
+                return self.attack(attack.x, attack.y);      
+            }                    
+        }
+    }
+  
+};
+
+const prophet = {};
+var stepCounter$2 = 0;
+var currentPath$2 = [];
+var castlePaths$2;
+
+prophet.takeTurn = (self) => {
+
+  if(self.step === 0){
+            //i know on creation I will be x+1,y+1 away from castle as per code below
+            ////self.log(self.fuel_map);
+            castlePaths$2 =  find_possible_castle_locations([self.me.x-1,self.me.y-1],self.map,self.fuel_map);
+            //self.log(["me at: " + self.me.x,self.me.y]);
+            //self.log("castle paths: ");
+           //self.log(castlePaths);
+           ////self.log(self.map);
+            //path = movement.find_path_to_coordinate([self.me.x-1,self.me.y-1],castlePaths,self.map,self.me);
+            ////self.log("chosen path: " );
+            ////self.log(path);
+            stepCounter$2 = 0;
+            ////self.log(path);
+          }
+            // //self.log("Crusader health: " + self.me.health);
             //const choices = [[0,-1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
             //const choice = choices[Math.floor(Math.random()*choices.length)]
-            var visible = this.getVisibleRobots();
-            var enemies = get_visible_enemies(this.me.team, visible);
-            var curr_loc = {'x': this.me.x, 'y':this.me.y};
+            var visible = self.getVisibleRobots();
+            var enemies = get_visible_enemies(self.me.team, visible);
+            var curr_loc = {'x': self.me.x, 'y':self.me.y};
             if (enemies.length !== 0){
-              //this.log("We see an enemy!");
+              //self.log("We see an enemy!");
                 var target = find_nearest_node(curr_loc, enemies);
                 //Check if in range
                 var dist = calculate_distance(curr_loc, target);
-                if (dist <= 4){
-                    //this.log("Attacking enemy!");
+                if (dist <= 16 && dist >= 4){
+                    //self.log("Attacking enemy!");
                     var attack = get_relative_position(curr_loc, target);
-                    return this.attack(attack.x, attack.y);      
+                    return self.attack(attack.x, attack.y);      
                 }                    
             }
-            
-            currentPath[stepCounter] = [this.me.x,this.me.y];
-            if(stepCounter == 0){
-              stepCounter++;
-              if(Math.abs(castlePaths[0] - this.me.x) == 1){
-                return this.move(-1,0);
-              }
-              if(Math.abs(castlePaths[1] - this.me.y) == 1){
-                return this.move(0,-1);
-              }
+            if(self.step < 6 ||visible.length > 8){
               
+            
+              currentPath$2[stepCounter$2] = [self.me.x,self.me.y];
+              if(stepCounter$2 == 0){
+                stepCounter$2++;
+                if(Math.abs(castlePaths$2[0] - self.me.x) == 1){
+                  return self.move(-1,0);
+                }
+                if(Math.abs(castlePaths$2[1] - self.me.y) == 1){
+                  return self.move(0,-1);
+                }
+                
+              }
+              ////self.log("me : " + self.me.x + "," +self.me.y);
+              ////self.log("cP " + castlePaths);
+              var nexStep = get_next_step([self.me.x,self.me.y],castlePaths$2,self.map,currentPath$2.concat(get_visible_robots_list(visible)),2);
+              var movex = nexStep[0] - self.me.x;
+              var movey = nexStep[1] - self.me.y;
+              //self.log("stepCounter : " + stepCounter);
+              //self.log("location : " + self.me.x + "," +self.me.y);
+              //self.log("movement : " + movex + ";" + movey);
+              stepCounter$2++;
+              return self.move(movex,movey);
             }
-            ////this.log("me : " + this.me.x + "," +this.me.y);
-            ////this.log("cP " + castlePaths);
-            var nexStep = get_next_step([this.me.x,this.me.y],castlePaths,this.map,currentPath.concat(get_visible_robots_list(visible)),3);
-            var movex = nexStep[0] - this.me.x;
-            var movey = nexStep[1] - this.me.y;
-            //this.log("stepCounter : " + stepCounter);
-            //this.log("location : " + this.me.x + "," +this.me.y);
-            //this.log("movement : " + movex + ";" + movey);
-            stepCounter++;
-            return this.move(movex,movey);
-            
            /*if(stepCounter < path.length){
-              var movex = path[stepCounter][0] - this.me.x;
-              var movey =  path[stepCounter][1] - this.me.y;
+              var movex = path[stepCounter][0] - self.me.x;
+              var movey =  path[stepCounter][1] - self.me.y;
               
-              //this.log("stepCounter : " + stepCounter);
-              //this.log("location : " + [this.me.x,this.me.y]);
-              //this.log("movement : " + movex + ";" + movey);
+              //self.log("stepCounter : " + stepCounter);
+              //self.log("location : " + [self.me.x,self.me.y]);
+              //self.log("movement : " + movex + ";" + movey);
               stepCounter++;
-              return this.move(movex,movey);
+              return self.move(movex,movey);
             }else{
               return
             }*/
             return;
-            //return this.move(path[stepCounter][1],);
-        }
+            //return self.move(path[stepCounter][1],);
+};
 
-        else if (this.me.unit === SPECS.CASTLE) {
-          if(step== 0){
-           //this.log("Building a pilgrim at " + (this.me.x+1) + ", " + (this.me.y+1));
-                return this.buildUnit(SPECS.PILGRIM, 1, 1);
-          }
-            if (step%5   === 1) {
-                //this.log("Building a crusader at " + (this.me.x+1) + ", " + (this.me.y+1));
-                return this.buildUnit(SPECS.CRUSADER, 1, 1);
-            } else {
-                return // //this.log("Castle health: " + this.me.health);
-            }
+class MyRobot extends BCAbstractRobot {
+  
+  constructor() {
+      super();
+      this.step = -1;
+  }
+    turn() {
+        //step++;
+        this.step++;
+        
+       
+        if (this.me.unit === SPECS.PROPHET) {
+          return prophet.takeTurn(this);
+        }else if (this.me.unit === SPECS.CASTLE) {
+          //this.myType = castle;
+          return castle.takeTurn(this);
         }else if (this.me.unit === SPECS.PILGRIM) {
-          var curr_loc = {'x': this.me.x, 'y':this.me.y};
-          var visible = this.getVisibleRobots();
-          var nearest_karb = find_nearest_node(curr_loc, get_resource_nodes(this.getKarboniteMap()));
-          if (this.me.karbonite !== 20){
-            if (curr_loc.x ===  nearest_karb.x && curr_loc.y === nearest_karb.y) {
-                    console.log("I am mining!");
-                    //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
-                    return this.mine();
-            }
-            var nexStep = get_next_step([this.me.x,this.me.y],[nearest_karb.x,nearest_karb.y],this.map,get_visible_robots_list(visible),2);
-            var movex = nexStep[0] - this.me.x;
-            var movey = nexStep[1] - this.me.y;
-            //this.log("location : " + this.me.x + "," +this.me.y);
-            //this.log("movement : " + movex + ";" + movey);
-            return this.move(movex,movey);
-          }else{
-            //this.log("I am full! Looking for nearest castle...");
-            var nearest_castle = find_nearest_unit(curr_loc, visible, 0);
-            //this.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
-            var dist = get_distance([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y]);
-            if(dist <= Math.sqrt(2)){
-              //this.log("I am unloading resources");
-              var dx = nearest_castle.x - curr_loc.x;
-              var dy = nearest_castle.y - curr_loc.y;
-              return this.give(dx, dy, this.me.karbonite, this.me.fuel);
-            }
-            var nexStep = get_next_step([this.me.x,this.me.y],[nearest_castle.x,nearest_castle.y],this.map,get_visible_robots_list(visible),2);
-            var movex = nexStep[0] - this.me.x;
-            var movey = nexStep[1] - this.me.y;
-            //this.log("location : " + this.me.x + "," +this.me.y);
-            //this.log("movement : " + movex + ";" + movey);
-            return this.move(movex,movey);
-          }
+          return pilgrim.takeTurn(this);
           
         }
 
