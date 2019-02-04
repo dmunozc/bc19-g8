@@ -1,119 +1,157 @@
-import {BCAbstractRobot, SPECS} from 'battlecode';
+import * as movement from './movement.js'
 
-
-
-
-
-
-// Reads a 2D grid map and returns a list of x, y coordinates for any
-// place on the map that outputs "true"
-export function get_resource_nodes(map) {
+/**
+ * Takes a 2D map grid and returns a list of objects with
+ * x and y coordinates wherever the map has true.
+ * 
+ * example usage:
+ *  var karbonite = resource.get_resource_nodes(this.getKarboniteMap());
+ * 
+ * @param {boolean} map   a 2D array of booleans
+ * 
+ * @returns {list}    a list of objects with x and y coordinates, dist and free
+ *                      properties.
+ */
+export function get_resource_nodes(map){
     var list = []
     for (var i = 0; i < map.length; i++){
         for (var j = 0; j < map[0].length; j++){
             if (map[i][j] === true){
-                list.push({x:j, y:i});
+                list.push({'x':j, 'y':i, 'dist': 0, 'free': true});
             }
         }
     }
     return list;
-} 
+}
 
-// Returns the item on the list that is closest to the provided
-// location. 
-export function find_nearest_node(loc, list) {
+
+/**
+ * Returns an item on a list that is closest to provided
+ * location.
+ * 
+ * @requires    movement.get_distance()
+ * 
+ * example usage:
+ *  var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, resources);
+ * 
+ * @param {object} loc  a object with x and y coordinates 
+ * @param {list} list   a list of objects with x and y coordinates, dist and free
+ *                          properties.
+ * 
+ * @returns {object}    an object with x and y coordinates, dist and free properties.
+ */
+export function find_nearest_node(loc,list){
     var min_dist = 10000000;
     var index;
     for (var i = 0; i < list.length; i++) {
-        var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
+        var dist = movement.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
         if (dist < min_dist) {
             min_dist = dist;
             index = i;
+        }  
+    }
+    return list[index];
+}
+/**
+ * Adds distance to each dist property on the list and updates the free property
+ * 
+ * example usage:
+ *  var karbonite = resource.update_nodes(curr_loc, resources, visible);
+ * 
+ * @param {object} loc   an object with x and y coordinates 
+ * @param {list} list  a list of objects with x, y, dist, and free properties
+ * @param {list} visible   a list of robot objects
+ * 
+ * @returns {list}  a list of objects with x, y, dist, and free properties sorted by dist
+ *                   from the loc x and y coordinates(closest will be first)
+ */
+export function update_nodes(loc,list,visible){
+    for (var i = 0; i < list.length; i++){
+        var dist = movement.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
+        list[i].dist = dist;
+        for (var j = 0; j < visible.length; j++){
+            if (visible[j].x === list[i].x && visible[j].y === list[i].y){
+                list[i].free = false;
+            }
         }
-        
+    }
+    return list.sort((a, b) => a.dist - b.dist);
+}
+
+
+/**
+ * Finds the nearest unoccupied coordinate from supplied location
+ * Requires a call to update_nodes first.
+ * 
+ * example usage:
+ *  var karbonite = resource.update_nodes(curr_loc, resources, visible);
+ *  var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, resources);
+ * 
+ * @param {object} loc  an object with x and y coordinates 
+ * @param {list} list   a sorted list of objects with x, y, dist, and free properties, 
+ *                      sorted by closest dist to loc first.
+ * 
+ * @returns {object}    an object with x, y, dist, and free properties closest to the
+ *                          loc provided (may also be the same location unit is on if
+ *                          it is on a resource node)
+ */
+export function find_nearest_unoccupied_node(loc,list){
+    var index = 100000;
+    for (var i = 0; i < list.length; i++){
+        if (list[i].x === loc.x && list[i].y === loc.y || list[i].free){
+            index = i;
+            break;
+        }
     }
     return list[index];
 }
 
-// Calculates the distance between two locations
-export function calculate_distance(curr, dest) {
-    var dx = Math.abs(dest.x - curr.x);
-    var dy = Math.abs(dest.y - curr.y);
-    var dist = dx + dy;
-    if (dx === 1 && dy === 1){
-        dist = 1;
-    }
-    return dist;
-}
-
-// Finds the nearest unit of specified type
-export function find_nearest_unit(loc, list, type) {
+/**
+ * Finds nearest unit of specified type.
+ * 
+ * @requires movement.get_distance()
+ * 
+ * example usage:
+ *  var nearest_castle = resource.find_nearest_unit(curr_loc, visible, 0);
+ * 
+ * @param {object} loc  object with x and y properties 
+ * @param {list} list   a list of visible robot objects 
+ * @param {int} type    integer representing unit type (0 for castle, 1 for church...)
+ * 
+ * @returns {object}    object with x and y properties.
+ */
+export function find_nearest_unit(loc,list,type){
     var min_dist = 100000000;
-    var res = {'x':0, 'y':0};
+    var res = {'x':loc.x, 'y':loc.y};
     var index;
-    for (var i = 0; i < list.length; i++){
-        if (list[i].unit === type) {
-            var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
-            if (dist < min_dist) {
-                min_dist = dist;
-                index = i;
+    if (list.length > 0) {
+        for (var i = 0; i < list.length; i++){
+            if (list[i].unit === type) {
+//                var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
+                var dist = movement.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
+                if (dist < min_dist) {
+                    min_dist = dist;
+                    index = i;
+                }
             }
         }
-    }
-    res.x = list[index].x;
-    res.y = list[index].y;
-    return res;
-}
-
-// Updates the map of impassable terrain with current positions
-// export function update_map(loc, map, castle){
-//     var map_loc = map[loc.y][loc.x];
-//     if (castle) {
-//         map[loc.y][loc.x] = "@@@@@@@@@@@@@@@@@@@@@@CASTLE@@@@@@@@@@@@@@@@@@@@";
-//     }
-//     else {
-//         if (map_loc !== false) {
-//             map_loc = false
-//         }
-//     }
-//     // for (var i = 0; i < map.length; i++){
-//     //     for (var j = 0; j< map[0].length; j++){
-//     //         map[i][j] = "CASTLE";
-//     //     }
-//     // }
-//     return map;
-// }
-
-// Returns the dx, dy to from source to a dest coordinate
-export function calculate_move(curr, dest) {
-    // example
-    // source: 35, 35
-    // dest: 24, 36
-    
-    var dx = dest.x - curr.x;
-    var dy = dest.y - curr.y;
-
-    var res = {'x': 0, 'y': 0};
-
-    // We need to move 2 on the x axis
-    if (Math.abs(dx) > 0 && dy === 0) {
-        res.x = (dx/Math.abs(dx)) * 2;
-    }
-    // We need to move 2 on the y axis
-    if (dx === 0 && Math.abs(dy) > 1) {
-        res.y = (dy/Math.abs(dy)) * 2;
-    }
-    // Else we'll move 1 on x and 1 on y;
-    if (Math.abs(dx) > 1 && Math.abs(dy) > 1) {
-        res.x = (dx/Math.abs(dx));
-        res.y = (dy/Math.abs(dy));
+        res.x = list[index].x;
+        res.y = list[index].y;
     }
     return res;
 }
 
-//Checks for maps axis of symmetry
-//return 0 for x axis (up and down symmetry)
-//returns 1 for y axis (left and right symmetry)
+/**
+ * Checks map for axis of symmetry
+ * 
+ * example usage:
+ *  var axis = get_axis_of_symmetry(this.getKarboniteMap());
+ * 
+ * @param {boolean} resourceMap a 2d grid of booleans
+ * 
+ * @returns {int}   0 for x axis (up and down symmetry), 1 for y axis 
+ *                      (left and right symmetry), -1 on error.
+ */
 export function get_axis_of_symmetry(resourceMap){
   var i;
   var j;
@@ -141,6 +179,21 @@ export function get_axis_of_symmetry(resourceMap){
   return -1;
 }
 
+/**
+ * Finds possible castle locations
+ * 
+ * @requires get_axis_of_symmetry();
+ * 
+ * example usage:
+ *  var castlePaths = resource.find_possible_castle_locations([this.me.x - 1, 
+ *                      this.me.y - 1], this.map, this.fuel_map);
+ * 
+ * @param {list} origin a list of 2 ints, where list[0] = x, and list[1] = y 
+ * @param {boolean} map a 2d array of booleans
+ * @param {boolean} resourceMap a 2d array of booleans
+ * 
+ * @returns {list}  castle location where list[0] = x coord, and list[1] = y coord 
+ */
 export function find_possible_castle_locations(origin,map,resourceMap){
   var result = [];
   var symm = get_axis_of_symmetry(resourceMap);
