@@ -26,7 +26,7 @@ castle.takeTurn = (self) => {
   //self.log(messagingRobots);
 
   //self.log(buildPlace);
-  if(self.step== 0 || messagingRobots.length < 2){
+  if(self.step <=2){
    self.log("Building a pilgrim at " + (self.me.x+1) + ", " + (self.me.y+1));
    
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
