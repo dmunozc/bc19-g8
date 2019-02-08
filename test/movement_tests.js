@@ -66,7 +66,6 @@ radius = 1;
 //in middle of open map
 result3 = movement.get_possible_step_list([3,3],openMap,radius);
 test.assert(result3.length == 4);
-console.log(result3);
 //in corner of open map
 result3 = movement.get_possible_step_list([0,0],openMap,radius);
 test.assert(result3.length == 2);
@@ -98,7 +97,7 @@ result3 = movement.get_possible_step_list([7,3],openMap,radius);
 test.assert(result3.length == 8);
 
 radius = 3;
-//in middle of open map
+//in middle of closed map
 result3 = movement.get_possible_step_list([3,4],map1,radius);
 test.assert(result3.length == 25);
 
@@ -232,9 +231,79 @@ result6 = movement.find_path_to_coordinate([2,2],[6,2],openMap,{'unit':3});
 test.assert(result6[result6.length-1][0] === 6);
 test.assert(result6[result6.length-1][1] === 2);
 
-//[[13,8],[13,11],[13,14],[13,17],[13,20],[13,23],[13,26],[13,29],[13,32],[13,35],[13,38],[13,41],[13,44],[13,45]]
-//console.log("@@@@@@@@@@@@@@@");
 result6 = movement.find_path_to_coordinate([13,5],[13,45],mapTest,{'unit':3});
 test.assert(result6[result6.length-1][0] === 13);
 test.assert(result6[result6.length-1][1] === 45);
-//console.log(result6);
+
+
+/*Test generate_open_list(currentLocation,radius,map,previousPathsTaken)*/
+var result7;
+result7 = movement.generate_open_list([0,0],1,openMap,[]);
+test.assert(result7.length === 2);
+result7 = movement.generate_open_list([0,0],2,openMap,[]);
+test.assert(result7.length === 5);
+result7 = movement.generate_open_list([3,3],1,openMap,[]);
+test.assert(result7.length === 4);
+result7 = movement.generate_open_list([3,3],2,openMap,[]);
+test.assert(result7.length === 12);
+result7 = movement.generate_open_list([3,4],3,map1,[]);
+test.assert(result7.length === 25);
+result7 = movement.generate_open_list([3,4],3,map1,[[3-3,4+0],[3-2,4-2],[3+1,4+1],[3+3,4+0]]);
+test.assert(result7.length === 21);
+
+/*Test calculate_open_list_g(openList)*/
+var result8;
+temp = movement.generate_open_list([0,0],1,openMap,[]);
+result8 = movement.calculate_open_list_g(temp,1);
+test.assert(result8.length === 2);
+temp = movement.generate_open_list([0,0],2,openMap,[]);
+result8 = movement.calculate_open_list_g(temp,1);
+test.assert(result8.length === 5);
+temp = movement.generate_open_list([3,3],1,openMap,[]);
+result8 = movement.calculate_open_list_g(temp,1);
+test.assert(result8.length === 4);
+temp = movement.generate_open_list([3,3],2,openMap,[]);
+result8 = movement.calculate_open_list_g(temp,1);
+test.assert(result8.length === 12);
+temp = movement.generate_open_list([3,4],3,map1,[]);
+result8 = movement.calculate_open_list_g(temp,1);
+test.assert(result8.length === 25);
+temp = movement.generate_open_list([3,4],3,map1,[[3-3,4+0],[3-2,4-2],[3+1,4+1],[3+3,4+0]]);
+result8 = movement.calculate_open_list_g(temp,1);
+test.assert(result8.length === 21);
+
+/*Test calculate_open_list_h(currentLocation,destination,openList)*/
+var result9;
+temp = movement.generate_open_list([0,0],1,openMap,[]);
+result9 = movement.calculate_open_list_h([0,0],[4,4],temp);
+test.assert(result9.length === 2);
+temp = movement.generate_open_list([0,0],2,openMap,[]);
+result9 = movement.calculate_open_list_h([0,0],[4,4],temp);
+test.assert(result9.length === 5);
+temp = movement.generate_open_list([3,3],1,openMap,[]);
+result9 = movement.calculate_open_list_h([3,3],[0,0],temp);
+test.assert(result9.length === 4);
+temp = movement.generate_open_list([3,3],2,openMap,[]);
+result9 = movement.calculate_open_list_h([3,3],[0,0],temp);
+test.assert(result9.length === 12);
+temp = movement.generate_open_list([3,4],3,map1,[]);
+result9 = movement.calculate_open_list_h([3,3],[0,0],temp);
+test.assert(result9.length === 25);
+temp = movement.generate_open_list([3,4],3,map1,[[3-3,4+0],[3-2,4-2],[3+1,4+1],[3+3,4+0]]);
+result9 = movement.calculate_open_list_h([3,3],[0,0],temp);
+test.assert(result9.length === 21);
+
+
+/*Test get_next_step_astar_fuel(currentLocation,destination,map,previousPathsTaken,radius)*/
+var result10;
+result10 = movement.get_next_step_astar_fuel([1,1],[0,5],openMap,[],3);
+console.log(result10);
+result10 = movement.get_next_step_astar_fuel(result10,[0,5],openMap,[],3);
+console.log(result10);
+
+/*Test get_next_step_astar_turn(currentLocation,destination,map,previousPathsTaken,radius)*/
+var result11;
+result11 = movement.get_next_step_astar_turn([1,1],[0,5],openMap,[],3);
+console.log(result11);
+result11 = movement.get_next_step_astar_turn(result11,[0,5],openMap,[],3);
+console.log(result11);
