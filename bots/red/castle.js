@@ -43,7 +43,7 @@ castle.takeTurn = (self) => {
           //self.log("We see an enemy!");
             var target = resource.find_nearest_node(curr_loc, enemies);
             //Check if in range
-            var dist = resource.calculate_distance(curr_loc, target);
+            var dist = movement.get_distance([curr_loc.x,curr_loc.y], [target.x,target.y]);
             if (dist <= 8){
                 //self.log("Attacking enemy!");
                 var attack = combat.get_relative_position(curr_loc, target);

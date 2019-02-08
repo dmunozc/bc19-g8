@@ -17,13 +17,13 @@ pilgrim.takeTurn = (self) => {
   var curr_loc = {'x': self.me.x, 'y':self.me.y};
           var visible = self.getVisibleRobots();
           if(typeof typePil === 'undefined'){
-            self.log("here");
+            //self.log("here");
             if (visible.filter(robot => robot.team === self.me.team && robot.unit === SPECS.PILGRIM).length > 1){
               typePil = 1;
             }else{
               typePil = 0;
             }
-            self.log(typePil);
+            //self.log(typePil);
             
           }
           if(typePil == 1){

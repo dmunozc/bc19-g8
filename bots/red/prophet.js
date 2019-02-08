@@ -13,7 +13,7 @@ var castlePaths
 
 prophet.takeTurn = (self) => {
 
-  if(self.step === 0){
+ if(self.step === 0){
             //i know on creation I will be x+1,y+1 away from castle as per code below
             ////self.log(self.fuel_map);
             castlePaths =  resource.find_possible_castle_locations([self.me.x-1,self.me.y-1],self.map,self.fuel_map);
@@ -37,14 +37,14 @@ prophet.takeTurn = (self) => {
               //self.log("We see an enemy!");
                 var target = resource.find_nearest_node(curr_loc, enemies);
                 //Check if in range
-                var dist = resource.calculate_distance(curr_loc, target);
+                var dist = movement.get_distance([curr_loc.x,curr_loc.y], [target.x,target.y]);
                 if (dist <= 16 && dist >= 4){
                     //self.log("Attacking enemy!");
                     var attack = combat.get_relative_position(curr_loc, target);
                     return self.attack(attack.x, attack.y);      
                 }                    
             }
-            if(self.step < 8 ||visible.length > 8){
+            if(self.step < 6 ||visible.length > 8){
               
             
               currentPath[stepCounter] = [self.me.x,self.me.y];
