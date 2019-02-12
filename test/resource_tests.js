@@ -13,8 +13,8 @@ var map2 =   [[true,true,true,true,true,true,true,true],
               [true,true,true,true,true,true,true,true],
               [true,true,true,true,true,true,true,true]];
 
-// ****TODO: Check that current unit is on visible list
 var visible1 = [{x: 2, y: 3}, {x:1, y: 2}, {x:1, y:1}, {x:1, y:3}];
+var resource_nodes1 = [{x: 1, y: 2}, {x: 1, y: 3}, {x:1, y:4}, {x: 9, y: 5}];
 
 /** Testing resource.get_resource_nodes */
 var result1 = resource.get_resource_nodes(map1);
@@ -66,3 +66,9 @@ var nearest_node2 = resource.find_nearest_unoccupied_node({x:2, y:2}, updated_li
 test.assert(nearest_node2.free === true);
 test.assert(nearest_node2.x === 2);
 test.assert(nearest_node2.y === 1);
+
+
+/**Testing resource.find_nearby_nodes */
+var nearby_nodes = resource.find_nearby_nodes({x: 2, y: 3}, resource_nodes1, visible1, 2);
+test.assert(nearby_nodes.length === 3);
+test.assert(nearby_nodes[0].dist <= 2);
