@@ -26,7 +26,7 @@ castle.takeTurn = (self) => {
   //self.log(messagingRobots);
 
   //self.log(buildPlace);
-  if(self.step== 0 || messagingRobots.length < 2){
+  if(self.step <=2){
    self.log("Building a pilgrim at " + (self.me.x+1) + ", " + (self.me.y+1));
    
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
@@ -43,7 +43,7 @@ castle.takeTurn = (self) => {
           //self.log("We see an enemy!");
             var target = resource.find_nearest_node(curr_loc, enemies);
             //Check if in range
-            var dist = resource.calculate_distance(curr_loc, target);
+            var dist = movement.get_distance([curr_loc.x,curr_loc.y], [target.x,target.y]);
             if (dist <= 8){
                 //self.log("Attacking enemy!");
                 var attack = combat.get_relative_position(curr_loc, target);

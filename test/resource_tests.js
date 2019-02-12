@@ -1,6 +1,6 @@
 // load Unit.js module
 var test = require('unit.js');
-var resource = require('../bots/blue/resource_test.js');
+var resource = require('../bots/resource_test.js');
 
 
 var map1 = [[false,false,false],[true,false,false],[false,false,false]];

@@ -167,6 +167,9 @@ export function get_max_movement(direction,radius,map,currentLocation){
  * @return double The calculated distance
  */
 export function get_distance(coor1,coor2){
+  if(typeof coor1[1] === 'undefined' || typeof coor2[1] === 'undefined'){
+    throw "get_distance vars not an array";
+  }
   return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
 }
 /**
@@ -291,4 +294,21 @@ export function get_visible_robots_list(visible){
     res.push([visible[i].x,visible[i].y]);
   }
   return res;
+}
+export function get_possible_square_steps_list(coor,map){
+  var i;
+  var j;
+  var k = 0;
+  var result = [];
+  for(i = -1; i<=1; i++){
+    for(j = -1; j<=1; j++){
+      if(!(coor[0] + i < 0 || coor[0] + i >= map.length || coor[1] + j < 0 || coor[1] + j >= map.length || (i == 0 && j == 0))){
+        if(map[coor[1] + j][coor[0] + i] == true){
+        result[k] = [i,j];
+        k++;
+        }
+      }
+    }
+  }
+  return result;
 }
