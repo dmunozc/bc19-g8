@@ -10,6 +10,8 @@ var path;
 var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
 var castlePaths
+var pilgrimCount = 0;
+
 castle.takeTurn = (self) => {
   var possibleSteps = movement.get_possible_square_steps_list([self.me.x, self.me.y],self.map);
   //self.log("lala");
@@ -26,15 +28,23 @@ castle.takeTurn = (self) => {
   //self.log(messagingRobots);
 
   //self.log(buildPlace);
-  if(self.step <=2){
+  if (self.step < 1){
+      var karbonite = resource.get_resource_nodes(self.getKarboniteMap());
+      var fuel = resource.get_resource_nodes(self.getFuelMap());
+      pilgrimCount = Math.floor((karbonite.length + fuel.length) / 4);
+  }
+  if(self.step % 10 && pilgrimCount !== 0){
    self.log("Building a pilgrim at " + (self.me.x+1) + ", " + (self.me.y+1));
-   
+        pilgrimCount--;
+        self.log(pilgrimCount);
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
+
   }
   
-    if (self.step%6   === 1) {
-        //self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
-        return self.buildUnit(Math.floor(Math.random() * (4 - 4 + 1) ) + 4, buildPlace[0], buildPlace[1]);
+    if (self.step % 6   === 1 && pilgrimCount === 0) {
+        // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
+        return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
+        // return self.buildUnit(Math.floor(Math.random() * (4 - 4 + 1) ) + 4, buildPlace[0], buildPlace[1]);
     }  else {
         var visible = self.getVisibleRobots();
         var enemies = combat.get_visible_enemies(self.me.team, visible);
