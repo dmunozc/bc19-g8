@@ -11,6 +11,7 @@ var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
 var castlePaths;
 var typePil;
+var castleLoc = {'x':-1, 'y':-1}
 
 
 pilgrim.takeTurn = (self) => {
@@ -22,6 +23,9 @@ pilgrim.takeTurn = (self) => {
   var resources = karbonite.concat(fuel);
   karbonite = resource.update_nodes(curr_loc, resources, visible);
 
+  if (castleLoc.x == -1){
+    castleLoc = resource.find_nearest_unit(curr_loc, visible,0);
+  }
 
   var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, resources);
   // this.log("(" + nearest_karb.x + "," + nearest_karb.y+ ")");
@@ -41,11 +45,12 @@ pilgrim.takeTurn = (self) => {
   } else {
     //self.log("is castle locs empty? " + castleLocs.length);
     //this.log("I am full! Looking for nearest castle...");
-    var nearest_castle = resource.find_nearest_unit(curr_loc, visible, 0);
+    // var nearest_castle = resource.find_nearest_unit(curr_loc, visible, 0);
+    var nearest_castle = castleLoc;
     //this.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
     var dist = movement.get_distance([self.me.x, self.me.y], [nearest_castle.x, nearest_castle.y]);
     if (dist <= Math.sqrt(2)) {
-      //self.log("I am unloading resources");
+      // self.log("I am unloading resources");
       var dx = nearest_castle.x - curr_loc.x;
       var dy = nearest_castle.y - curr_loc.y;
       return self.give(dx, dy, self.me.karbonite, self.me.fuel);
