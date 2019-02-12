@@ -13,7 +13,7 @@ var map2 =   [[true,true,true,true,true,true,true,true],
               [true,true,true,true,true,true,true,true],
               [true,true,true,true,true,true,true,true]];
 
-var visible1 = [{x: 2, y: 3}, {x:1, y: 2}, {x:1, y:1}, {x:1, y:3}];
+var visible1 = [{x: 2, y: 3, unit: 0}, {x:1, y: 2, unit: 1}, {x:1, y:1, unit: 1}, {x:1, y:3, unit: 2}];
 var resource_nodes1 = [{x: 1, y: 2}, {x: 1, y: 3}, {x:1, y:4}, {x: 9, y: 5}];
 
 /** Testing resource.get_resource_nodes */
@@ -72,3 +72,11 @@ test.assert(nearest_node2.y === 1);
 var nearby_nodes = resource.find_nearby_nodes({x: 2, y: 3}, resource_nodes1, visible1, 2);
 test.assert(nearby_nodes.length === 3);
 test.assert(nearby_nodes[0].dist <= 2);
+
+/**Testing resource.get_number_of_units */
+var unitCount1 = resource.get_number_of_units(visible1, 1);
+var unitCount2 = resource.get_number_of_units(visible1, 2);
+var unitCount3 = resource.get_number_of_units(visible1, 3);
+test.assert(unitCount1 === 2);
+test.assert(unitCount2 === 1);
+test.assert(unitCount3 === 0);
