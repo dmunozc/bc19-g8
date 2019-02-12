@@ -31,6 +31,7 @@ prophet.takeTurn = (self) => {
     //const choices = [[0,-1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
     //const choice = choices[Math.floor(Math.random()*choices.length)]
     var visible = self.getVisibleRobots();
+    //self.log(visible);
     var enemies = combat.get_visible_enemies(self.me.team, visible);
     var curr_loc = {'x': self.me.x, 'y':self.me.y};
     if (enemies.length !== 0){

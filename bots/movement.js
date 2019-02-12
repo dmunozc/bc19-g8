@@ -434,3 +434,114 @@ export function get_possible_square_steps_list(coor,map){
   }
   return result;
 }
+
+export function get_absolute_possible_square_checkerboard_steps_list(coor,map){
+  var i;
+  var j;
+  var k = 0;
+  var result = [];
+  for(i = -1; i<=1; i++){
+    for(j = -1; j<=1; j++){
+      if((i == 0 && j == 0) || (i == 1 && j == 0) || (i == -1 && j == 0) || (i == 0 && j == 1) || (i == 0 && j == -1)){
+        continue;
+      }
+      if(!(coor[0] + i < 0 || coor[0] + i >= map.length || coor[1] + j < 0 || coor[1] + j >= map.length)){
+        if(map[coor[1] + j][coor[0] + i] == true){
+          result[k] = [i+coor[0],j+coor[1]];
+          k++;
+        }
+      }
+    }
+  }
+  return result;
+}
+
+export function get_absolute_impossible_square_checkerboard_steps_list(coor,map){
+  var i;
+  var j;
+  var k = 0;
+  var result = [];
+  for(i = -1; i<=1; i++){
+    for(j = -1; j<=1; j++){
+      if((i == 0 && j == 0) || (i == 1 && j == 0) || (i == -1 && j == 0) || (i == 0 && j == 1) || (i == 0 && j == -1)){
+        result[k] = [i+coor[0],j+coor[1]];
+        k++;
+      }
+      if(!(coor[0] + i < 0 || coor[0] + i >= map.length || coor[1] + j < 0 || coor[1] + j >= map.length)){
+        if(map[coor[1] + j][coor[0] + i] == true){
+          continue;
+        }
+      }
+    }
+  }
+  return result;
+}
+
+//[{"type":"robot","id":2022,"team":0,"x":3,"y":0,"unit":2,"turn":6,"signal":-1,"signal_radius":-1},{"type":"robot","id":3650,"team":0,"x":4,"y":2,"unit":0,"turn":8,"signal":-1,"signal_radius":-1},{"type":"robot","id":3594,"team":0,"x":4,"y":1,"unit":4,"health":20,"karbonite":0,"fuel":0,"turn":1,"signal":0,"signal_radius":0,"time":120},{"type":"robot","id":1218,"team":0,"x":6,"y":2,"unit":2,"turn":7,"signal":-1,"signal_radius":-1},{"type":"robot","id":1303,"team":0,"x":6,"y":1,"unit":2,"turn":8,"signal":-1,"signal_radius":-1}]
+export function get_next_checkerboard_step(currentLocation,map,visibleRobots,previousPathsTaken,r){
+  
+  var closeRobots = visibleRobots.filter(robot => (get_distance(currentLocation, [robot.x,robot.y]) <= Math.sqrt(2) && !(robot.x == currentLocation[0] && robot.y == currentLocation[1])  && robot.unit >=2));
+  var openPaths;
+  var otherOpenPaths = [];
+  var otherClosedPaths = [];
+  var loc;
+  var i;
+  var j;
+  var tempPath;
+  var otherRobotsLocations = [];
+  var newPaths;
+  var chosenPath;
+  //r.log(closeRobots);
+  if(closeRobots.length > 0){
+    for(i = 0; i < closeRobots.length; i++){
+      otherRobotsLocations[i] = [closeRobots[i].x,closeRobots[i].y];
+      otherOpenPaths = otherOpenPaths.concat(get_absolute_possible_square_checkerboard_steps_list(otherRobotsLocations[i],map));
+      otherClosedPaths = otherClosedPaths.concat(get_absolute_impossible_square_checkerboard_steps_list(otherRobotsLocations[i],map));
+    }
+    //console.log("-----------");
+    
+    //console.log(otherClosedPaths);
+    //console.log("-----------");
+    for(i = 0; i < otherOpenPaths.length; i++){
+      if(check_if_coor_in_path(otherOpenPaths[i], otherRobotsLocations) == true){
+        otherOpenPaths.splice(i,1);
+        i--;
+      }
+    }
+    //console.log(otherRobotsLocations);
+    //console.log(otherOpenPaths);
+    for(i = 0; i < otherOpenPaths.length; i++){
+      //is any of the other of both open paths at sqrt(2) distace of me? If yes move there
+      var temp = get_distance(otherOpenPaths[i],currentLocation);
+      //console.log(temp);
+      //console.log(otherOpenPaths[i]);
+      if(temp <= Math.sqrt(2) && temp > 0 && check_if_coor_in_path(otherOpenPaths[i],previousPathsTaken) == false){
+        console.log("return 502");
+        return otherOpenPaths[i];
+      }
+    }
+    //else get mine if see if I can move
+    openPaths = get_absolute_possible_square_checkerboard_steps_list(currentLocation,map);
+    
+    for(i = 0; i < openPaths.length; i++){
+      if(check_if_coor_in_path(openPaths[i], otherRobotsLocations.concat(previousPathsTaken.concat(otherClosedPaths))) == true){
+        openPaths.splice(i,1);
+        i--;
+      }
+    }
+    //console.log(openPaths);
+    //console.log(openPaths.length);
+    if(openPaths.length > 0){
+      return get_random_from_list(openPaths);
+    }
+    return currentLocation;
+  }else{
+    openPaths = get_absolute_possible_square_checkerboard_steps_list(currentLocation,map);
+    chosenPath = get_random_from_list(openPaths);
+    while(check_if_coor_in_path(chosenPath,previousPathsTaken)){ //this option does not allow backtracking
+      chosenPath = get_random_from_list(openPaths);
+    }
+    return chosenPath;
+  }
+  return;
+}

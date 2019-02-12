@@ -47,6 +47,21 @@ crusader.takeTurn = (self) => {
       
     }else{
       //attack
+      var visible = self.getVisibleRobots();
+      //self.log(visible);
+      var enemies = combat.get_visible_enemies(self.me.team, visible);
+      var curr_loc = {'x': self.me.x, 'y':self.me.y};
+      if (enemies.length !== 0){
+        //self.log("We see an enemy!");
+          var target = resource.find_nearest_node(curr_loc, enemies);
+          //Check if in range
+          var dist = movement.get_distance([curr_loc.x,curr_loc.y], [target.x,target.y]);
+          if (dist <= 16 && dist >= 4){
+              //self.log("Attacking enemy!");
+              var attack = combat.get_relative_position(curr_loc, target);
+              return self.attack(attack.x, attack.y);      
+          }                    
+      }
     }
   }
 };

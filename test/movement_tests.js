@@ -14,15 +14,15 @@ var openMap = [[true,true,true,true,true,true,true,true],
               [true,true,true,true,true,true,true,true],
               [true,true,true,true,true,true,true,true],
               [true,true,true,true,true,true,true,true]];
-              
-var map1 =   [[true,true,true,true,true,true,true,true],
-              [true,true,true,true,true,true,true,true],
-              [true,true,true,true,true,true,true,true],
-              [true,true,false,false,false,true,true,true],
-              [true,true,true,true,true,true,true,true],
-              [true,true,true,true,true,true,true,true],
-              [true,true,true,true,true,true,true,true],
-              [true,true,true,true,true,true,true,true]];              
+           //x: 0    1    2     3    4   5    6     7    y:  
+var map1 =   [[true,true,true,true,true,true,true,true],//0
+              [true,true,true,true,true,true,true,true],//1
+              [true,true,true,true,true,true,true,true],//2
+              [true,true,false,false,false,true,true,true],//3
+              [true,true,true,true,true,true,true,true],//4
+              [true,true,true,true,true,true,true,true],//5
+              [true,true,true,true,true,true,true,true],//6
+              [true,true,true,true,true,true,true,true]];//7              
       
 
       
@@ -297,13 +297,41 @@ test.assert(result9.length === 21);
 /*Test get_next_step_astar_fuel(currentLocation,destination,map,previousPathsTaken,radius)*/
 var result10;
 result10 = movement.get_next_step_astar_fuel([1,1],[0,5],openMap,[],3);
-console.log(result10);
+//console.log(result10);
 result10 = movement.get_next_step_astar_fuel(result10,[0,5],openMap,[],3);
-console.log(result10);
+//console.log(result10);
 
 /*Test get_next_step_astar_turn(currentLocation,destination,map,previousPathsTaken,radius)*/
 var result11;
 result11 = movement.get_next_step_astar_turn([1,1],[0,5],openMap,[],3);
-console.log(result11);
+//console.log(result11);
 result11 = movement.get_next_step_astar_turn(result11,[0,5],openMap,[],3);
-console.log(result11);
+//console.log(result11);
+
+
+/*Test get_absolute_possible_square_checkerboard_steps_list(coor,map)*/
+var result12;
+result12 = movement.get_absolute_possible_square_checkerboard_steps_list([0,0],openMap);
+test.assert(result12.length === 1);
+result12 = movement.get_absolute_possible_square_checkerboard_steps_list([3,3],openMap);
+test.assert(result12.length === 4);
+result12 = movement.get_absolute_possible_square_checkerboard_steps_list([3,2],map1);
+test.assert(result12.length === 2);
+
+/*Test get_next_checkerboard_step(currentLocation,map,visibleRobots,previousPathsTaken)*/
+var result13;
+var robotMe = {"type":"robot","id":2022,"team":0,"x":2,"y":4,"unit":2,"turn":6,"signal":-1,"signal_radius":-1};
+var robotOne = {"type":"robot","id":2022,"team":0,"x":3,"y":3,"unit":2,"turn":6,"signal":-1,"signal_radius":-1};
+var robotTwo = {"type":"robot","id":2022,"team":0,"x":1,"y":3,"unit":2,"turn":6,"signal":-1,"signal_radius":-1};
+var robotThree = {"type":"robot","id":2022,"team":0,"x":3,"y":1,"unit":2,"turn":6,"signal":-1,"signal_radius":-1};
+var robotFour = {"type":"robot","id":2022,"team":0,"x":2,"y":4,"unit":2,"turn":6,"signal":-1,"signal_radius":-1};
+var castle = {"type":"robot","id":2022,"team":0,"x":1,"y":1,"unit":0,"turn":6,"signal":-1,"signal_radius":-1}
+//result13 = movement.get_next_checkerboard_step([2,2],openMap,[robotMe,castle],[],-5);
+
+//result13 = movement.get_next_checkerboard_step([2,2],openMap,[robotMe,castle,robotOne],[[1,1]],-5);
+//result13 = movement.get_next_checkerboard_step([2,2],openMap,[robotMe,castle,robotOne,robotTwo],[[1,1]],-5);
+//result13 = movement.get_next_checkerboard_step([2,2],openMap,[robotMe,castle,robotOne,robotTwo,robotThree],[[1,1]],-5);
+//result13 = movement.get_next_checkerboard_step([2,3],openMap,[robotMe,castle,robotOne,robotTwo,robotThree],[[1,1],[2,2]],-5);
+//result13 = movement.get_next_checkerboard_step([2,3],openMap,[robotMe,castle,robotOne,robotTwo,robotThree,robotFour],[[1,1],[2,2]],-5);
+result13 = movement.get_next_checkerboard_step([2,4],openMap,[robotMe,castle,robotOne,robotTwo,robotThree,robotFour],[[1,1],[2,2],[2,3]],-5);
+console.log(result13);

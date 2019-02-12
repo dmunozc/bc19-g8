@@ -4,7 +4,8 @@ import * as combat from './combat.js';
 import pilgrim from './pilgrim.js';
 import * as movement from './movement.js';
 import castle from './castle.js';
-import prophet from './prophet.js';
+import prophet from './test_prophet.js';
+import crusader from './crusader.js';
 
 class MyRobot extends BCAbstractRobot {
   
@@ -24,6 +25,9 @@ class MyRobot extends BCAbstractRobot {
           return castle.takeTurn(this);
         }else if (this.me.unit === SPECS.PILGRIM) {
           return pilgrim.takeTurn(this);
+          
+        }else if (this.me.unit === SPECS.CRUSADER) {
+          return crusader.takeTurn(this);
           
         }
 
