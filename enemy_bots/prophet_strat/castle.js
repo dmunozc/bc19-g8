@@ -66,19 +66,13 @@ castle.takeTurn = (self) => {
 
   }
   
-    // if (self.step % 6   === 1 && pilgrimCount === 0 && self.karbonite >= 30) {
-    //     // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
-    //     var visible = self.getVisibleRobots();
-    //     var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
-    //     buildPlace = [build_loc.x, build_loc.y];
-    //     return self.buildUnit(SPECS.PREACHER, buildPlace[0], buildPlace[1]);
-    // }
-    if (self.step % 6 === 5 && pilgrimCount === 0 && self.karbonite >= 10){
+    if (self.step % 6   === 1 && pilgrimCount === 0 && self.karbonite >= 25) {
+        // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
         var visible = self.getVisibleRobots();
         var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
         buildPlace = [build_loc.x, build_loc.y];
-        return self.buildUnit(SPECS.CRUSADER, buildPlace[0], buildPlace[1]);
-
+        return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
+        // return self.buildUnit(Math.floor(Math.random() * (4 - 4 + 1) ) + 4, buildPlace[0], buildPlace[1]);
     }  else {
         var visible = self.getVisibleRobots();
         var enemies = combat.get_visible_enemies(self.me.team, visible);
