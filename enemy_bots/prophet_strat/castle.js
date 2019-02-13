@@ -73,7 +73,8 @@ castle.takeTurn = (self) => {
         buildPlace = [build_loc.x, build_loc.y];
         return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
         // return self.buildUnit(Math.floor(Math.random() * (4 - 4 + 1) ) + 4, buildPlace[0], buildPlace[1]);
-    }  else {
+    }  
+    else {
         var visible = self.getVisibleRobots();
         var enemies = combat.get_visible_enemies(self.me.team, visible);
         var curr_loc = {'x': self.me.x, 'y':self.me.y};

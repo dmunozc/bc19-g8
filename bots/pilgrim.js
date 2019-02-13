@@ -1,7 +1,7 @@
-import {BCAbstractRobot, SPECS} from 'battlecode';
+import { BCAbstractRobot, SPECS } from 'battlecode';
 import * as combat from './combat.js';
 import * as resource from './resource.js';
-
+import * as build from './build.js';
 import * as movement from './movement.js';
 
 const pilgrim = {};
@@ -11,20 +11,24 @@ var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
 var castlePaths;
 var typePil;
-var castleLoc = {'x':-1, 'y':-1}
+var castleLoc = { 'x': -1, 'y': -1 };
 
 
 pilgrim.takeTurn = (self) => {
-  
+
   var curr_loc = { 'x': self.me.x, 'y': self.me.y };
   var visible = self.getVisibleRobots();
   var karbonite = resource.get_resource_nodes(self.getKarboniteMap());
   var fuel = resource.get_resource_nodes(self.getFuelMap());
   var resources = karbonite.concat(fuel);
-  karbonite = resource.update_nodes(curr_loc, resources, visible);
+  resources = resource.update_nodes(curr_loc, resources, visible);
 
-  if (castleLoc.x == -1){
-    castleLoc = resource.find_nearest_unit(curr_loc, visible,0);
+  if (castleLoc.x == -1) {
+    if (resource.get_number_of_units(visible, 1) === 0) {
+      castleLoc = resource.find_nearest_unit(curr_loc, visible, 0);
+    } else {
+      castleLoc = resource.find_nearest_unit(curr_loc, visible, 1);
+    }
   }
 
   var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, resources);
@@ -46,16 +50,30 @@ pilgrim.takeTurn = (self) => {
     //self.log("is castle locs empty? " + castleLocs.length);
     //this.log("I am full! Looking for nearest castle...");
     // var nearest_castle = resource.find_nearest_unit(curr_loc, visible, 0);
-    var nearest_castle = castleLoc;
     //this.log("Nearest castle is at (" + nearest_castle.x + ", " + nearest_castle.y +")");
-    var dist = movement.get_distance([self.me.x, self.me.y], [nearest_castle.x, nearest_castle.y]);
+    var dist = movement.get_distance([self.me.x, self.me.y], [castleLoc.x, castleLoc.y]);
+    // If the castle is far away, we should build a church
+    if (dist >= 10) {
+      var visible = self.getVisibleRobots();
+      var num_churches = resource.get_number_of_units(visible, 1);
+      if (num_churches === 0 && self.karbonite >= 50 && self.fuel >= 200) {
+        self.log("I am going to build a church");
+        var build_loc = build.find_location_to_build_unit(curr_loc, self.getPassableMap(), visible, self);
+        var buildPlace = [build_loc.x, build_loc.y];
+        return self.buildUnit(SPECS.CHURCH, buildPlace[0], buildPlace[1]);
+      }
+      else if (num_churches >= 1) {
+        castleLoc = resource.find_nearest_unit(curr_loc, visible, 1);
+        dist = movement.get_distance([self.me.x, self.me.y], [castleLoc.x, castleLoc.y]);
+      }
+    }
     if (dist <= Math.sqrt(2)) {
       // self.log("I am unloading resources");
-      var dx = nearest_castle.x - curr_loc.x;
-      var dy = nearest_castle.y - curr_loc.y;
+      var dx = castleLoc.x - curr_loc.x;
+      var dy = castleLoc.y - curr_loc.y;
       return self.give(dx, dy, self.me.karbonite, self.me.fuel);
     }
-    var nexStep = movement.get_next_step([self.me.x, self.me.y], [nearest_castle.x, nearest_castle.y], self.map, movement.get_visible_robots_list(visible), 2);
+    var nexStep = movement.get_next_step([self.me.x, self.me.y], [castleLoc.x, castleLoc.y], self.map, movement.get_visible_robots_list(visible), 2);
     var movex = nexStep[0] - self.me.x;
     var movey = nexStep[1] - self.me.y;
     //self.log("location : " + self.me.x + "," +self.me.y);

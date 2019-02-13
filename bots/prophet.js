@@ -44,7 +44,7 @@ prophet.takeTurn = (self) => {
             return self.attack(attack.x, attack.y);      
         }                    
     }
-    if(self.step < 6 ||visible.length > 8){
+    if(self.step < 3 ||visible.length > 8){
       
     
       currentPath[stepCounter] = [self.me.x,self.me.y];
