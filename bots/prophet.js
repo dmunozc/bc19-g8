@@ -60,7 +60,7 @@ prophet.takeTurn = (self) => {
       }
       ////self.log("me : " + self.me.x + "," +self.me.y);
       ////self.log("cP " + castlePaths);
-      var nexStep = movement.get_next_step([self.me.x,self.me.y],castlePaths,self.map,currentPath.concat(movement.get_visible_robots_list(visible)),2);
+      var nexStep = movement.get_next_step_astar_turn([self.me.x,self.me.y],castlePaths,self.map,currentPath.concat(movement.get_visible_robots_list(visible)),2);
       var movex = nexStep[0] - self.me.x;
       var movey = nexStep[1] - self.me.y;
       //self.log("stepCounter : " + stepCounter);

@@ -175,7 +175,7 @@ export function get_distance(coor1,coor2){
 
 
 /**
- * Generates an array of relative x,y coordinates that a unit from its current location can move to 
+ * Generates an array of absolute x,y coordinates that a unit from its current location can move to 
  * @currentLocation list	A list that contains an x,y coordinate. Always of size 2 and x is always 0, y is always 1
  * @radius int 
  * @map list Battlecode map
@@ -194,100 +194,6 @@ export function generate_open_list(currentLocation,radius,map,previousPathsTaken
   }
   return openPaths
 }
-/**
- * Generates a list with the same index position in openList denoting its g value
- * g value is the movement cost to move from the starting point to a given square on the grid, following the path generated to get there.
- * @openList list possible coordinates a unit can move
- * @return list of g values in same index as openList
- */
-export function calculate_open_list_g(openList,type){
-  var i;
-  var result = [];
-  for(i = 0; i < openList.length;i++){
-    if(type == 1){//fuel
-    result.push(get_distance([0,0],openList[i]))
-    }else{ //turn
-      result.push(1.0)
-    }
-  }
-  return result;
-}
-
-/**
- * Generates a list with the same index position in openList denoting its h value
- * h value the estimated movement cost to move from that given square on the grid to the final destination.
- * I am using euclidian distance, but could explore using diagonal distance for pilgrim
- * @currentLocation list	A list that contains an x,y coordinate. Always of size 2 and x is always 0, y is always 1
- * @destination list	A list that contains an x,y coordinate. Always of size 2 and x is always 0, y is always 1
- * @openList list possible coordinates a unit can move
- * @return list of h values in same index as openList
- */
-export function calculate_open_list_h(currentLocation,destination,openList){
-  var i;
-  var result = [];
-  var potentialMove = []
-  for(i = 0; i < openList.length;i++){
-    potentialMove[0] = openList[i][0] + currentLocation[0];
-    potentialMove[1] = openList[i][1] + currentLocation[1];
-    result.push(get_distance(potentialMove,destination))
-  }
-  return result;
-}
-
-export function get_next_step_astar_fuel(currentLocation,destination,map,previousPathsTaken,radius){
-  return get_next_step_astar(currentLocation,destination,map,previousPathsTaken,radius,1)
-}
-
-export function get_next_step_astar_turn(currentLocation,destination,map,previousPathsTaken,radius){
-  return get_next_step_astar(currentLocation,destination,map,previousPathsTaken,radius,0)
-}
-
-export function get_next_step_astar(currentLocation,destination,map,previousPathsTaken,radius,type){
-  if(get_distance(currentLocation,destination) < radius){
-    return destination;
-  }
-  var openList = [];
-  var gList = [];
-  var hList = [];
-  var minList = [];
-  var currentMin;
-  var i;
-  var chosenMin;
-  //generate open list (list of squares that I can move based on the radius, map, visible robots, previous path)
-  openList =  generate_open_list(currentLocation,radius,map,previousPathsTaken);
-  //calculate g for open list
-  gList= calculate_open_list_g(openList, type);
-  //calculate h for open list
-  hList = calculate_open_list_h(currentLocation,destination,openList);
-  //pick lowest g+h value as next step
-  //  if there is more than one g+h min value, pick one with lowest h cost
-  currentMin = gList[0]+hList[0];
-  for(i = 0; i< openList.length; i++){
-    if(gList[i]+hList[i] < currentMin){
-      currentMin = gList[i]+hList[i];
-    }
-  }
-  for(i = 0; i< openList.length; i++){
-    if(gList[i]+hList[i] === currentMin){
-      minList.push(i);
-    }
-  }
-  if(minList.length > 1){
-    currentMin = hList[minList[0]];
-    chosenMin = minList[0];
-    for(i = 0; i < minList.length; i++){
-      if(hList[minList[i]] < currentMin){
-        currentMin = hList[minList[i]];
-        chosenMin = minList[i];
-      }
-    }
-  }else{
-    chosenMin = minList[0];
-  }
-  
-  return [currentLocation[0] + openList[chosenMin][0],currentLocation[1] + openList[chosenMin][1]];
-}
-
 /**
  * Given a current location coordinate, destination coordinate, a map, a list of previous visited coordinates, and the unit radus
  * It returns the greedy next step to take from the current location to reach the coordinate. Takes into account the unit radius,
