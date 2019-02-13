@@ -1,6 +1,51 @@
 import * as movement from './movement.js'
 
 /**
+ * This function is used to find nearby nodes for the castle so that it knows
+ * how many pilgrims to make
+ * 
+ * @requires resource.update_nodes();
+ * 
+ * example usage:
+ *  var nearby_nodes = resource.find_nearby_nodes(curr_loc, resources, visbile, 10);
+ * 
+ * @param {object} loc  current location of castle, object with x and y properties 
+ * @param {list}  list  list of resources (fuel and/or karb)
+ * @param {list}  visible   list of visible units (used for dependant function)
+ * @param {int}   range   the vision range
+ * 
+ * @returns {list}  returns a list of nodes in the vision range
+ */
+export function find_nearby_nodes(loc,list,visible,range){
+  var nearby_nodes = [];
+  var nodes = update_nodes(loc,list,visible);
+  for (var i = 0; i < nodes.length; i++){
+    if (nodes[i].dist <= range){
+      nearby_nodes.push(nodes[i]);
+    }
+  }
+  return nearby_nodes;
+}
+
+/**
+ * This function is used to see how many pilgrims are in vision range.
+ * Used by castle to update pilgrim counts.
+ * 
+ * @param {list} visible  list of visible units
+ * @param {int} unit  number of unit to retrieve
+ * 
+ * @returns {int} returns a count of unit
+ */
+export function get_number_of_units(visible, unit){
+  var count = 0;
+  for (var i = 0; i < visible.length; i++){
+    if (visible[i].unit === unit){
+      count++;
+    }
+  }
+  return count;
+}
+/**
  * Takes a 2D map grid and returns a list of objects with
  * x and y coordinates wherever the map has true.
  * 
@@ -13,7 +58,7 @@ import * as movement from './movement.js'
  *                      properties.
  */
 export function get_resource_nodes(map){
-    var list = []
+    var list = [];
     for (var i = 0; i < map.length; i++){
         for (var j = 0; j < map[0].length; j++){
             if (map[i][j] === true){
