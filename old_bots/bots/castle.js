@@ -35,7 +35,7 @@ castle.takeTurn = (self) => {
   
   if (self.step%6   === 1) {
       //self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
-      return self.buildUnit(/*Math.floor(Math.random() * (4 - 4 + 1) ) + 4*/ SPECS.PREACHER, buildPlace[0], buildPlace[1]);
+      return self.buildUnit(/*Math.floor(Math.random() * (4 - 4 + 1) ) + 4*/ SPECS.PROPHET, buildPlace[0], buildPlace[1]);
   }  else {
       var visible = self.getVisibleRobots();
       var enemies = combat.get_visible_enemies(self.me.team, visible);
