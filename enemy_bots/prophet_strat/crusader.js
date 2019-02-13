@@ -37,13 +37,13 @@ crusader.takeTurn = (self) => {
             var target = resource.find_nearest_node(curr_loc, enemies);
             //Check if in range
             var dist = movement.get_distance([curr_loc.x,curr_loc.y], [target.x,target.y]);
-            if (dist <= 3){
+            if (dist <= 16 && dist >= 4){
                 //self.log("Attacking enemy!");
                 var attack = combat.get_relative_position(curr_loc, target);
                 return self.attack(attack.x, attack.y);      
             }                    
         }
-        if(self.step < 6 ||visible.length > 10){
+        if(self.step < 6 ||visible.length > 8){
           
         
           currentPath[stepCounter] = [self.me.x,self.me.y];
@@ -62,9 +62,9 @@ crusader.takeTurn = (self) => {
           var nexStep = movement.get_next_step_astar_turn([self.me.x,self.me.y],castlePaths,self.map,currentPath.concat(movement.get_visible_robots_list(visible)),2);
           var movex = nexStep[0] - self.me.x;
           var movey = nexStep[1] - self.me.y;
-          //self.log("stepCounter : " + stepCounter);
-          //self.log("location : " + self.me.x + "," +self.me.y);
-          //self.log("movement : " + movex + ";" + movey);
+          self.log("stepCounter : " + stepCounter);
+          self.log("location : " + self.me.x + "," +self.me.y);
+          self.log("movement : " + movex + ";" + movey);
           stepCounter++;
           return self.move(movex,movey);
         }
@@ -82,6 +82,7 @@ crusader.takeTurn = (self) => {
         }*/
         return;
         //return self.move(path[stepCounter][1],);
+
 };
 
 

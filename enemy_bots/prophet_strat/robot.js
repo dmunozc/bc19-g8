@@ -1,4 +1,4 @@
-import {BCAbstractRobot, SPECS} from 'battlecode';
+import { BCAbstractRobot, SPECS } from 'battlecode';
 import * as resource from './resource.js';
 import * as combat from './combat.js';
 import pilgrim from './pilgrim.js';
@@ -9,12 +9,12 @@ import crusader from './crusader.js';
 import preacher from './preacher.js';
 
 class MyRobot extends BCAbstractRobot {
-  
+
   constructor() {
-      super();
-      this.step = -1;
+    super();
+    this.step = -1;
   }
-    turn() {
+  turn() {
     //step++;
     this.step++;
 
