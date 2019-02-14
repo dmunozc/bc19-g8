@@ -24,7 +24,6 @@ castle.takeTurn = (self) => {
     // var messagingRobots = self.getVisibleRobots().filter(robot => {
     //     if (robot.signal == 666 || robot.signal == 6969){
     //       return robot;
-
     //     }
     //     return;
     // });
@@ -73,13 +72,13 @@ castle.takeTurn = (self) => {
             var visible = self.getVisibleRobots();
             var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
             buildPlace = [build_loc.x, build_loc.y];
-            return self.buildUnit(SPECS.PREACHER, buildPlace[0], buildPlace[1]);
+            return self.buildUnit(SPECS.CRUSADER, buildPlace[0], buildPlace[1]);
         }
         if (self.step % 6 === 5 && pilgrimCount === 0 && self.karbonite >= 25) {
             var visible = self.getVisibleRobots();
             var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
             buildPlace = [build_loc.x, build_loc.y];
-            return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
+            return self.buildUnit(SPECS.CRUSADER, buildPlace[0], buildPlace[1]);
 
         }
     } else {
@@ -87,7 +86,7 @@ castle.takeTurn = (self) => {
             var visible = self.getVisibleRobots();
             var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
             buildPlace = [build_loc.x, build_loc.y];
-            return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
+            return self.buildUnit(SPECS.CRUSADER, buildPlace[0], buildPlace[1]);
         }
         else {
             var visible = self.getVisibleRobots();

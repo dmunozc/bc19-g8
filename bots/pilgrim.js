@@ -13,7 +13,6 @@ var castlePaths;
 var typePil;
 var castleLoc = { 'x': -1, 'y': -1 };
 
-
 pilgrim.takeTurn = (self) => {
 
   var curr_loc = { 'x': self.me.x, 'y': self.me.y };

@@ -6,12 +6,33 @@ import * as movement from './movement.js';
 
 const church = {};
 
+var stepCounter = 0;
+var path;
+var possibleOpponentCastleLocations = [];//y,x locations
+var currentPath = [];
+var castlePaths
 var pilgrimCount = 0;
 var castle_loc = { x: 0, y: 0 };
 var map = [];
 var nearbyNodeCount = 0;
 
 church.takeTurn = (self) => {
+
+
+    // var possibleSteps = movement.get_possible_square_steps_list([self.me.x, self.me.y],self.map);
+    // //self.log("lala");
+    // //self.log(possibleSteps);
+    // var buildPlace = movement.get_random_from_list(possibleSteps);
+    // var messagingRobots = self.getVisibleRobots().filter(robot => {
+    //     if (robot.signal == 666 || robot.signal == 6969){
+    //       return robot;
+    //     }
+    //     return;
+    // });
+    //self.log("msg");
+    //self.log(messagingRobots);
+
+    //self.log(buildPlace);
 
 
     // Initialize to figure out how many pilgrims to build
@@ -26,7 +47,7 @@ church.takeTurn = (self) => {
         var nearby_nodes = resource.find_nearby_nodes(castle_loc, resources, visible, 4);
         map = self.getPassableMap();
         // Build 1 more pilgrim so it can go off and build a church
-        pilgrimCount = nearby_nodes.length;
+        pilgrimCount = nearby_nodes.length + 1;
         nearbyNodeCount = nearby_nodes.length;
         self.log(pilgrimCount);
     }
@@ -47,39 +68,46 @@ church.takeTurn = (self) => {
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
 
     }
+    if (self.step > 50) {
+        if (self.step % 6 === 1 && pilgrimCount === 0 && self.karbonite >= 30) {
+            // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
+            var visible = self.getVisibleRobots();
+            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+            buildPlace = [build_loc.x, build_loc.y];
+            return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
+        }
+        if (self.step % 6 === 5 && pilgrimCount === 0 && self.karbonite >= 25) {
+            var visible = self.getVisibleRobots();
+            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+            buildPlace = [build_loc.x, build_loc.y];
+            return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
 
-    // if (self.step % 6   === 1 && pilgrimCount === 0 && self.karbonite >= 30) {
-    //     // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
-    //     var visible = self.getVisibleRobots();
-    //     var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
-    //     buildPlace = [build_loc.x, build_loc.y];
-    //     return self.buildUnit(SPECS.PREACHER, buildPlace[0], buildPlace[1]);
-    // }
-    // if (self.step % 6 === 5 && pilgrimCount === 0 && self.karbonite >= 10) {
-    //     var visible = self.getVisibleRobots();
-    //     var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
-    //     buildPlace = [build_loc.x, build_loc.y];
-    //     return self.buildUnit(SPECS.CRUSADER, buildPlace[0], buildPlace[1]);
-
-    // }
-    else {
-        var visible = self.getVisibleRobots();
-        var enemies = combat.get_visible_enemies(self.me.team, visible);
-        var curr_loc = { 'x': self.me.x, 'y': self.me.y };
-        if (enemies.length !== 0) {
-            //self.log("We see an enemy!");
-            var target = resource.find_nearest_node(curr_loc, enemies);
-            //Check if in range
-            var dist = movement.get_distance([curr_loc.x, curr_loc.y], [target.x, target.y]);
-            if (dist <= 8) {
-                //self.log("Attacking enemy!");
-                var attack = combat.get_relative_position(curr_loc, target);
-                return self.attack(attack.x, attack.y);
+        }
+    } else {
+        if (self.step % 10 === 1 && pilgrimCount === 0 && self.karbonite >= 50) {
+            var visible = self.getVisibleRobots();
+            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+            buildPlace = [build_loc.x, build_loc.y];
+            return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
+        }
+        else {
+            var visible = self.getVisibleRobots();
+            var enemies = combat.get_visible_enemies(self.me.team, visible);
+            var curr_loc = { 'x': self.me.x, 'y': self.me.y };
+            if (enemies.length !== 0) {
+                //self.log("We see an enemy!");
+                var target = resource.find_nearest_node(curr_loc, enemies);
+                //Check if in range
+                var dist = movement.get_distance([curr_loc.x, curr_loc.y], [target.x, target.y]);
+                if (dist <= 8) {
+                    //self.log("Attacking enemy!");
+                    var attack = combat.get_relative_position(curr_loc, target);
+                    return self.attack(attack.x, attack.y);
+                }
             }
         }
     }
 
-
-    };
+};
 
     export default church;

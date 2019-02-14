@@ -11,6 +11,7 @@ var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
 var castlePaths
 
+
 preacher.takeTurn = (self) => {
     if (self.step === 0) {
         castlePaths = resource.find_possible_castle_locations([self.me.x - 1, self.me.y - 1], self.map, self.fuel_map);

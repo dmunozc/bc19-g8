@@ -4,21 +4,19 @@ import * as resource from './resource.js';
 
 import * as movement from './movement.js';
 
-const prophet = {};
+const preacher = {};
 var stepCounter = 0;
 var path;
 var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
-var castlePaths;
+var castlePaths
 
 
-prophet.takeTurn = (self) => {
-
- if(self.step === 0){
+preacher.takeTurn = (self) => {
+  if(self.step === 0){
     //i know on creation I will be x+1,y+1 away from castle as per code below
     ////self.log(self.fuel_map);
     castlePaths =  resource.find_possible_castle_locations([self.me.x-1,self.me.y-1],self.map,self.fuel_map);
-    
     //self.log(["me at: " + self.me.x,self.me.y]);
     //self.log("castle paths: ");
    //self.log(castlePaths);
@@ -41,13 +39,13 @@ prophet.takeTurn = (self) => {
         var target = resource.find_nearest_node(curr_loc, enemies);
         //Check if in range
         var dist = movement.get_distance([curr_loc.x,curr_loc.y], [target.x,target.y]);
-        if (dist <= 16 && dist >= 4){
+        if (dist <= 4){
             //self.log("Attacking enemy!");
             var attack = combat.get_relative_position(curr_loc, target);
             return self.attack(attack.x, attack.y);      
         }                    
     }
-    if(self.step < 3 ||visible.length > 8){
+    if(self.step < 4 ||visible.length > 4){
       
     
       currentPath[stepCounter] = [self.me.x,self.me.y];
@@ -86,7 +84,8 @@ prophet.takeTurn = (self) => {
     }*/
     return;
     //return self.move(path[stepCounter][1],);
+  
 };
 
 
-export default prophet;
+export default preacher;
