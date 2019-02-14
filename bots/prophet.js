@@ -9,7 +9,8 @@ var stepCounter = 0;
 var path;
 var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
-var castlePaths
+var castlePaths;
+
 
 prophet.takeTurn = (self) => {
 
@@ -17,6 +18,7 @@ prophet.takeTurn = (self) => {
     //i know on creation I will be x+1,y+1 away from castle as per code below
     ////self.log(self.fuel_map);
     castlePaths =  resource.find_possible_castle_locations([self.me.x-1,self.me.y-1],self.map,self.fuel_map);
+    
     //self.log(["me at: " + self.me.x,self.me.y]);
     //self.log("castle paths: ");
    //self.log(castlePaths);

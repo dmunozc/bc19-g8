@@ -60,30 +60,9 @@ castle.takeTurn = (self) => {
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
 
   }
-  
-<<<<<<< HEAD
-  if (self.step%6   === 1) {
-      //self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
-      return self.buildUnit(/*Math.floor(Math.random() * (4 - 4 + 1) ) + 4*/ SPECS.PREACHER, buildPlace[0], buildPlace[1]);
-  }  else {
-      var visible = self.getVisibleRobots();
-      var enemies = combat.get_visible_enemies(self.me.team, visible);
-      var curr_loc = {'x': self.me.x, 'y':self.me.y};
-      if (enemies.length !== 0){
-        //self.log("We see an enemy!");
-          var target = resource.find_nearest_node(curr_loc, enemies);
-          //Check if in range
-          var dist = movement.get_distance([curr_loc.x,curr_loc.y], [target.x,target.y]);
-          if (dist <= 8){
-              //self.log("Attacking enemy!");
-              var attack = combat.get_relative_position(curr_loc, target);
-              return self.attack(attack.x, attack.y);      
-          }                    
-      }
-  }
-=======
     if (self.step % 6   === 1 && pilgrimCount === 0 && self.karbonite >= 25) {
         // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
+        //self.log(buildPlace);
         return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
         // return self.buildUnit(Math.floor(Math.random() * (4 - 4 + 1) ) + 4, buildPlace[0], buildPlace[1]);
     }  else {
@@ -102,7 +81,6 @@ castle.takeTurn = (self) => {
             }                    
         }
     }
->>>>>>> master
   
 };
 

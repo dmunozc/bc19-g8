@@ -17,8 +17,6 @@ class MyRobot extends BCAbstractRobot {
     turn() {
         //step++;
         this.step++;
-        
-       
         if (this.me.unit === SPECS.PROPHET) {
           return prophet.takeTurn(this);
         }else if (this.me.unit === SPECS.CASTLE) {
@@ -28,7 +26,7 @@ class MyRobot extends BCAbstractRobot {
           return pilgrim.takeTurn(this);
           
         }else if (this.me.unit === SPECS.CRUSADER) {
-          return crusader.takeTurn(this);
+          //return crusader.takeTurn(this);
           
         }else if (this.me.unit === SPECS.PREACHER) {
           return preacher.takeTurn(this);
