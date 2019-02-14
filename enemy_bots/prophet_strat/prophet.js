@@ -9,8 +9,7 @@ var stepCounter = 0;
 var path;
 var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
-var castlePaths;
-
+var castlePaths
 
 prophet.takeTurn = (self) => {
 
@@ -18,7 +17,6 @@ prophet.takeTurn = (self) => {
     //i know on creation I will be x+1,y+1 away from castle as per code below
     ////self.log(self.fuel_map);
     castlePaths =  resource.find_possible_castle_locations([self.me.x-1,self.me.y-1],self.map,self.fuel_map);
-    
     //self.log(["me at: " + self.me.x,self.me.y]);
     //self.log("castle paths: ");
    //self.log(castlePaths);
@@ -33,7 +31,6 @@ prophet.takeTurn = (self) => {
     //const choices = [[0,-1], [1, -1], [1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1]];
     //const choice = choices[Math.floor(Math.random()*choices.length)]
     var visible = self.getVisibleRobots();
-    //self.log(visible);
     var enemies = combat.get_visible_enemies(self.me.team, visible);
     var curr_loc = {'x': self.me.x, 'y':self.me.y};
     if (enemies.length !== 0){
@@ -47,7 +44,7 @@ prophet.takeTurn = (self) => {
             return self.attack(attack.x, attack.y);      
         }                    
     }
-    if(self.step < 3 ||visible.length > 8){
+    if(self.step < 6 ||visible.length > 8){
       
     
       currentPath[stepCounter] = [self.me.x,self.me.y];

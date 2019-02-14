@@ -11,7 +11,6 @@ var possibleOpponentCastleLocations = [];//y,x locations
 var currentPath = [];
 var castlePaths
 
-
 preacher.takeTurn = (self) => {
     if (self.step === 0) {
         castlePaths = resource.find_possible_castle_locations([self.me.x - 1, self.me.y - 1], self.map, self.fuel_map);
@@ -25,9 +24,9 @@ preacher.takeTurn = (self) => {
         var target = resource.find_nearest_node(curr_loc, enemies);
         //Check if in range
         var dist = movement.get_distance([curr_loc.x, curr_loc.y], [target.x, target.y]);
-        if (dist <= 4) {
+        if (dist <= 3) {
             var attack = combat.get_relative_position(curr_loc, target);
-            return self.attack(attack.x, attack.y);
+            return self.attack(attack.x+1, attack.y-1);
         }
     }
     if (self.step < 6 || visible.length > 2) {
