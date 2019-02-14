@@ -4,6 +4,7 @@ import * as combat from './combat.js';
 import pilgrim from './pilgrim.js';
 import * as movement from './movement.js';
 import castle from './castle.js';
+import church from './church.js';
 import prophet from './prophet.js';
 import crusader from './crusader.js';
 import preacher from './preacher.js';
@@ -27,6 +28,8 @@ class MyRobot extends BCAbstractRobot {
       return crusader.takeTurn(this);
     } else if (this.me.unit === SPECS.PREACHER) {
       return preacher.takeTurn(this);
+    } else if (this.me.unit === SPECS.CHURCH) {
+      return church.takeTurn(this);
     } else if (this.me.unit === SPECS.CASTLE) {
       //this.myType = castle;
       return castle.takeTurn(this);
