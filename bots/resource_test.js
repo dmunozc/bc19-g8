@@ -1,3 +1,64 @@
+var movement = require('../bots/movement_test.js');
+
+/**
+ * This function finds clusters of resources.
+ * 
+ * @param {list} resources  a list of objects with x and y parameters 
+ * @param {list} friendly_locs  a list of objects with x and y properties (set
+ *                              to 0 if you do not want this)
+ * @param {list} enemy_locs a list of objects with x and y properties (set to
+ *                           0 if you do not want this)
+ * 
+ * @returns {list} a list of objects with x and y properties.
+ */
+exports.find_clusters = function(list, friendly_locs,enemy_locs){
+
+  var result = [];
+  var resources = list.slice();
+
+  while (resources.length > 0){
+    var curr = resources[0];
+    result.push(curr);
+    resources.splice(0, 1);
+  
+    var updated = this.update_nodes(curr, list, []);
+
+    for (var i = 0; i < updated.length; i++){
+      if (updated[i].dist <= 5){
+        for (var j = 0; j < resources.length; j++){
+          if (resources[j].x === updated[i].x && resources[j].y === updated[i].y) {
+            resources.splice(j, 1);
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+/**
+ * Checks to see if the resource is a cluster near friendly or
+ * enemy castles.
+ * 
+ * @param {object} resource_loc 
+ * @param {list} friendly_locs 
+ * @param {list} enemy_locs
+ * 
+ * @returns {boolean} 
+ */
+exports.check_clusters = function(resource_loc,friendly_locs,enemy_locs){
+  if (friendly_locs === 0 && enemy_locs === 0){
+    return false;
+  }
+  var total_locs = friendly_locs.concat(enemy_locs);
+  for (var i = 0; i < total_locs.length; i++){
+    var dist = movement.get_distance([resource_loc.x, resource_loc.y], [total_locs[i].x], total_locs[i].y);
+    if (dist > 4){
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * This function is used to find nearby nodes for the castle so that it knows
@@ -37,6 +98,7 @@ exports.find_nearby_nodes = function(loc,list,visible,range){
  * @returns {int} returns a count of unit
  */
 exports.get_number_of_units = function(visible,unit){
+
   var count = 0;
   for (var i = 0; i < visible.length; i++){
     if (visible[i].unit === unit){
@@ -45,7 +107,6 @@ exports.get_number_of_units = function(visible,unit){
   }
   return count;
 }
-
 /**
  * Takes a 2D map grid and returns a list of objects with
  * x and y coordinates wherever the map has true.
@@ -92,7 +153,7 @@ exports.find_nearest_node = function(loc,list){
     var min_dist = 10000000;
     var index;
     for (var i = 0; i < list.length; i++) {
-        var dist = this.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
+        var dist = movement.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
         if (dist < min_dist) {
             min_dist = dist;
             index = i;
@@ -116,7 +177,7 @@ exports.find_nearest_node = function(loc,list){
 exports.update_nodes = function(loc,list,visible){
 
     for (var i = 0; i < list.length; i++){
-        var dist = this.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
+        var dist = movement.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
         list[i].dist = dist;
         for (var j = 0; j < visible.length; j++){
             if (visible[j].x === list[i].x && visible[j].y === list[i].y){
@@ -130,10 +191,10 @@ exports.update_nodes = function(loc,list,visible){
 
 /**
  * Finds the nearest unoccupied coordinate from supplied location
- * Requires a call to update_nodes first.
+ * Requires a call to this.update_nodes first.
  * 
  * example usage:
- *  var karbonite = resource.update_nodes(curr_loc, resources, visible);
+ *  var karbonite = resource.this.update_nodes(curr_loc, resources, visible);
  *  var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, resources);
  * 
  * @param {object} loc  an object with x and y coordinates 
@@ -179,7 +240,7 @@ exports.find_nearest_unit = function(loc,list,type){
         for (var i = 0; i < list.length; i++){
             if (list[i].unit === type) {
 //                var dist = (Math.abs(list[i].x - loc.x)) + (Math.abs(list[i].y - loc.y));
-                var dist = this.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
+                var dist = movement.get_distance([loc.x, loc.y], [list[i].x, list[i].y]);
                 if (dist < min_dist) {
                     min_dist = dist;
                     index = i;
@@ -234,7 +295,7 @@ exports.get_axis_of_symmetry = function(resourceMap){
 /**
  * Finds possible castle locations
  * 
- * @requires get_axis_of_symmetry();
+ * @requires this.get_axis_of_symmetry();
  * 
  * example usage:
  *  var castlePaths = resource.find_possible_castle_locations([this.me.x - 1, 
@@ -249,14 +310,11 @@ exports.get_axis_of_symmetry = function(resourceMap){
 exports.find_possible_castle_locations = function(origin,map,resourceMap){
 
   var result = [];
-  var symm = get_axis_of_symmetry(resourceMap);
+  var symm = this.get_axis_of_symmetry(resourceMap);
   if(symm == 1){
     result = [(map.length - 1 - origin[0]),origin[1]];
   }else if(symm == 0){
     result = [origin[0],(map.length - 1 - origin[1])];
   }
   return result;
-}
-exports.get_distance = function(coor1,coor2){
-  return Math.sqrt(Math.pow(coor1[0] - coor2[0],2) + Math.pow(coor1[1] - coor2[1],2));
 }

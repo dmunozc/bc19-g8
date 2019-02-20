@@ -41,6 +41,7 @@ castle.takeTurn = (self) => {
         var karbonite = resource.get_resource_nodes(self.getKarboniteMap());
         var fuel = resource.get_resource_nodes(self.getFuelMap());
         var resources = karbonite.concat(fuel);
+        // self.log(resources);
         // Checks for resources in a 4 r^2 range
         var nearby_nodes = resource.find_nearby_nodes(castle_loc, resources, visible, 4);
         map = self.getPassableMap();

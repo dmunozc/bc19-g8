@@ -1304,7 +1304,7 @@ prophet.takeTurn = (self) => {
     //self.log(fuelPaths);
   }
   
-  if(self.step < 1){
+  if(self.step < 4){
     var nexStep = get_next_step_astar_turn([self.me.x,self.me.y],find_possible_castle_locations([self.me.x-1,self.me.y-1],self.map,self.fuel_map),self.map,
     currentPath$2.concat(get_visible_robots_list(self.getVisibleRobots())),2);
       var movex = nexStep[0] - self.me.x;
