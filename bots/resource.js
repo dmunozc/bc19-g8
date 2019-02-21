@@ -12,16 +12,18 @@ import * as movement from './movement.js'
  * @returns {list} a list of objects with x and y properties.
  */
 export function find_clusters(list,friendly_locs,enemy_locs){
-  
+
   var result = [];
   var resources = list.slice();
 
   while (resources.length > 0){
     var curr = resources[0];
-    result.push(curr);
     resources.splice(0, 1);
-  
+    if (!this.check_clusters(curr, friendly_locs, enemy_locs)){
+      result.push(curr);
+    }
     var updated = this.update_nodes(curr, list, []);
+
 
     for (var i = 0; i < updated.length; i++){
       if (updated[i].dist <= 5){
@@ -52,8 +54,8 @@ export function check_clusters(resource_loc,friendly_locs,enemy_locs){
   }
   var total_locs = friendly_locs.concat(enemy_locs);
   for (var i = 0; i < total_locs.length; i++){
-    var dist = movement.get_distance([resource_loc.x, resource_loc.y], [total_locs[i].x], total_locs[i].y);
-    if (dist > 4){
+    var dist = movement.get_distance([resource_loc.x, resource_loc.y], [total_locs[i].x, total_locs[i].y]);
+    if (dist <= 5){
       return true;
     }
   }

@@ -36,7 +36,8 @@ var resource_nodes1 = [{ x: 1, y: 2 }, { x: 1, y: 3 }, { x: 1, y: 4 }, { x: 9, y
 var resource_nodes2 = [{ "x": 15, "y": 1, "dist": 0, "free": true }, { "x": 30, "y": 1, "dist": 0, "free": true }, { "x": 2, "y": 16, "dist": 0, "free": true }, { "x": 43, "y": 16, "dist": 0, "free": true }, { "x": 10, "y": 23, "dist": 0, "free": true }, { "x": 35, "y": 23, "dist": 0, "free": true }, { "x": 5, "y": 35, "dist": 0, "free": true }, { "x": 40, "y": 35, "dist": 0, "free": true }, { "x": 11, "y": 0, "dist": 0, "free": true }, { "x": 34, "y": 0, "dist": 0, "free": true }, { "x": 13, "y": 2, "dist": 0, "free": true }, { "x": 32, "y": 2, "dist": 0, "free": true }, { "x": 5, "y": 17, "dist": 0, "free": true }, { "x": 40, "y": 17, "dist": 0, "free": true }, { "x": 2, "y": 18, "dist": 0, "free": true }, { "x": 43, "y": 18, "dist": 0, "free": true }, { "x": 9, "y": 23, "dist": 0, "free": true }, { "x": 36, "y": 23, "dist": 0, "free": true }, { "x": 5, "y": 34, "dist": 0, "free": true }, { "x": 40, "y": 34, "dist": 0, "free": true }];
 // Resources on map seed 1723414601
 var resource_nodes3 = [{"x":14,"y":8,"dist":0,"free":true},{"x":35,"y":8,"dist":0,"free":true},{"x":3,"y":13,"dist":0,"free":true},{"x":46,"y":13,"dist":0,"free":true},{"x":6,"y":14,"dist":0,"free":true},{"x":43,"y":14,"dist":0,"free":true},{"x":2,"y":23,"dist":0,"free":true},{"x":47,"y":23,"dist":0,"free":true},{"x":1,"y":24,"dist":0,"free":true},{"x":48,"y":24,"dist":0,"free":true},{"x":7,"y":38,"dist":0,"free":true},{"x":42,"y":38,"dist":0,"free":true},{"x":19,"y":39,"dist":0,"free":true},{"x":30,"y":39,"dist":0,"free":true},{"x":18,"y":40,"dist":0,"free":true},{"x":31,"y":40,"dist":0,"free":true},{"x":13,"y":8,"dist":0,"free":true},{"x":36,"y":8,"dist":0,"free":true},{"x":5,"y":15,"dist":0,"free":true},{"x":44,"y":15,"dist":0,"free":true},{"x":0,"y":23,"dist":0,"free":true},{"x":49,"y":23,"dist":0,"free":true},{"x":2,"y":25,"dist":0,"free":true},{"x":47,"y":25,"dist":0,"free":true},{"x":18,"y":35,"dist":0,"free":true},{"x":31,"y":35,"dist":0,"free":true},{"x":5,"y":36,"dist":0,"free":true},{"x":44,"y":36,"dist":0,"free":true},{"x":18,"y":37,"dist":0,"free":true},{"x":31,"y":37,"dist":0,"free":true},{"x":19,"y":38,"dist":0,"free":true},{"x":30,"y":38,"dist":0,"free":true},{"x":5,"y":39,"dist":0,"free":true},{"x":44,"y":39,"dist":0,"free":true}]
-
+var friendly_castles3 = [{"x":5,"y":38},{"x":4,"y":14}];
+var enemy_castles3 = [{"x":44,"y":38,"dist":39},{"x":45,"y":14,"dist":46.647615158762406}];
 
 
 /** Testing resource.get_resource_nodes */
@@ -111,5 +112,8 @@ var cluster1 = resource.find_clusters(resource_nodes2, 0, 0);
 test.assert(cluster1.length === 8);
 var cluster2 = resource.find_clusters(resource_nodes3, 0, 0);
 test.assert(cluster2.length === 10);
+// When we add enemy and friendly castles, there are less nodes
+var cluster3 = resource.find_clusters(resource_nodes3, friendly_castles3, enemy_castles3);
+test.assert(cluster3.length === 6);
 // var updated1 = resource.update_nodes({x:0, y:0}, resources, []);
 // console.log(updated1);
