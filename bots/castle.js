@@ -3,6 +3,7 @@ import * as combat from './combat.js';
 import * as resource from './resource.js';
 import * as build from './build.js';
 import * as movement from './movement.js';
+import * as message from './message.js';
 import pilgrim from './pilgrim.js';
 
 const castle = {};
@@ -14,6 +15,9 @@ var castlePaths
 var pilgrimCount = 0;
 var castle_loc = { x: 0, y: 0 };
 var map = [];
+var friendly_castles = [];
+var enemy_castles = [];
+var numCastles = 0;
 var nearbyNodeCount = 0;
 
 castle.takeTurn = (self) => {
@@ -41,21 +45,49 @@ castle.takeTurn = (self) => {
         var karbonite = resource.get_resource_nodes(self.getKarboniteMap());
         var fuel = resource.get_resource_nodes(self.getFuelMap());
         var resources = karbonite.concat(fuel);
+        // self.log(resources);
         // Checks for resources in a 4 r^2 range
         var nearby_nodes = resource.find_nearby_nodes(castle_loc, resources, visible, 4);
         map = self.getPassableMap();
         // Build 1 more pilgrim so it can go off and build a church
-        pilgrimCount = nearby_nodes.length + 1;
+        pilgrimCount = nearby_nodes.length;
         nearbyNodeCount = nearby_nodes.length;
         self.log(pilgrimCount);
+        numCastles = self.getVisibleRobots().length;
+        friendly_castles.push({"x": self.me.x, "y": self.me.y});
+        self.signal(1, Math.pow(self.getPassableMap().length, 2));
+        numCastles--;
+
     }
-    // This is to check to see if we need to replace any pilgrims
-    // if (self.step % 50 === 49){
-    //   var visible = self.getVisibleRobots(); 
-    //   var tempCount = resource.get_number_of_units(visible, 2);
-    //   pilgrimCount = nearbyNodeCount - tempCount;
-    //   self.log("New pilgrim count!" + pilgrimCount);
-    // }
+
+    if (self.step <= numCastles){
+        self.signal(1, Math.pow(self.getPassableMap().length, 2));
+        self.castleTalk(1);
+    }
+
+    if(self.step > 0 && numCastles != 0){
+        self.castleTalk(1); 
+        var visible = self.getVisibleRobots();
+        self.log(visible);
+        for (var i = 0; i < visible.length; i++){
+            if (visible[i].castle_talk === 1 && visible[i].x != self.mex && visible[i].y != self.me.y){
+                friendly_castles.push({"x": visible[i].x, "y":visible[i].y});
+                numCastles--;
+            } 
+        }
+        self.log(friendly_castles);
+    }
+    // We can calculate enemy castles now
+    if (numCastles === 0 && enemy_castles.length < friendly_castles.length){
+        for (var i = 0; i < friendly_castles.length; i++){
+            var enemy = resource.find_possible_castle_locations([friendly_castles[i].x, friendly_castles[i].y], self.map, self.getKarboniteMap());
+            enemy_castles.push({"x":enemy[0], "y":enemy[1]});
+        }
+        // This just arranges by distance (might not be needed)
+        enemy_castles = resource.update_nodes(castle_loc, enemy_castles, []);
+        self.log(enemy_castles);
+
+    }
 
     if (self.step % 10 && pilgrimCount !== 0 && self.karbonite >= 10) {
         self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));

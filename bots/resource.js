@@ -1,6 +1,68 @@
 import * as movement from './movement.js'
 
 /**
+ * This function finds clusters of resources.
+ * 
+ * @param {list} list  a list of objects with x and y parameters 
+ * @param {list} friendly_locs  a list of objects with x and y properties (set
+ *                              to 0 if you do not want this)
+ * @param {list} enemy_locs a list of objects with x and y properties (set to
+ *                           0 if you do not want this)
+ * 
+ * @returns {list} a list of objects with x and y properties.
+ */
+export function find_clusters(list,friendly_locs,enemy_locs){
+
+  var result = [];
+  var resources = list.slice();
+
+  while (resources.length > 0){
+    var curr = resources[0];
+    resources.splice(0, 1);
+    if (!this.check_clusters(curr, friendly_locs, enemy_locs)){
+      result.push(curr);
+    }
+    var updated = this.update_nodes(curr, list, []);
+
+
+    for (var i = 0; i < updated.length; i++){
+      if (updated[i].dist <= 5){
+        for (var j = 0; j < resources.length; j++){
+          if (resources[j].x === updated[i].x && resources[j].y === updated[i].y) {
+            resources.splice(j, 1);
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+/**
+ * Checks to see if the resource is a cluster near friendly or
+ * enemy castles.
+ * 
+ * @param {object} resource_loc 
+ * @param {list} friendly_locs 
+ * @param {list} enemy_locs
+ * 
+ * @returns {boolean} 
+ */
+export function check_clusters(resource_loc,friendly_locs,enemy_locs){
+  if (friendly_locs === 0 && enemy_locs === 0){
+    return false;
+  }
+  var total_locs = friendly_locs.concat(enemy_locs);
+  for (var i = 0; i < total_locs.length; i++){
+    var dist = movement.get_distance([resource_loc.x, resource_loc.y], [total_locs[i].x, total_locs[i].y]);
+    if (dist <= 5){
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
  * This function is used to find nearby nodes for the castle so that it knows
  * how many pilgrims to make
  * 
@@ -36,7 +98,7 @@ export function find_nearby_nodes(loc,list,visible,range){
  * 
  * @returns {int} returns a count of unit
  */
-export function get_number_of_units(visible, unit){
+export function get_number_of_units(visible,unit){
   var count = 0;
   for (var i = 0; i < visible.length; i++){
     if (visible[i].unit === unit){

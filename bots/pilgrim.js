@@ -29,7 +29,6 @@ pilgrim.takeTurn = (self) => {
       castleLoc = resource.find_nearest_unit(curr_loc, visible, 1);
     }
   }
-
   var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, resources);
   // this.log("(" + nearest_karb.x + "," + nearest_karb.y+ ")");
 
