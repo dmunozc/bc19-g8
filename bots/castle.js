@@ -132,13 +132,18 @@ castle.takeTurn = (self) => {
         self.log("Resource clusters");
         self.log(resource_clusters);
         maxPilgrims = maxPilgrims + Math.ceil(resource_clusters.length/friendly_castles.length);
+        self.log("Max pilgrims: " + maxPilgrims);
     }
 
     if (self.step % 100 === 0){
         // we should adjust number of pilgrims periodically
         var count = 0;
+        self.log("Updating pilgrims");
+        self.log(visible);
         for (var i = 0; i < visible.length; i++){
-            if (visible[i].unit === 2){
+            var sig = visible[i].castle_talk;
+            // These are all the pilgrim castle talk signals
+            if (sig === 2 || sig === 10 || sig === 11){
                 count++;
             }
         }
@@ -146,7 +151,10 @@ castle.takeTurn = (self) => {
         if (pilgrimCount < 0){
             pilgrimCount = 0;
         }
+        self.log("***************************************");
         self.log("Pilgrim count updated: " + pilgrimCount);
+        self.log("***************************************");
+
     }
 
     /***************** BUILD SECTION  **********************/

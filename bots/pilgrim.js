@@ -27,6 +27,9 @@ pilgrim.takeTurn = (self) => {
   var resources = karbonite.concat(fuel);
   resources = resource.update_nodes(curr_loc, resources, visible);
 
+  //Using this to count pilgrims
+  self.castleTalk(2);
+
   if (castleLoc.x == -1) {
     if (resource.get_number_of_units(visible, 1) === 0) {
       castleLoc = resource.find_nearest_unit(curr_loc, visible, 0);
