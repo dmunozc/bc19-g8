@@ -14,6 +14,7 @@ var castlePaths
 var pilgrimCount = 0;
 var castle_loc = { x: 0, y: 0 };
 var map = [];
+var resource_list;
 var nearbyNodeCount = 0;
 
 church.takeTurn = (self) => {
@@ -42,12 +43,11 @@ church.takeTurn = (self) => {
         var visible = self.getVisibleRobots();
         var karbonite = resource.get_resource_nodes(self.getKarboniteMap());
         var fuel = resource.get_resource_nodes(self.getFuelMap());
-        var resources = karbonite.concat(fuel);
+        resource_list = karbonite.concat(fuel);
         // Checks for resources in a 4 r^2 range
-        var nearby_nodes = resource.find_nearby_nodes(castle_loc, resources, visible, 4);
+        var nearby_nodes = resource.find_nearby_nodes(castle_loc, resource_list, visible, 4);
         map = self.getPassableMap();
-        // Build 1 more pilgrim so it can go off and build a church
-        pilgrimCount = nearby_nodes.length + 1;
+        pilgrimCount = nearby_nodes.length - 1;
         nearbyNodeCount = nearby_nodes.length;
         self.log(pilgrimCount);
     }
@@ -63,7 +63,7 @@ church.takeTurn = (self) => {
         self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
         pilgrimCount--;
         var visible = self.getVisibleRobots();
-        var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+        var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
         var buildPlace = [build_loc.x, build_loc.y];
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
 
@@ -72,13 +72,13 @@ church.takeTurn = (self) => {
         if (self.step % 6 === 1 && pilgrimCount === 0 && self.karbonite >= 30) {
             // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
             var visible = self.getVisibleRobots();
-            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
             buildPlace = [build_loc.x, build_loc.y];
             return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
         }
         if (self.step % 6 === 5 && pilgrimCount === 0 && self.karbonite >= 25) {
             var visible = self.getVisibleRobots();
-            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
             buildPlace = [build_loc.x, build_loc.y];
             return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
 
@@ -86,7 +86,7 @@ church.takeTurn = (self) => {
     } else {
         if (self.step % 10 === 1 && pilgrimCount === 0 && self.karbonite >= 50) {
             var visible = self.getVisibleRobots();
-            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+            var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
             buildPlace = [build_loc.x, build_loc.y];
             return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
         }

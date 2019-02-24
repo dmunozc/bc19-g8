@@ -19,10 +19,10 @@ export function find_clusters(list,friendly_locs,enemy_locs){
   while (resources.length > 0){
     var curr = resources[0];
     resources.splice(0, 1);
-    if (!this.check_clusters(curr, friendly_locs, enemy_locs)){
+    if (!check_clusters(curr, friendly_locs, enemy_locs)){
       result.push(curr);
     }
-    var updated = this.update_nodes(curr, list, []);
+    var updated = update_nodes(curr, list, []);
 
 
     for (var i = 0; i < updated.length; i++){

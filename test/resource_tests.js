@@ -114,6 +114,7 @@ var cluster2 = resource.find_clusters(resource_nodes3, 0, 0);
 test.assert(cluster2.length === 10);
 // When we add enemy and friendly castles, there are less nodes
 var cluster3 = resource.find_clusters(resource_nodes3, friendly_castles3, enemy_castles3);
+console.log(cluster3);
 test.assert(cluster3.length === 6);
 // var updated1 = resource.update_nodes({x:0, y:0}, resources, []);
 // console.log(updated1);
