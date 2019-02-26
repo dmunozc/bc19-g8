@@ -32,7 +32,6 @@ First install the bc19
 	
 ## Unit Testing with description
 - Please refer to test/sample_test.js, which contains an example to give output with proper description.
-- sample_test.js gives some assertion errors but this can be taken as reference to write descriptions for the test cases.
 
 ### Useful Links
 - Trello board: https://trello.com/b/Osda0zr5
