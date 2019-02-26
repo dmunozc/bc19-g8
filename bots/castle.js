@@ -171,7 +171,7 @@ castle.takeTurn = (self) => {
 
     /***************** BUILD SECTION  **********************/
 
-    if (self.step % 10 === 0 && pilgrimCount !== 0 && self.karbonite >= (10 * friendly_castles.length) && self.fuel >= (50 * friendly_castles.length)) {
+    if (self.step % 10 === 0 && pilgrimCount >= 0 && self.karbonite >= (10 * friendly_castles.length) && self.fuel >= (50 * friendly_castles.length)) {
         self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
         pilgrimCount--;
         var visible = self.getVisibleRobots();
@@ -181,7 +181,7 @@ castle.takeTurn = (self) => {
 
     }
     if (self.step > 50) {
-        if (self.step % 6 === 1 && pilgrimCount === 0 && self.karbonite >= 60) {
+        if (self.step % 6 === 1 && pilgrimCount <= 0 && self.karbonite >= 100) {
             // self.log("Building a crusader at " + (self.me.x+1) + ", " + (self.me.y+1));
             var visible = self.getVisibleRobots();
             var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
@@ -196,7 +196,7 @@ castle.takeTurn = (self) => {
 
         // }
     } else {
-        if (self.step % 10 === 1 && pilgrimCount === 0 && self.karbonite >= 50) {
+        if (self.step % 10 === 1 && pilgrimCount <= 0 && self.karbonite >= 100) {
             var visible = self.getVisibleRobots();
             var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
             buildPlace = [build_loc.x, build_loc.y];

@@ -53,6 +53,7 @@ pilgrim.takeTurn = (self) => {
       // Their desitnation will be this node now
       destination = nearest_karb;
       hasBase = true;
+      currentPath = [];
       self.log("Mining at:");
       self.log(destination);
     }
@@ -78,6 +79,7 @@ pilgrim.takeTurn = (self) => {
     self.log("Received message");
     self.log(destination);
     if (destination.x === -1){
+      currentPath = [];
       return;
     }
     self.castleTalk(2);
@@ -94,7 +96,7 @@ pilgrim.takeTurn = (self) => {
       //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
       return self.mine();
     }
-    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [destination.x, destination.y], self.map, currentPath.push(movement.get_visible_robots_list(visible)), 2);
+    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [destination.x, destination.y], self.map, currentPath.concat(movement.get_visible_robots_list(visible)), 2);
     var movex = nexStep[0] - self.me.x;
     var movey = nexStep[1] - self.me.y;
     //this.log("location : " + this.me.x + "," +this.me.y);
@@ -133,7 +135,7 @@ pilgrim.takeTurn = (self) => {
       var dy = castleLoc.y - curr_loc.y;
       return self.give(dx, dy, self.me.karbonite, self.me.fuel);
     }
-    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [castleLoc.x, castleLoc.y], self.map, currentPath.push(movement.get_visible_robots_list(visible)), 2);
+    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [castleLoc.x, castleLoc.y], self.map, currentPath.concat(movement.get_visible_robots_list(visible)), 2);
     var movex = nexStep[0] - self.me.x;
     var movey = nexStep[1] - self.me.y;
     //self.log("location : " + self.me.x + "," +self.me.y);
