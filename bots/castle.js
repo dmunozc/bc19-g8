@@ -50,17 +50,27 @@ castle.takeTurn = (self) => {
         resource_list = karbonite.concat(fuel);
         self.log(resource_list);
         // Checks for resources in a 4 r^2 range
-        var nearby_nodes = resource.find_nearby_nodes(castle_loc, resource_list, visible, 4);
+        var nearby_nodes = resource.find_nearby_nodes(castle_loc, resource_list, visible, 8);
         map = self.getPassableMap();
         // Build 1 more pilgrim so it can go off and build a church
-        pilgrimCount = nearby_nodes.length;
+
+        numCastles = self.getVisibleRobots().length;
+
+        friendly_castles.push({"x": self.me.x, "y": self.me.y});
+        var enemy = resource.find_possible_castle_locations([self.me.x, self.me.y], self.map, self.getKarboniteMap());
+        enemy_castles.push({"x": enemy[0], "y": enemy[1]});
+        self.log(friendly_castles);
+        self.log(enemy_castles);
+        var temp_cluster = resource.find_clusters(resource_list, friendly_castles, enemy_castles);
+        resource_clusters = resource.update_nodes(castle_loc, temp_cluster, visible);
+        self.log(resource_clusters);
+        pilgrimCount = nearby_nodes.length + Math.floor(resource_clusters.length/numCastles);
+        self.log(pilgrimCount);
         maxPilgrims = pilgrimCount;
         nearbyNodeCount = nearby_nodes.length;
         self.log(pilgrimCount);
-        numCastles = self.getVisibleRobots().length;
-        friendly_castles.push({"x": self.me.x, "y": self.me.y});
-        self.signal(1, Math.pow(self.getPassableMap().length, 2));
-        self.castleTalk(1);
+        // self.signal(1, Math.pow(self.getPassableMap().length, 2));
+        // self.castleTalk(1);
         numCastles--;
 
     }
@@ -71,6 +81,8 @@ castle.takeTurn = (self) => {
         if (visible[i].castle_talk === 10){
             self.log("pilgrim needs loc");
             if (visible[i].x){
+                self.log("I am going to transmit to:");
+                self.log(visible[i]);
                 var reset = false;
                 if (resource_clusters.length === 1){
                     reset = true;
@@ -95,50 +107,55 @@ castle.takeTurn = (self) => {
     }
 
 
-    // Sending a signal to determine number of castles
-    if (self.step <= numCastles){
-        self.signal(1, Math.pow(self.getPassableMap().length, 2));
-        self.castleTalk(1);
-    }
+    // // Sending a signal to determine number of castles
+    // if (self.step <= numCastles){
+    //     self.signal(1, Math.pow(self.getPassableMap().length, 2));
+    //     self.castleTalk(1);
+    // }
 
-    // We can add to friendly castle array
-    if(self.step > 0 && numCastles != 0){
-        self.castleTalk(1); 
-        var visible = self.getVisibleRobots();
-        self.log(visible);
-        for (var i = 0; i < visible.length; i++){
-            if (visible[i].castle_talk === 1 && visible[i].x != self.me.x && visible[i].y != self.me.y){
-                friendly_castles.push({"x": visible[i].x, "y":visible[i].y});
-                numCastles--;
-            } 
-        }
-        self.log("Friendly castles");
-        self.log(friendly_castles);
-    }
-    // We can calculate enemy castles now
-    if (numCastles === 0 && enemy_castles.length < friendly_castles.length){
-        for (var i = 0; i < friendly_castles.length; i++){
-            var enemy = resource.find_possible_castle_locations([friendly_castles[i].x, friendly_castles[i].y], self.map, self.getKarboniteMap());
-            enemy_castles.push({"x":enemy[0], "y":enemy[1]});
-        }
-        // This just arranges by distance (might not be needed)
-        enemy_castles = resource.update_nodes(castle_loc, enemy_castles, []);
-        self.log("Enemy castles");
-        self.log(enemy_castles);
-    }
-    // We can find the clusters now
-    if (enemy_castles.length === friendly_castles.length && resource_clusters.length < 1){
-        resource_clusters = resource.find_clusters(resource_list, friendly_castles, enemy_castles);
-        self.log("Resource clusters");
-        self.log(resource_clusters);
-        maxPilgrims = maxPilgrims + Math.ceil(resource_clusters.length/friendly_castles.length);
-    }
+    // // We can add to friendly castle array
+    // if(self.step > 0 && numCastles != 0){
+    //     self.castleTalk(1); 
+    //     var visible = self.getVisibleRobots();
+    //     self.log(visible);
+    //     for (var i = 0; i < visible.length; i++){
+    //         if (visible[i].castle_talk === 1 && visible[i].x != self.me.x && visible[i].y != self.me.y){
+    //             friendly_castles.push({"x": visible[i].x, "y":visible[i].y});
+    //             numCastles--;
+    //         } 
+    //     }
+    //     self.log("Friendly castles");
+    //     self.log(friendly_castles);
+    // }
+    // // We can calculate enemy castles now
+    // if (numCastles === 0 && enemy_castles.length < friendly_castles.length){
+    //     for (var i = 0; i < friendly_castles.length; i++){
+    //         var enemy = resource.find_possible_castle_locations([friendly_castles[i].x, friendly_castles[i].y], self.map, self.getKarboniteMap());
+    //         enemy_castles.push({"x":enemy[0], "y":enemy[1]});
+    //     }
+    //     // This just arranges by distance (might not be needed)
+    //     enemy_castles = resource.update_nodes(castle_loc, enemy_castles, []);
+    //     self.log("Enemy castles");
+    //     self.log(enemy_castles);
+    // }
+    // // We can find the clusters now
+    // if (enemy_castles.length === friendly_castles.length && resource_clusters.length < 1){
+    //     resource_clusters = resource.find_clusters(resource_list, friendly_castles, enemy_castles);
+    //     self.log("Resource clusters");
+    //     self.log(resource_clusters);
+    //     maxPilgrims = maxPilgrims + Math.ceil(resource_clusters.length/friendly_castles.length);
+    //     self.log("Max pilgrims: " + maxPilgrims);
+    // }
 
-    if (self.step % 100 === 0){
+    if (self.step % 100 === 99){
         // we should adjust number of pilgrims periodically
         var count = 0;
+        self.log("Updating pilgrims");
+        self.log(visible);
         for (var i = 0; i < visible.length; i++){
-            if (visible[i].unit === 2){
+            var sig = visible[i].castle_talk;
+            // These are all the pilgrim castle talk signals
+            if (sig === 2 || sig === 10 || sig === 11){
                 count++;
             }
         }
@@ -146,12 +163,15 @@ castle.takeTurn = (self) => {
         if (pilgrimCount < 0){
             pilgrimCount = 0;
         }
+        self.log("***************************************");
         self.log("Pilgrim count updated: " + pilgrimCount);
+        self.log("***************************************");
+
     }
 
     /***************** BUILD SECTION  **********************/
 
-    if (self.step % 10 && pilgrimCount !== 0 && self.karbonite >= (10 * friendly_castles.length) && self.fuel >= (50 * friendly_castles.length)) {
+    if (self.step % 10 === 0 && pilgrimCount !== 0 && self.karbonite >= (10 * friendly_castles.length) && self.fuel >= (50 * friendly_castles.length)) {
         self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
         pilgrimCount--;
         var visible = self.getVisibleRobots();
