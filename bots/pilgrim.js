@@ -32,7 +32,7 @@ pilgrim.takeTurn = (self) => {
   //Using this to count pilgrims
   self.castleTalk(2);
   step++;
-
+  //self.log(currentPath);
   if (step === 0) {
     self.log("pilgrim initializing....");
     // This assigns castle loc to nearest castle or church
@@ -94,7 +94,7 @@ pilgrim.takeTurn = (self) => {
       //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
       return self.mine();
     }
-    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [destination.x, destination.y], self.map, currentPath.push(movement.get_visible_robots_list(visible)), 2);
+    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [destination.x, destination.y], self.map, currentPath.concat(movement.get_visible_robots_list(visible)), 2);
     var movex = nexStep[0] - self.me.x;
     var movey = nexStep[1] - self.me.y;
     //this.log("location : " + this.me.x + "," +this.me.y);
@@ -102,6 +102,11 @@ pilgrim.takeTurn = (self) => {
     if (!hasBase){
       currentPath.push([self.me.x, self.me.y]);
     }
+    if( movement.check_if_coor_in_path(nexStep,movement.get_visible_robots_list(visible))){
+      ///self.log("false");
+      currentPath.concat();
+    }
+    //self.log("haaaaaaaaaaa   " +   self.map[nexStep[1]][nexStep[0]]);
     return self.move(movex, movey);
   } else {
     var dist = movement.get_distance([self.me.x, self.me.y], [castleLoc.x, castleLoc.y]);
@@ -133,11 +138,14 @@ pilgrim.takeTurn = (self) => {
       var dy = castleLoc.y - curr_loc.y;
       return self.give(dx, dy, self.me.karbonite, self.me.fuel);
     }
-    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [castleLoc.x, castleLoc.y], self.map, currentPath.push(movement.get_visible_robots_list(visible)), 2);
+    var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [castleLoc.x, castleLoc.y], 
+    
+    self.map, currentPath.concat(movement.get_visible_robots_list(visible)), 2);
     var movex = nexStep[0] - self.me.x;
     var movey = nexStep[1] - self.me.y;
     //self.log("location : " + self.me.x + "," +self.me.y);
     //self.log("movement : " + movex + ";" + movey);
+    //self.log("here");
     return self.move(movex, movey);
   }
 
