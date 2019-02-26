@@ -34,7 +34,7 @@ pilgrim.takeTurn = (self) => {
   step++;
 
   if (step === 0) {
-    self.log("pilgrim initializing....");
+    // self.log("pilgrim initializing....");
     // This assigns castle loc to nearest castle or church
     if (resource.get_number_of_units(visible, 1) === 0) {
       castleLoc = resource.find_nearest_unit(curr_loc, visible, 0);
@@ -47,15 +47,15 @@ pilgrim.takeTurn = (self) => {
     resource_list = karbonite.concat(fuel);
     var updated_nodes = resource.update_nodes(curr_loc, resource_list, visible);    
     var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, updated_nodes);
-    self.log("Nearest karb");
-    self.log(nearest_karb);
+    // self.log("Nearest karb");
+    // self.log(nearest_karb);
     if (movement.get_distance([curr_loc.x, curr_loc.y], [nearest_karb.x, nearest_karb.y]) <= 8){
       // Their desitnation will be this node now
       destination = nearest_karb;
       hasBase = true;
       currentPath = [];
-      self.log("Mining at:");
-      self.log(destination);
+      // self.log("Mining at:");
+      // self.log(destination);
     }
   }
 
@@ -76,8 +76,8 @@ pilgrim.takeTurn = (self) => {
   if (destination.x === -1){
     self.castleTalk(10);
     destination = message.parse_message(self, visible);
-    self.log("Received message");
-    self.log(destination);
+    // self.log("Received message");
+    // self.log(destination);
     if (destination.x === -1){
       currentPath = [];
       return;
@@ -117,7 +117,7 @@ pilgrim.takeTurn = (self) => {
       var num_churches = resource.get_number_of_units(visible, 1);
       if (num_churches === 0) {
         self.castleTalk(11);
-        self.log("I am going to build a church");
+        // self.log("I am going to build a church");
         var build_loc = build.find_location_to_build_unit(curr_loc, self.getPassableMap(), visible, resource_list, self);
         var buildPlace = [build_loc.x, build_loc.y];
         return self.buildUnit(SPECS.CHURCH, buildPlace[0], buildPlace[1]);

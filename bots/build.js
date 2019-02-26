@@ -31,7 +31,7 @@ export function find_location_to_build_unit(castleLoc, map, list, resources, r) 
         if (build_loc.x > boundary || build_loc.y > boundary){
             continue;
         } else if (map[build_loc.y][build_loc.x] === true && find_if_robot_is_present([build_loc.x, build_loc.y], list) === true && find_if_robot_is_present([build_loc.x, build_loc.y], resources) === true){
-            r.log("build loc: " + locations[i].x + ", " + locations[i].y);
+            // r.log("build loc: " + locations[i].x + ", " + locations[i].y);
             return locations[i];
         } 
     }

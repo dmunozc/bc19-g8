@@ -6,7 +6,6 @@ export function format_integer(int){
 }
 
 export function transmit_location(r,location,range){
-    r.log("1"+format_integer(location.x) + format_integer(location.y));
     return r.signal(parseInt("1"+format_integer(location.x)+format_integer(location.y)), range);
 }
 

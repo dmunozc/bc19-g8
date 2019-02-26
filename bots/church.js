@@ -53,12 +53,12 @@ church.takeTurn = (self) => {
             if (visible[i].unit === 2 && movement.get_distance([castle_loc.x, castle_loc.y], [visible[i].x, visible[i].y]) <= 10){
                 pilgrimCount--;
             }
-            self.log("Church: nearby pilgrims");
-            self.log(pilgrimCount);
+            // self.log("Church: nearby pilgrims");
+            // self.log(pilgrimCount);
         }
         pilgrimCount += nearby_nodes.length;
         nearbyNodeCount = nearby_nodes.length;
-        self.log(pilgrimCount);
+        // self.log(pilgrimCount);
     }
     // This is to check to see if we need to replace any pilgrims
     // if (self.step % 50 === 49){
@@ -69,7 +69,7 @@ church.takeTurn = (self) => {
     // }
 
     if (self.step % 10 && pilgrimCount >= 0 && self.karbonite >= 10) {
-        self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
+        // self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
         pilgrimCount--;
         var visible = self.getVisibleRobots();
         var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
@@ -99,22 +99,22 @@ church.takeTurn = (self) => {
             buildPlace = [build_loc.x, build_loc.y];
             return self.buildUnit(SPECS.PROPHET, buildPlace[0], buildPlace[1]);
         }
-        else {
-            var visible = self.getVisibleRobots();
-            var enemies = combat.get_visible_enemies(self.me.team, visible);
-            var curr_loc = { 'x': self.me.x, 'y': self.me.y };
-            if (enemies.length !== 0) {
-                //self.log("We see an enemy!");
-                var target = resource.find_nearest_node(curr_loc, enemies);
-                //Check if in range
-                var dist = movement.get_distance([curr_loc.x, curr_loc.y], [target.x, target.y]);
-                if (dist <= 8) {
-                    //self.log("Attacking enemy!");
-                    var attack = combat.get_relative_position(curr_loc, target);
-                    return self.attack(attack.x, attack.y);
-                }
-            }
-        }
+        // else {
+        //     var visible = self.getVisibleRobots();
+        //     var enemies = combat.get_visible_enemies(self.me.team, visible);
+        //     var curr_loc = { 'x': self.me.x, 'y': self.me.y };
+        //     if (enemies.length !== 0) {
+        //         //self.log("We see an enemy!");
+        //         var target = resource.find_nearest_node(curr_loc, enemies);
+        //         //Check if in range
+        //         var dist = movement.get_distance([curr_loc.x, curr_loc.y], [target.x, target.y]);
+        //         if (dist <= 8) {
+        //             //self.log("Attacking enemy!");
+        //             var attack = combat.get_relative_position(curr_loc, target);
+        //             return self.attack(attack.x, attack.y);
+        //         }
+        //     }
+        // }
     }
 
 };
