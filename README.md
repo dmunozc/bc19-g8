@@ -24,16 +24,11 @@ First install the bc19
 - Run test by issuing command on root folder "mocha test"
 
 ## Code Coverage
--	Firstly, run npm install
-	npm install -g bc19
--	Then, install mocha
-	npm install -g mocha
--	Then, install nyc
-	npm install -g nyc
--	package.json file should be added
-	(Please refer package.json file)
--	Then run tests and code coverage. This runs tests and also gives code coverage.
-	npm run test-with-coverage
+-	Firstly, run npm install, npm install -g bc19
+-	Then, install mocha, npm install -g mocha
+-	Then, install nyc, npm install -g nyc
+-	package.json file should be added (Please refer package.json file)
+-	Then run tests and code coverage. This runs tests and also gives code coverage.	npm run test-with-coverage
 	
 ## Unit Testing with description
 - Please refer to test/sample_test.js, which contains an example to give output with proper description.
