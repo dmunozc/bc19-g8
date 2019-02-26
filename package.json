@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "mocha",
+    "test-with-coverage": "nyc --reporter=text mocha"
+  },
+  "devDependencies": {
+    "mocha": "^6.0.2"
+}
+}
