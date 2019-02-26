@@ -23,6 +23,22 @@ First install the bc19
 - Have to make sure there are no imports on top
 - Run test by issuing command on root folder "mocha test"
 
+## Code Coverage
+-	Firstly, run npm install
+	npm install -g bc19
+-	Then, install mocha
+	npm install -g mocha
+-	Then, install nyc
+	npm install -g nyc
+-	package.json file should be added
+	(Please refer package.json file)
+-	Then run tests and code coverage. This runs tests and also gives code coverage.
+	npm run test-with-coverage
+	
+## Unit Testing with description
+- Please refer to test/sample_test.js, which contains an example to give output with proper description.
+- sample_test.js gives some assertion errors but this can be taken as reference to write descriptions for the test cases.
+
 ### Useful Links
 - Trello board: https://trello.com/b/Osda0zr5
 - Battlecode docs: https://battlecode.org/dash/docs
