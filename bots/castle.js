@@ -107,6 +107,7 @@ castle.takeTurn = (self) => {
     }
 
 
+<<<<<<< HEAD
     // // Sending a signal to determine number of castles
     // if (self.step <= numCastles){
     //     self.signal(1, Math.pow(self.getPassableMap().length, 2));
@@ -148,6 +149,49 @@ castle.takeTurn = (self) => {
     // }
 
     if (self.step % 100 === 99){
+=======
+    // Sending a signal to determine number of castles
+    if (self.step <= numCastles){
+        self.signal(1, Math.pow(self.getPassableMap().length, 2));
+        self.castleTalk(1);
+    }
+
+    // We can add to friendly castle array
+    if(self.step > 0 && numCastles != 0){
+        self.castleTalk(1); 
+        var visible = self.getVisibleRobots();
+        self.log(visible);
+        for (var i = 0; i < visible.length; i++){
+            if (visible[i].castle_talk === 1 && visible[i].x != self.me.x && visible[i].y != self.me.y){
+                friendly_castles.push({"x": visible[i].x, "y":visible[i].y});
+                numCastles--;
+            } 
+        }
+        self.log("Friendly castles");
+        self.log(friendly_castles);
+    }
+    // We can calculate enemy castles now
+    if (numCastles === 0 && enemy_castles.length < friendly_castles.length){
+        for (var i = 0; i < friendly_castles.length; i++){
+            var enemy = resource.find_possible_castle_locations([friendly_castles[i].x, friendly_castles[i].y], self.map, self.getKarboniteMap());
+            enemy_castles.push({"x":enemy[0], "y":enemy[1]});
+        }
+        // This just arranges by distance (might not be needed)
+        enemy_castles = resource.update_nodes(castle_loc, enemy_castles, []);
+        self.log("Enemy castles");
+        self.log(enemy_castles);
+    }
+    // We can find the clusters now
+    if (enemy_castles.length === friendly_castles.length && resource_clusters.length < 1){
+        resource_clusters = resource.find_clusters(resource_list, friendly_castles, enemy_castles);
+        self.log("Resource clusters");
+        self.log(resource_clusters);
+        maxPilgrims = maxPilgrims + Math.ceil(resource_clusters.length/friendly_castles.length);
+        self.log("Max pilgrims: " + maxPilgrims);
+    }
+
+    if (self.step % 100 === 0){
+>>>>>>> e3e03e3f8235c4083475e51c1b74518c6f4ab6f4
         // we should adjust number of pilgrims periodically
         var count = 0;
         self.log("Updating pilgrims");

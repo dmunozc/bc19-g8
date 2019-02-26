@@ -31,11 +31,16 @@ pilgrim.takeTurn = (self) => {
 
   //Using this to count pilgrims
   self.castleTalk(2);
+<<<<<<< HEAD
   step++;
 
   if (step === 0) {
     self.log("pilgrim initializing....");
     // This assigns castle loc to nearest castle or church
+=======
+
+  if (castleLoc.x == -1) {
+>>>>>>> e3e03e3f8235c4083475e51c1b74518c6f4ab6f4
     if (resource.get_number_of_units(visible, 1) === 0) {
       castleLoc = resource.find_nearest_unit(curr_loc, visible, 0);
     } else {
