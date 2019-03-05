@@ -13,6 +13,9 @@
 export function get_visible_enemies(team, list) {
     var res = [];
     for (var i = 0; i < list.length; i++) {
+      if(typeof list[i].team === 'undefined' ){
+        continue;
+      }
         if (list[i].team !== team) {
             res.push(list[i]);
         }

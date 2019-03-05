@@ -32,9 +32,9 @@ pilgrim.takeTurn = (self) => {
   //Using this to count pilgrims
   self.castleTalk(2);
   step++;
-  //self.log(currentPath);
+  ////self.log(currentPath);
   if (step === 0) {
-    self.log("pilgrim initializing....");
+    //self.log("pilgrim initializing....");
     // This assigns castle loc to nearest castle or church
     if (resource.get_number_of_units(visible, 1) === 0) {
       castleLoc = resource.find_nearest_unit(curr_loc, visible, 0);
@@ -47,15 +47,26 @@ pilgrim.takeTurn = (self) => {
     resource_list = karbonite.concat(fuel);
     var updated_nodes = resource.update_nodes(curr_loc, resource_list, visible);    
     var nearest_karb = resource.find_nearest_unoccupied_node(curr_loc, updated_nodes);
-    self.log("Nearest karb");
-    self.log(nearest_karb);
+    //self.log("Nearest karb");
+    //self.log(nearest_karb);
     if (movement.get_distance([curr_loc.x, curr_loc.y], [nearest_karb.x, nearest_karb.y]) <= 8){
       // Their desitnation will be this node now
       destination = nearest_karb;
       hasBase = true;
-      self.log("Mining at:");
-      self.log(destination);
+      //self.log("Mining at:");
+      //self.log(destination);
     }
+  }
+  // this.log("(" + nearest_karb.x + "," + nearest_karb.y+ ")");
+  if (destination.x == -1){
+    self.castleTalk(10);
+    destination = message.parse_message(self, visible);
+    //self.log("Received message");
+    //self.log(destination);
+    if (destination.x == -1){
+      return;
+    }
+    self.castleTalk(2);
   }
 
   //This is a quick fix to the signalling, sometimes 
@@ -71,17 +82,7 @@ pilgrim.takeTurn = (self) => {
   }
 
 
-  // this.log("(" + nearest_karb.x + "," + nearest_karb.y+ ")");
-  if (destination.x === -1){
-    self.castleTalk(10);
-    destination = message.parse_message(self, visible);
-    self.log("Received message");
-    self.log(destination);
-    if (destination.x === -1){
-      return;
-    }
-    self.castleTalk(2);
-  }
+  
 
 
 
@@ -90,7 +91,7 @@ pilgrim.takeTurn = (self) => {
   if (self.me.karbonite !== 20 && self.me.fuel !== 100 && destination.x != -1) {
     if (curr_loc.x === destination.x && curr_loc.y === destination.y) {
       hasBase = true;
-      //self.log("I am mining!");
+      ////self.log("I am mining!");
       //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
       return self.mine();
     }
@@ -102,11 +103,7 @@ pilgrim.takeTurn = (self) => {
     if (!hasBase){
       currentPath.push([self.me.x, self.me.y]);
     }
-    if( movement.check_if_coor_in_path(nexStep,movement.get_visible_robots_list(visible))){
-      ///self.log("false");
-      currentPath.concat();
-    }
-    //self.log("haaaaaaaaaaa   " +   self.map[nexStep[1]][nexStep[0]]);
+    ////self.log("haaaaaaaaaaa   " +   self.map[nexStep[1]][nexStep[0]]);
     return self.move(movex, movey);
   } else {
     var dist = movement.get_distance([self.me.x, self.me.y], [castleLoc.x, castleLoc.y]);
@@ -120,7 +117,7 @@ pilgrim.takeTurn = (self) => {
       var num_churches = resource.get_number_of_units(visible, 1);
       if (num_churches === 0) {
         self.castleTalk(11);
-        self.log("I am going to build a church");
+        //self.log("I am going to build a church");
         var build_loc = build.find_location_to_build_unit(curr_loc, self.getPassableMap(), visible, resource_list, self);
         var buildPlace = [build_loc.x, build_loc.y];
         return self.buildUnit(SPECS.CHURCH, buildPlace[0], buildPlace[1]);
@@ -132,7 +129,7 @@ pilgrim.takeTurn = (self) => {
 
     }
     if (dist <= Math.sqrt(2)) {
-      // self.log("I am unloading resources");
+      // //self.log("I am unloading resources");
       currentPath = [];
       var dx = castleLoc.x - curr_loc.x;
       var dy = castleLoc.y - curr_loc.y;
@@ -143,9 +140,9 @@ pilgrim.takeTurn = (self) => {
     self.map, currentPath.concat(movement.get_visible_robots_list(visible)), 2);
     var movex = nexStep[0] - self.me.x;
     var movey = nexStep[1] - self.me.y;
-    //self.log("location : " + self.me.x + "," +self.me.y);
-    //self.log("movement : " + movex + ";" + movey);
-    //self.log("here");
+    ////self.log("location : " + self.me.x + "," +self.me.y);
+    ////self.log("movement : " + movex + ";" + movey);
+    ////self.log("here");
     return self.move(movex, movey);
   }
 
