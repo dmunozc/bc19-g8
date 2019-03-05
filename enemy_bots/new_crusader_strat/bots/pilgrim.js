@@ -95,13 +95,11 @@ pilgrim.takeTurn = (self) => {
       //this.log("I am carrying " + this.me.fuel + " fuel, and " + this.me.karbonite);
       return self.mine();
     }
-    //self.log("here");
     var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [destination.x, destination.y], self.map, currentPath.concat(movement.get_visible_robots_list(visible)), 2);
     var movex = nexStep[0] - self.me.x;
     var movey = nexStep[1] - self.me.y;
-    //self.log("my pos  " + self.me.x + "  :  " + self.me.y);
-    //self.log("location : " + self.me.x + "," +self.me.y);
-   // self.log("movement : " + movex + ";" + movey);
+    //this.log("location : " + this.me.x + "," +this.me.y);
+    //this.log("movement : " + movex + ";" + movey);
     if (!hasBase){
       currentPath.push([self.me.x, self.me.y]);
     }
@@ -117,9 +115,9 @@ pilgrim.takeTurn = (self) => {
         castleLoc = resource.find_nearest_unit(curr_loc, visible, 0);
       }
       var num_churches = resource.get_number_of_units(visible, 1);
-      if (num_churches === 0 && self.karbonite >= 50 && self.fuel >= 200) {
+      if (num_churches === 0) {
         self.castleTalk(11);
-        //self.log("I am going to build a church");
+        self.log("I am going to build a church");
         var build_loc = build.find_location_to_build_unit(curr_loc, self.getPassableMap(), visible, resource_list, self);
         var buildPlace = [build_loc.x, build_loc.y];
         return self.buildUnit(SPECS.CHURCH, buildPlace[0], buildPlace[1]);
@@ -137,7 +135,6 @@ pilgrim.takeTurn = (self) => {
       var dy = castleLoc.y - curr_loc.y;
       return self.give(dx, dy, self.me.karbonite, self.me.fuel);
     }
-    //self.log("tetetettete");
     var nexStep = movement.get_next_step_astar_turn([self.me.x, self.me.y], [castleLoc.x, castleLoc.y], 
     
     self.map, currentPath.concat(movement.get_visible_robots_list(visible)), 2);

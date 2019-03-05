@@ -57,13 +57,7 @@ prophet.takeTurn = (self) => {
       
      // self.log(attack);
       return self.attack(attack.x, attack.y);      
-    }else if( dist <= 4 && target.unit == 3 && canMove == true){
-      self.log("movign away from crusader");
-      var nexStep = movement.get_next_step_astar_turn([self.me.x,self.me.y],[target.x -4 ,target.y -4],self.map,[],2);
-      var movex = nexStep[0] - self.me.x;
-      var movey = nexStep[1] - self.me.y;
-      return self.move(movex,movey);
-    }               
+    }                    
   }
   //this is to make sure we do more work if we are close to overdrawn
   if(self.time <20){

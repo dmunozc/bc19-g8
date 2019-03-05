@@ -35,7 +35,7 @@ church.takeTurn = (self) => {
 
     //self.log(buildPlace);
 
-    var visible = self.getVisibleRobots();
+var visible = self.getVisibleRobots();
     // Initialize to figure out how many pilgrims to build
     if (self.step < 1) {
         castle_loc.x = self.me.x;
@@ -60,8 +60,8 @@ church.takeTurn = (self) => {
     //   self.log("New pilgrim count!" + pilgrimCount);
     // }
 
-    if (self.step % 10 == 0 && pilgrimCount > 0 && self.karbonite >= 10*3 && self.fuel >= 50 + 400) {
-       // self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
+    if (self.step % 10 == 0 && pilgrimCount > 0 && self.karbonite >= 10*3) {
+        //self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
         pilgrimCount--;
         var visible = self.getVisibleRobots();
         var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, resource_list, self);
@@ -69,10 +69,8 @@ church.takeTurn = (self) => {
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
 
     }
-    if (  self.step >0 &&  self.step % prime == 0  && pilgrimCount === 0 && self.karbonite >= 25*3 && self.fuel >= 50 + 500) {
-      // self.log("building prophet");
-       //self.log(castle_loc);
-       //self.log(visible + "");
+    if (  self.step >0 &&  self.step % prime == 0  && pilgrimCount === 0 && self.karbonite >= 25*3 && self.fuel >= 50*3) {
+       
         var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
         buildPlace = [build_loc.x, build_loc.y];
          return self.buildUnit(Math.floor(Math.random() * (4 - 3 + 1) ) + 3, buildPlace[0], buildPlace[1]);

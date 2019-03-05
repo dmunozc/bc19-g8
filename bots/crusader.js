@@ -59,8 +59,8 @@ crusader.takeTurn = (self) => {
      // self.log(attack);
       return self.attack(attack.x, attack.y);      
     }else{
-      if (target.unit == 3){
-        //self.log("movign towards prophet");
+      if (target.unit == 4){
+        self.log("movign towards prophet");
          var nexStep = movement.get_next_step_astar_turn([self.me.x,self.me.y],[target.x,target.y],self.map,[],3);
           var movex = nexStep[0] - self.me.x;
           var movey = nexStep[1] - self.me.y;
