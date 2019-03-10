@@ -54,7 +54,7 @@ castle.takeTurn = (self) => {
   var enemyRobots = visible.filter(robot => robot.team != self.me.team && robot.signal_radius == -1);
 
   var nearby_attack_units = visible.filter(robot => robot.team === self.me.team && robot.unit >= 3)
-  if (nearby_attack_units.length >= minAttackUnits && resource_clusters.length > 0) {
+  if (self.step > 75  || (nearby_attack_units.length >= minAttackUnits && resource_clusters.length > 0)) {
     //We can build pilgrims to mine the clusters
     maxPilgrims += pilgrimDelta;
     pilgrimDelta = 0;
@@ -74,7 +74,7 @@ castle.takeTurn = (self) => {
     map = self.getPassableMap();
     // Build 1 more pilgrim so it can go off and build a church
     maxPilgrims = nearby_nodes.length;
-    self.log("start.  maxPIlgimrs  " + maxPilgrims);
+    //self.log("start.  maxPIlgimrs  " + maxPilgrims);
     // self.log(pilgrimCount);
     numCastles = visible.filter(robot => robot.team == self.me.team).length;
 
@@ -90,7 +90,7 @@ castle.takeTurn = (self) => {
       oldPrime = prime;
     }
     ////self.log(numCastles);
-    self.log("start. my prime is  " + prime);
+    //self.log("start. my prime is  " + prime);
     ////self.log(visible);
   }
   if(pilgrimCount == nearby_nodes.length){
@@ -284,7 +284,7 @@ castle.takeTurn = (self) => {
   }*/
   ////self.log("canBuild    "   + canBuild + "   prime   " + prime);
   if (self.step > 0 && self.step % prime == 0 && (pilgrimCount >= maxPilgrims || enemyRobots.length >= 1) && self.karbonite >= (25 + minimumKarb ) && (50 + minimumFuel) && canBuild == true) {
-    self.log("buidlattack unit");
+    //self.log("buidlattack unit");
     var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
     var buildPlace = [build_loc.x, build_loc.y];
     if (nearby_attack_units.length >= minAttackUnits){

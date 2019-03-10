@@ -47,11 +47,18 @@ church.takeTurn = (self) => {
         // Checks for resources in a 4 r^2 range
         var nearby_nodes = resource.find_nearby_nodes(castle_loc, resource_list, visible, 4);
         map = self.getPassableMap();
-         prime = movement.get_random_from_list([5,7,11,13]);
+         prime = movement.get_random_from_list([5,7,11]);
         pilgrimCount = nearby_nodes.length - 1;
         nearbyNodeCount = nearby_nodes.length;
         //self.log(pilgrimCount);
     }
+    
+     if (self.step > 0 && self.step < 4) {
+       var build_loc = build.find_location_to_build_unit(castle_loc, map, visible, self);
+        buildPlace = [build_loc.x, build_loc.y];
+         return self.buildUnit(Math.floor(Math.random() * (4 - 3 + 1) ) + 3, buildPlace[0], buildPlace[1]);
+       
+     }
     // This is to check to see if we need to replace any pilgrims
     // if (self.step % 50 === 49){
     //   var visible = self.getVisibleRobots(); 
@@ -69,7 +76,7 @@ church.takeTurn = (self) => {
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
 
     }
-    if (  self.step >0 &&  self.step % prime == 0  && pilgrimCount === 0 && self.karbonite >= 25*3 && self.fuel >= 50 + 500) {
+    if (  self.step >0 &&  self.step % prime == 0  && pilgrimCount === 0 && self.karbonite >= 25*3 && self.fuel >= 50 + 400) {
       // self.log("building prophet");
        //self.log(castle_loc);
        //self.log(visible + "");
