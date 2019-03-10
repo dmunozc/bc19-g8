@@ -20,6 +20,7 @@ var castle_loc = { x: 0, y: 0 };
 var map = [];
 var friendly_castles = [];
 var resource_list;
+var nearby_nodes;
 var enemy_castles = [];
 var numCastles = 0;
 var resource_clusters = [];
@@ -68,7 +69,7 @@ castle.takeTurn = (self) => {
     resource_list = karbonite.concat(fuel);
     ////self.log(resource_list);
     // Checks for resources in a 4 r^2 range
-    var nearby_nodes = resource.find_nearby_nodes(castle_loc, resource_list, visible, 8);
+    nearby_nodes = resource.find_nearby_nodes(castle_loc, resource_list, visible, 8);
     map = self.getPassableMap();
     // Build 1 more pilgrim so it can go off and build a church
     maxPilgrims = nearby_nodes.length;
@@ -90,7 +91,15 @@ castle.takeTurn = (self) => {
     //self.log("start. my prime is  " + prime);
     ////self.log(visible);
   }
-
+  
+  //Check if number of pilgrims in the radius of the castle, are equal to nearby_nodes.
+  var pilgrims_nearby = visible.filter(robot => robot.team === self.me.team && robot.unit === 2);
+  if(pilgrims_nearby.length < nearby_nodes.length) {
+	  var delta = nearby_nodes.length - pilgrims_nearby.length;
+	  //decrement pilgrimCount in order to build more pilgrims.
+	  pilgrimCount = Math.abs(pilgrimCount - delta);
+    }  
+  
   // //self.log("here 97");
   // Assigns pilgrims to clusters
   for (var i = 0; i < visible.length; i++) {
