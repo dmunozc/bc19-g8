@@ -1101,15 +1101,10 @@ pilgrim.takeTurn = (self) => {
 
   var curr_loc = { 'x': self.me.x, 'y': self.me.y };
   var visible = self.getVisibleRobots();
-  // var karbonite = resource.get_resource_nodes(self.getKarboniteMap());
-  // var fuel = resource.get_resource_nodes(self.getFuelMap());
-  // var resources = karbonite.concat(fuel);
-  // resources = resource.update_nodes(curr_loc, resources, visible);
 
   //Using this to count pilgrims
   self.castleTalk(2);
   step++;
-  ////self.log(currentPath);
   if (step === 0) {
     //self.log("pilgrim initializing....");
     // This assigns castle loc to nearest castle or church
@@ -1127,7 +1122,7 @@ pilgrim.takeTurn = (self) => {
     //self.log("Nearest karb");
     //self.log(nearest_karb);
     if (get_distance([curr_loc.x, curr_loc.y], [nearest_karb.x, nearest_karb.y]) <= 8){
-      // Their desitnation will be this node now
+      // Their destination will be this node now
       destination = nearest_karb;
       hasBase = true;
       //self.log("Mining at:");
@@ -1204,6 +1199,11 @@ pilgrim.takeTurn = (self) => {
       else if (num_churches >= 1) {
         castleLoc = find_nearest_unit(curr_loc, visible, 1);
       }
+      //Wait to build a church
+      else if(num_churches < 1 && num_castles < 1){
+        self.log("Waiting to build a church...");
+        return
+      }
       dist = get_distance([self.me.x, self.me.y], [castleLoc.x, castleLoc.y]);
 
     }
@@ -1231,291 +1231,292 @@ pilgrim.takeTurn = (self) => {
 const castle = {};
 var pilgrimCount = 0;
 var maxPilgrims = 0;
+var pilgrimDelta;
 var castle_loc = { x: 0, y: 0 };
 var map = [];
 var friendly_castles = [];
 var resource_list$1;
+var nearby_nodes;
 var enemy_castles = [];
 var numCastles = 0;
 var resource_clusters = [];
-var nearbyNodeCount = 0;
+var minAttackUnits = 5;
 var prime = 0;
 var foundMaster = false;
 var MASTER = 13;
 var HEARTBEAT = 213;
 var ATTACK_INCOMING = 215;
 var locSentCounter = 0;
-var minimumFuel = 200;
+var minimumFuel = 150;
 var minimumKarb = 25;
 var friendlyCastlesNumbered = 0;
-var possiblePrimes = [2,3,5];
+var possiblePrimes = [2, 3, 5];
 var canBuild = true;
 var beingAttack = false;
+var firstPilgrimWaveDone = false;
 castle.takeTurn = (self) => {
 
 
-     var visible = self.getVisibleRobots();
-     ////self.log(enemy_castles);
-     ////self.log(self.step);
-     var castleMasterSignal = visible.filter(robot => robot.castle_talk == MASTER);
-     var castleAttackSignal = visible.filter(robot => robot.castle_talk == ATTACK_INCOMING && robot.id != self.id);
-     var enemyRobots = visible.filter(robot => robot.team != self.me.team && robot.signal_radius == -1);
-     ////self.log(castleMasterSignal);
-    // Initialize to figure out how many pilgrims to build
-    if (self.step <= 0) {
-      
-        castle_loc.x = self.me.x;
-        castle_loc.y = self.me.y;
-        var karbonite = get_resource_nodes(self.getKarboniteMap());
-        var fuel = get_resource_nodes(self.getFuelMap());
-        resource_list$1 = karbonite.concat(fuel);
-        ////self.log(resource_list);
-        // Checks for resources in a 4 r^2 range
-        var nearby_nodes = find_nearby_nodes(castle_loc, resource_list$1, visible, 8);
-        map = self.getPassableMap();
-        // Build 1 more pilgrim so it can go off and build a church
-        pilgrimCount = nearby_nodes.length;
-        nearbyNodeCount = nearby_nodes.length;
-        ////self.log(pilgrimCount);
-        numCastles = visible.filter(robot =>  robot.team == self.me.team).length;//visible.length;
-        
-        friendly_castles.push({"x": self.me.x, "y": self.me.y});
-        //var enemy = resource.find_possible_castle_locations([self.me.x, self.me.y], self.map, self.getKarboniteMap());
-        //enemy_castles.push({"x": enemy[0], "y": enemy[1]});
-        ////self.log(friendly_castles);
-        ////self.log(enemy_castles);
-        var temp_cluster = find_clusters(resource_list$1, friendly_castles, enemy_castles);
-        resource_clusters = update_nodes(castle_loc, temp_cluster, visible);
-        ////self.log(resource_clusters);
-        pilgrimCount = nearby_nodes.length + Math.floor(resource_clusters.length/numCastles) ;
-        ////self.log(pilgrimCount);
-        maxPilgrims = pilgrimCount;
-        nearbyNodeCount = nearby_nodes.length;
-        ////self.log(pilgrimCount);
-        // self.signal(1, Math.pow(self.getPassableMap().length, 2));
-        // self.castleTalk(1);
-        numCastles--;
-        if(numCastles == 0){
-          prime = 1;
-          foundMaster = true;
-        }else{
-          prime = get_random_from_list([5,7,11,13]);
-        }
-        ////self.log(numCastles);
-        //self.log("start. my prime is  " + prime);
-        ////self.log(visible);
-    }
-    
-   // //self.log("here 97");
-    // Assigns pilgrims to clusters
-    for(var i = 0; i < visible.length; i++){
-        if (visible[i].castle_talk === 10){
-            ////self.log("pilgrim needs loc");
-            if (visible[i].x){
-                ////self.log("I am going to transmit to:");
-                ////self.log(visible[i]);
-                var reset = false;
-                if (resource_clusters.length === 1){
-                    reset = true;
-                }
-                var dest = resource_clusters[0];
-                var dist = Math.ceil(get_distance([castle_loc.x, castle_loc.y], [visible[i].x, visible[i].y]));
-                ////self.log("Distance to transmit is : " + dist)
-                transmit_location(self, dest, Math.pow(dist, 2));
-                ////self.log(resource_clusters);
-                resource_clusters.splice(0, 1);
-                if (reset){
-                    resource_clusters = find_clusters(resource_list$1, friendly_castles, enemy_castles);
-                }
-                ////self.log("Deleted a resource cluster");
-                ////self.log(resource_clusters);
-            }
-        }
-        // A pilgrim needs to build a church, so let's skip some turns for resources
-       /* if (visible[i].castle_talk === 11){
-            return;
-        }*/
-    }
+  var visible = self.getVisibleRobots();
+  ////self.log(enemy_castles);
+  ////self.log(self.step);
+  // self.log("Pilgrim count: " + pilgrimCount);
+  // self.log("Max pilgrims: "+ maxPilgrims);
+  var castleMasterSignal = visible.filter(robot => robot.castle_talk == MASTER);
+  var castleAttackSignal = visible.filter(robot => robot.castle_talk == ATTACK_INCOMING && robot.id != self.id);
+  var enemyRobots = visible.filter(robot => robot.team != self.me.team && robot.signal_radius == -1);
 
-    ////self.log("here 128");
-    // // Sending a signal to determine number of castles
-    if (self.step == 0 && numCastles != 0){
-      ////self.log("sending signal heartbeat");
-       self.signal(1, Math.pow(self.getPassableMap().length, 2));
-       self.castleTalk(1);
-    }
- // //self.log("here 135");
-    // // We can add to friendly castle array
-    if(numCastles != 0){
-      ////self.log(self.step + "  trying to get castles");
-        //self.castleTalk(1); 
-        var visible = self.getVisibleRobots();
-        ////self.log(visible);
-        ////self.log(visible);
-        for (var i = 0; i < visible.length; i++){
-            if (visible[i].castle_talk === 1 && visible[i].x != self.me.x && visible[i].y != self.me.y){
-                friendly_castles.push({"x": visible[i].x, "y":visible[i].y});
-                numCastles--;
-            } 
-        }
-        ////self.log("Friendly castles");
-        ////self.log(friendly_castles);
-    }
-    // // We can calculate enemy castles now
-    if (numCastles == 0 && enemy_castles.length < friendly_castles.length){
-        for (var i = 0; i < friendly_castles.length; i++){
-            var enemy = find_possible_castle_locations([friendly_castles[i].x, friendly_castles[i].y], self.map, self.getKarboniteMap());
-            enemy_castles.push({"x":enemy[0], "y":enemy[1]});
-        }
-        // This just arranges by distance (might not be needed)
-        enemy_castles = update_nodes(castle_loc, enemy_castles, []);
-        ////self.log("Enemy castles");
-        ////self.log(enemy_castles);
-    }
-    // We can find the clusters now
-    if (enemy_castles.length === friendly_castles.length && resource_clusters.length < 1){
-        resource_clusters = find_clusters(resource_list$1, friendly_castles, enemy_castles);
-        ////self.log("Resource clusters");
-        ////self.log(resource_clusters);
-        maxPilgrims = maxPilgrims + Math.ceil(resource_clusters.length/friendly_castles.length);
-        //self.log("updated pilgrims  " + maxPilgrims);
-        ////self.log("Max pilgrims: " + maxPilgrims);
-    }
-    ////self.log(self.step + "  step  " + prime);
-    /*//self.log("numCastles  " + numCastles);
-    //self.log("friendlyCastlesNumbered   " + friendlyCastlesNumbered);
-    //self.log("friendly_castles.legnth  "  +friendly_castles.length); 
-    //self.log(foundMaster);*/
-   // //self.log("here 176");
-    if(foundMaster == true && prime != 1){
-      ////self.log("sending heartbeat  "  + self.step);
-      self.castleTalk(HEARTBEAT);
-      var castleHeartbeatSignal = visible.filter(robot => robot.castle_talk >= HEARTBEAT && robot.id != self.id);
-      ////self.log("castleHeartbeatSignal");
-      ////self.log(castleHeartbeatSignal);
-      if(self.step > 50 && castleHeartbeatSignal.length == 0){
-        //self.log("*********************************************************************************all castles eliminated, i am the only one");
-        prime = 1;
-      }
-    }
-    if(foundMaster == false && numCastles == 0 && friendlyCastlesNumbered == friendly_castles.length-1){
-      prime = possiblePrimes[friendlyCastlesNumbered];
-      //self.log("my prime  " + prime);
-      foundMaster = true;
-    }
-    if (foundMaster == false && numCastles == 0 && castleMasterSignal.length > 0){
-      //self.log("found other castle wanting to be master");
-      //self.log(castleMasterSignal);
-      friendlyCastlesNumbered += castleMasterSignal.length;
-      //foundMaster = true;
-    }
-    if(foundMaster == false && numCastles == 0 && friendlyCastlesNumbered < friendly_castles.length &&self.step >0 &&self.step % prime == 0){
-      self.castleTalk(MASTER);
-      //self.log("i am master   " + prime + "   " + self.step);
-      prime = possiblePrimes[friendlyCastlesNumbered];
-      //self.log("my prime  " + prime);
-      foundMaster = true;
-    }
-    
-    if(enemyRobots.length >= 2 || (enemyRobots.length == 1 && get_distance([ self.me.x, self.me.y],[enemyRobots[0].x,enemyRobots[0].y]) <= 10 ) ){
-      //self.log(enemyRobots);
-     // self.log(self.step +  "--------------------------------------------------------------------------i am being attacked, need all resources");
-      self.castleTalk(ATTACK_INCOMING);
-      prime =1;
-      canBuild = true;
-      beingAttack = true;
-    }else{
-      if(castleAttackSignal.length > 0){
-        //self.log(self.step +  "--------------------------------------------------------------------------somebody is being attacked, they need all resources");
-        canBuild = false;
-      }else{
-        if(beingAttack == true){
-          //self.log("sending herabeat after attacK");
-          beingAttack = false;
-          self.castleTalk(HEARTBEAT);
-          prime = possiblePrimes[friendlyCastlesNumbered];
-        }
-        canBuild = true;
-        
-        
-      }
-      
-      
-      
-    }
-    
-    
+  var nearby_attack_units = visible.filter(robot => robot.team === self.me.team && robot.unit >= 3);
+  if (self.step > 75  || (nearby_attack_units.length >= minAttackUnits && resource_clusters.length > 0)) {
+    //We can build pilgrims to mine the clusters
+    maxPilgrims += pilgrimDelta;
+    pilgrimDelta = 0;
+  }
+  ////self.log(castleMasterSignal);
+  // Initialize to figure out how many pilgrims to build
+  if (self.step <= 0) {
 
-  /*  if (self.step % 100 === 99){
-        // we should adjust number of pilgrims periodically
-        var count = 0;
-        ////self.log("Updating pilgrims");
-        ////self.log(visible);
+    castle_loc.x = self.me.x;
+    castle_loc.y = self.me.y;
+    var karbonite = get_resource_nodes(self.getKarboniteMap());
+    var fuel = get_resource_nodes(self.getFuelMap());
+    resource_list$1 = karbonite.concat(fuel);
+    ////self.log(resource_list);
+    // Checks for resources in a 4 r^2 range
+    nearby_nodes = find_nearby_nodes(castle_loc, resource_list$1, visible, 6);
+    map = self.getPassableMap();
+    // Build 1 more pilgrim so it can go off and build a church
+    maxPilgrims = nearby_nodes.length;
+    //self.log("start.  maxPIlgimrs  " + maxPilgrims);
+    // self.log(pilgrimCount);
+    numCastles = visible.filter(robot => robot.team == self.me.team).length;
 
-        for (var i = 0; i < visible.length; i++){
-            var sig = visible[i].castle_talk;
-            // These are all the pilgrim castle talk signals
-            if (sig === 2 || sig === 10 || sig === 11){
-                count++;
-            }
-        }
-        pilgrimCount = maxPilgrims - count;
-        if (pilgrimCount < 0){
-            pilgrimCount = 0;
-        }
-        ////self.log("***************************************");
-        ////self.log("Pilgrim count updated: " + pilgrimCount);
-        ////self.log("***************************************");
 
-    }*/
-
-    /***************** BUILD SECTION  **********************/
-////self.log("pilgrimCount   " + pilgrimCount);
-    if (self.step > 0 && self.step % prime === 0 && pilgrimCount >= 0 && self.karbonite >= (10 * friendly_castles.length + minimumKarb) && self.fuel >= (50 * friendly_castles.length + minimumFuel) && canBuild == true) {
-        // //self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
-        pilgrimCount--;
-        var build_loc = find_location_to_build_unit(castle_loc, map, visible, resource_list$1, self);
-        return self.buildUnit(SPECS.PILGRIM, build_loc.x, build_loc.y);
-
-    }
-    
-     if((self.step <= (300+prime*prime)+ enemy_castles.length  && self.step > (300+prime*prime))||
-          (self.step <= (625+prime*prime)+ enemy_castles.length && self.step >(625+prime*prime)) ||
-          (self.step <= (900+prime*prime)+ enemy_castles.length && self.step > (900+prime*prime)) ){
-        ////self.log("trying to send message");
-        ////self.log([enemy_castles[0].x,enemy_castles[0].y]);
-        var toSend = locSentCounter % enemy_castles.length;
-        ////self.log(enemy_castles.length);
-        ////self.log(enemy_castles[toSend]);
-        self.signal(encode_attack([enemy_castles[toSend].x,enemy_castles[toSend].y]), Math.pow(7, 2));
-        locSentCounter++;
-      }
-    /*if(enemy_castles.length == 1){
+    friendly_castles.push({ "x": self.me.x, "y": self.me.y });
+    numCastles--;
+    if (numCastles == 0) {
       prime = 1;
-    }*/
-      ////self.log("canBuild    "   + canBuild + "   prime   " + prime);
-    if ( self.step >0 &&  self.step % prime == 0 && pilgrimCount <=0 && self.karbonite >= (25 * friendly_castles.length + minimumKarb) && (50 * friendly_castles.length + minimumFuel * friendly_castles.length ) && canBuild == true) {
-       ////self.log("buidlattack unit");
-        var build_loc = find_location_to_build_unit(castle_loc, map, visible, self);
-        var buildPlace = [build_loc.x, build_loc.y];
-         return self.buildUnit(Math.floor(Math.random() * (4 - 3 + 1) ) + 3, buildPlace[0], buildPlace[1]);
+      foundMaster = true;
+    } else {
+      prime = get_random_from_list([3, 5, 7]);
     }
-    else {
-        var enemies = get_visible_enemies(self.me.team, visible);
-        var curr_loc = { 'x': self.me.x, 'y': self.me.y };
-        if (enemies.length !== 0) {
-            ////self.log("We see an enemy!");
-            var target = find_nearest_node(curr_loc, enemies);
-            //Check if in range
-            var dist = get_distance([curr_loc.x, curr_loc.y], [target.x, target.y]);
-            if (dist <= 8) {
-                ////self.log("Attacking enemy!");
-                var attack = get_relative_position(curr_loc, target);
-                return self.attack(attack.x, attack.y);
-            }
+    ////self.log(numCastles);
+    //self.log("start. my prime is  " + prime);
+    ////self.log(visible);
+  }
+  if(pilgrimCount == nearby_nodes.length){
+    firstPilgrimWaveDone = true;
+  }
+  //Check if number of pilgrims in the radius of the castle, are equal to nearby_nodes.
+  var pilgrims_nearby = visible.filter(robot => robot.team === self.me.team && robot.unit === 2);
+  //self.log("pC before  " + pilgrimCount);
+  //self.log(self.step + "pilgrims_nearby  " + pilgrims_nearby.length + "   :   " + nearby_nodes.length);
+  if(pilgrims_nearby.length < nearby_nodes.length && firstPilgrimWaveDone == true) {
+    //if we are under attack and have friendly castles, do not build more pilgirms
+    if(enemyRobots.length ==0){
+        var delta =  pilgrims_nearby.length - nearby_nodes.length;
+      ///decrement pilgrimCount in order to build more pilgrims.
+      //self.log("*************************************************need new pilgrims  " + pilgrimCount);
+      pilgrimCount += delta;//Math.abs(pilgrimCount - delta);
+      if (pilgrimCount < 0){
+        pilgrimCount = 0;
+      }
+      
+     // self.log("new ilgir count  " + pilgrimCount);
+    }
+	  
+  }  
+ // self.log("pC after  " + pilgrimCount);
+  // //self.log("here 97");
+  // Assigns pilgrims to clusters
+  for (var i = 0; i < visible.length; i++) {
+    if (visible[i].castle_talk === 10) {
+      ////self.log("pilgrim needs loc");
+      if (visible[i].x) {
+        ////self.log("I am going to transmit to:");
+        ////self.log(visible[i]);
+        var reset = false;
+        if (resource_clusters.length === 1) {
+          reset = true;
         }
+        var dest = resource_clusters[0];
+        var dist = Math.ceil(get_distance([castle_loc.x, castle_loc.y], [visible[i].x, visible[i].y]));
+        ////self.log("Distance to transmit is : " + dist)
+        transmit_location(self, dest, Math.pow(dist, 2));
+        ////self.log(resource_clusters);
+        resource_clusters.splice(0, 1);
+        if (reset) {
+          resource_clusters = find_clusters(resource_list$1, friendly_castles, enemy_castles);
+        }
+        ////self.log("Deleted a resource cluster");
+        ////self.log(resource_clusters);
+      }
+    }
+  }
+
+  ////self.log("here 128");
+  // // Sending a signal to determine number of castles
+  if (self.step == 0 && numCastles != 0) {
+    ////self.log("sending signal heartbeat");
+    self.signal(1, Math.pow(self.getPassableMap().length, 2));
+    self.castleTalk(1);
+  }
+  // //self.log("here 135");
+  // // We can add to friendly castle array
+  if (numCastles != 0) {
+    ////self.log(self.step + "  trying to get castles");
+    //self.castleTalk(1); 
+    // var visible = self.getVisibleRobots();
+    ////self.log(visibmaxPilgrims + 
+    ////self.log(visibmaxPilgrims + 
+    for (var i = 0; i < visible.length; i++) {
+      if (visible[i].castle_talk === 1 && visible[i].x != self.me.x && visible[i].y != self.me.y) {
+        friendly_castles.push({ "x": visible[i].x, "y": visible[i].y });
+        numCastles--;
+      }
+    }
+    // self.log("Friendly castles");
+    // self.log(friendly_castles);
+  }
+  // // We can calculate enemy castles now
+  if (numCastles == 0 && enemy_castles.length < friendly_castles.length) {
+    for (var i = 0; i < friendly_castles.length; i++) {
+      var enemy = find_possible_castle_locations([friendly_castles[i].x, friendly_castles[i].y], self.map, self.getKarboniteMap());
+      enemy_castles.push({ "x": enemy[0], "y": enemy[1] });
+    }
+    // This just arranges by distance (might not be needed)
+    enemy_castles = update_nodes(castle_loc, enemy_castles, []);
+    // self.log("Enemy castles");
+    // self.log(enemy_castles);
+  }
+  // We can find the clusters now
+  // self.log(resource_clusters.length)
+  if (enemy_castles.length === friendly_castles.length && resource_clusters.length < 1) {
+    resource_clusters = find_clusters(resource_list$1, friendly_castles, enemy_castles);
+    pilgrimDelta = Math.ceil(resource_clusters.length / friendly_castles.length);
+  }
+  ////self.log(self.step + "  step  " + prime);
+  /*//self.log("numCastles  " + numCastles);
+  //self.log("friendlyCastlesNumbered   " + friendlyCastlesNumbered);
+  //self.log("friendly_castles.legnth  "  +friendly_castles.length); 
+  //self.log(foundMaster);*/
+  // //self.log("here 176");
+  if (foundMaster == true && prime != 1) {
+    ////self.log("sending heartbeat  "  + self.step);
+    self.castleTalk(HEARTBEAT);
+    var castleHeartbeatSignal = visible.filter(robot => robot.castle_talk >= HEARTBEAT && robot.id != self.id);
+    ////self.log("castleHeartbeatSignal");
+    ////self.log(castleHeartbeatSignal);
+    if (self.step > 50 && castleHeartbeatSignal.length == 0) {
+      self.log("*********************************************************************************all castles eliminated, i am the only one");
+      prime = 1;
+    }
+  }
+  if (foundMaster == false && numCastles == 0 && friendlyCastlesNumbered == friendly_castles.length - 1) {
+    prime = possiblePrimes[friendlyCastlesNumbered];
+    self.log("my prime  " + prime);
+    foundMaster = true;
+  }
+  if (foundMaster == false && numCastles == 0 && castleMasterSignal.length > 0) {
+    self.log("found other castle wanting to be master");
+    //self.log(castleMasterSignal);
+    friendlyCastlesNumbered += castleMasterSignal.length;
+    //foundMaster = true;
+  }
+  if (foundMaster == false && numCastles == 0 && friendlyCastlesNumbered < friendly_castles.length && self.step > 0 && self.step % prime == 0) {
+    self.castleTalk(MASTER);
+    self.log("i am master   " + prime + "   " + self.step);
+    prime = possiblePrimes[friendlyCastlesNumbered];
+    self.log("my prime  " + prime);
+    foundMaster = true;
+  }
+
+  if (enemyRobots.length >= 1 || (enemyRobots.length == 1 && get_distance([self.me.x, self.me.y], [enemyRobots[0].x, enemyRobots[0].y]) <= 10)) {
+    //self.log(enemyRobots);
+   //  self.log(self.step +  "--------------------------------------------------------------------------i am being attacked, need all resources");
+   minimumKarb = 10;
+    self.castleTalk(ATTACK_INCOMING);
+    prime = 1;
+    canBuild = true;
+    beingAttack = true;
+  } else {
+    if (castleAttackSignal.length > 0) {
+    //  self.log(self.step +  "--------------------------------------------------------------------------somebody is being attacked, they need all resources");
+      canBuild = false;
+    } else {
+      + Math.floor(resource_clusters.length / numCastles);
+      if (beingAttack == true) {
+        //self.log("sending herabeat after attacK");
+        beingAttack = false;
+        minimumKarb = 35;
+        self.castleTalk(HEARTBEAT);
+        prime = possiblePrimes[friendlyCastlesNumbered];
+      }
+      canBuild = true;
+
+
+    }
+
+
+
+  }
+
+
+
+
+  /***************** BUILD SECTION  **********************/
+  ////self.log("pilgrimCount   " + pilgrimCount);
+  if (self.step > 0 && self.step % 2 === 0 && pilgrimCount < maxPilgrims && self.karbonite >= (10 + minimumKarb) && self.fuel >= (50 + minimumFuel) && canBuild == true && enemyRobots.length ==0) {
+   // self.log("Building a pilgrim at " + (self.me.x + 1) + ", " + (self.me.y + 1));
+    pilgrimCount++;
+    var build_loc = find_location_to_build_unit(castle_loc, map, visible, resource_list$1, self);
+    return self.buildUnit(SPECS.PILGRIM, build_loc.x, build_loc.y);
+
+  }
+
+  if ((self.step <= (222 + prime * prime) + enemy_castles.length && self.step > (222 + prime * prime)) ||
+    (self.step <= (500 + prime * prime) + enemy_castles.length && self.step > (500 + prime * prime)) ||
+    (self.step <= (750 + prime * prime) + enemy_castles.length && self.step > (750 + prime * prime)) || 
+    (self.step <= (900 + prime * prime) + enemy_castles.length && self.step > (900 + prime * prime))) {
+    ////self.log("trying to send message");
+    ////self.log([enemy_castles[0].x,enemy_castles[0].y]);
+    var toSend = locSentCounter % enemy_castles.length;
+    ////self.log(enemy_castles.length);
+    ////self.log(enemy_castles[toSend]);
+    self.signal(encode_attack([enemy_castles[toSend].x, enemy_castles[toSend].y]), Math.pow(7, 2));
+    locSentCounter++;
+  }
+  /*if(enemy_castles.length == 1){
+    prime = 1;
+  }*/
+  ////self.log("canBuild    "   + canBuild + "   prime   " + prime);
+  if (self.step > 0 && self.step % prime == 0 && (pilgrimCount >= maxPilgrims || enemyRobots.length >= 1) && self.karbonite >= (25 + minimumKarb ) && (50 + minimumFuel) && canBuild == true) {
+    //self.log("buidlattack unit");
+    var build_loc = find_location_to_build_unit(castle_loc, map, visible, self);
+    var buildPlace = [build_loc.x, build_loc.y];
+    if (nearby_attack_units.length >= minAttackUnits){
+      return self.buildUnit(Math.floor(Math.random() * (4 - 3 + 1)) + 3, buildPlace[0], buildPlace[1]);
+    }else{
+      return self.buildUnit(4, buildPlace[0], buildPlace[1]);
     }
     
+  }
+  else {
+    var enemies = get_visible_enemies(self.me.team, visible);
+    var curr_loc = { 'x': self.me.x, 'y': self.me.y };
+    if (enemies.length !== 0) {
+      ////self.log("We see an enemy!");
+      var target = find_nearest_node(curr_loc, enemies);
+      //Check if in range
+      var dist = get_distance([curr_loc.x, curr_loc.y], [target.x, target.y]);
+      if (dist <= 8) {
+        ////self.log("Attacking enemy!");
+        var attack = get_relative_position(curr_loc, target);
+        return self.attack(attack.x, attack.y);
+      }
+    }
+  }
+
 };
 
 const prophet = {};
@@ -1689,7 +1690,7 @@ var pilgrimCount$1 = 0;
 var castle_loc$1 = { x: 0, y: 0 };
 var map$1 = [];
 var resource_list$2;
-var nearbyNodeCount$1 = 0;
+var nearbyNodeCount = 0;
 var prime$1 =0;
 church.takeTurn = (self) => {
 
@@ -1721,11 +1722,18 @@ church.takeTurn = (self) => {
         // Checks for resources in a 4 r^2 range
         var nearby_nodes = find_nearby_nodes(castle_loc$1, resource_list$2, visible, 4);
         map$1 = self.getPassableMap();
-         prime$1 = get_random_from_list([5,7,11,13]);
+         prime$1 = get_random_from_list([5,7,11]);
         pilgrimCount$1 = nearby_nodes.length - 1;
-        nearbyNodeCount$1 = nearby_nodes.length;
+        nearbyNodeCount = nearby_nodes.length;
         //self.log(pilgrimCount);
     }
+    
+     if (self.step > 0 && self.step < 4) {
+       var build_loc = find_location_to_build_unit(castle_loc$1, map$1, visible, self);
+        buildPlace = [build_loc.x, build_loc.y];
+         return self.buildUnit(Math.floor(Math.random() * (4 - 3 + 1) ) + 3, buildPlace[0], buildPlace[1]);
+       
+     }
     // This is to check to see if we need to replace any pilgrims
     // if (self.step % 50 === 49){
     //   var visible = self.getVisibleRobots(); 
@@ -1743,7 +1751,7 @@ church.takeTurn = (self) => {
         return self.buildUnit(SPECS.PILGRIM, buildPlace[0], buildPlace[1]);
 
     }
-    if (  self.step >0 &&  self.step % prime$1 == 0  && pilgrimCount$1 === 0 && self.karbonite >= 25*3 && self.fuel >= 50 + 500) {
+    if (  self.step >0 &&  self.step % prime$1 == 0  && pilgrimCount$1 === 0 && self.karbonite >= 25*3 && self.fuel >= 50 + 400) {
       // self.log("building prophet");
        //self.log(castle_loc);
        //self.log(visible + "");
